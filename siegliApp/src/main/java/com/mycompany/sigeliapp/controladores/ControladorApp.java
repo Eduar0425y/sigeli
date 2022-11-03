@@ -329,7 +329,7 @@ public class ControladorApp {
         
         Pattern pat = Pattern.compile(".*" + busqueda.toLowerCase() + ".*");
         
-        vistaApp.setTexto("Resultados para " + busqueda );
+        vistaApp.setTexto("Resultados para \"" + busqueda + "\"");
         
         for(Libro libro : arrayListLibro){
             for( Categoria categoria: arrayListCategoria){
