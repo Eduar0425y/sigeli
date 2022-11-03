@@ -1,4 +1,4 @@
-package com.mycompany.sigeliapp.modelos;
+package main.java.com.mycompany.sigeliapp.modelos;
 
 import java.sql.Date;
 import java.util.ArrayList;

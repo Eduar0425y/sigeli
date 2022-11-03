@@ -1,5 +1,5 @@
 
-package com.mycompany.sigeliapp.modelos;
+package main.java.com.mycompany.sigeliapp.modelos;
 
 import java.util.ArrayList;
 

@@ -1,13 +1,13 @@
 
-package com.mycompany.sigeliapp.controladores;
+package main.java.com.mycompany.sigeliapp.controladores;
 
 import java.util.ArrayList;
 import java.sql.Date;
 import java.time.*; // Este paquete contiene LocalDate, LocalTime y LocalDateTime.
 import java.time.format.*;  // Este paquete contiene DateTimeFormatter.
 
-import com.mycompany.sigeliapp.modelos.*;
-import com.mycompany.sigeliapp.vistas.*;
+import main.java.com.mycompany.sigeliapp.modelos.*;
+import main.java.com.mycompany.sigeliapp.vistas.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

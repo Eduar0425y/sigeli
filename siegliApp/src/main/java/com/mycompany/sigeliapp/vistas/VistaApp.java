@@ -1,7 +1,7 @@
-package com.mycompany.sigeliapp.vistas;
+package main.java.com.mycompany.sigeliapp.vistas;
 
 import java.util.Scanner;
-import com.mycompany.sigeliapp.modelos.*;
+import main.java.com.mycompany.sigeliapp.modelos.*;
 
 public class VistaApp {
     

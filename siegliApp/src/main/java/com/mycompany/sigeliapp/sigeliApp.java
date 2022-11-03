@@ -1,6 +1,6 @@
-package com.mycompany.sigeliapp;
+package main.java.com.mycompany.sigeliapp;
 
-import  com.mycompany.sigeliapp.controladores.*;
+import  main.java.com.mycompany.sigeliapp.controladores.*;
 
 
 public class sigeliApp {
