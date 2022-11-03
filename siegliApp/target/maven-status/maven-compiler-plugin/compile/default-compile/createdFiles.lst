@@ -1,0 +1,14 @@
+com\mycompany\sigeliapp\modelos\Carrera.class
+com\mycompany\sigeliapp\modelos\Cargo.class
+com\mycompany\sigeliapp\modelos\Categoria.class
+com\mycompany\sigeliapp\vistas\VistaApp.class
+com\mycompany\sigeliapp\controladores\ControladorApp.class
+com\mycompany\sigeliapp\modelos\Prestamos.class
+com\mycompany\sigeliapp\modelos\Persona.class
+com\mycompany\sigeliapp\modelos\Usuario.class
+com\mycompany\sigeliapp\dao\Constantes.class
+com\mycompany\sigeliapp\modelos\Libro.class
+com\mycompany\sigeliapp\modelos\Multa.class
+com\mycompany\sigeliapp\modelos\CategoriaLibro.class
+com\mycompany\sigeliapp\modelos\Estado.class
+com\mycompany\sigeliapp\sigeliApp.class
