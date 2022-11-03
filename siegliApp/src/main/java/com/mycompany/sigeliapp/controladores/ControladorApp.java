@@ -94,7 +94,7 @@ public class ControladorApp {
         claveAdmin = vistaApp.getEntrada("Ingrese su clave: ");
 
         for(Usuario usuario : arrayListUsuario){
-            if(documentoLogin == usuario.getDocumento() && claveLogin.equals(usuario.getClave())){
+            if(documentoAdmin == usuario.getDocumento() && claveAdmin.equals(usuario.getClave())){
                 if(usuario.getIdCargo() == 1){
                     documento = vistaApp.getEntradaInt("Ingrese su documento: ");
                     nombre = vistaApp.getEntrada("Ingrese su nombre: ");
