@@ -364,7 +364,7 @@ public class ControladorApp {
             
         }
         
-        vistaApp.setTexto("Cerca de " + cantLibros + " libros encontrados\n");
+        vistaApp.setTexto("Cerca de " + cantLibros + " libros encontrados entre "+ arrayListLibro.size() +"\n");
  
     }
 
