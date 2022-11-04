@@ -40,12 +40,4 @@ public class Usuario {
         this.idCargo = idCargo;
     }
     
-    public ArrayList<Usuario> arrayListUsuario(){
-        ArrayList<Usuario> arrayListUsuario = new ArrayList<>();
-        
-        arrayListUsuario.add(new Usuario(1094045112, "eduar", 1));
-        arrayListUsuario.add(new Usuario(1092525868, "eduarLindo", 2));
-        
-        return arrayListUsuario;
-    }
 }

@@ -100,7 +100,7 @@ public class VistaApp {
     }
     
     public int adminMultas(){
-        System.out.println("Ingrse la opcion de lo que desea hacer: \n1. Ver todas las multas\n2. Buscar multas\n3. Pagar multa\n4. Salir");
+        System.out.println("Ingrse la opcion de lo que desea hacer: \n1. Ver todas las multas\n2. Buscar multas\n3. Pagar multa\n4. Eliminar multa\n5. salir");
         return teclado.nextInt();
     }
     
@@ -128,4 +128,5 @@ public class VistaApp {
         System.out.println("\nMulta numero: " + multa.getIdMulta() + "\nPersona: " + multa.getDocumentoPersona() +
                            "\nValor de la multa: " + multa.getValorMulta());
     }
+    
 }

@@ -80,7 +80,7 @@ public class ControladorApp {
                 case 1: vistaApp.getEntrada("");
                         documentoLogin = Integer.parseInt(vistaApp.getEntrada("Ingrese su usuario: "));
                         claveLogin = vistaApp.getEntrada("Ingrese su clave: ");
-                        login(usuario.arrayListUsuario());
+                        login(iDaoUsuario.verUsuarios());
                     break;
                 case 2: //registrarUsuario(persona.arrayListPersonas(), usuario.arrayListUsuario());
                     break;
@@ -169,7 +169,7 @@ public class ControladorApp {
                     reportes();
                     break;
                 case "7":
-                    opcionesCuenta(iDaoPersona.verPersonas(), usuario.arrayListUsuario(), documentoLogin, iDaoCarrera.verCarreras());
+                    opcionesCuenta(iDaoPersona.verPersonas(), iDaoUsuario.verUsuarios(), documentoLogin, iDaoCarrera.verCarreras());
                     break;
                 case "8":
                     opcion = false;
@@ -191,7 +191,7 @@ public class ControladorApp {
                 busquedaLibro(iDaoLibro.verLibros(), iDaoEstado.verEstados(), iDaoCategoriaLibro.verCategoriaLibros(), iDaoCategoria.verCategorias());
                 break;
             case 2:
-                opcionesCuenta(iDaoPersona.verPersonas(), usuario.arrayListUsuario(), documentoLogin, iDaoCarrera.verCarreras());
+                opcionesCuenta(iDaoPersona.verPersonas(), iDaoUsuario.verUsuarios(), documentoLogin, iDaoCarrera.verCarreras());
                 break;
              case 3:
                     opcion = false;
@@ -241,7 +241,7 @@ public class ControladorApp {
                 carreraEnviar.setCarrera(" ");
             }
             else{
-                carreraEnviar.setCarrera("Carrera: " + arrayListCarrera.get(persona.getIdCarrera()).getCarrera());
+                carreraEnviar.setCarrera("Carrera: " + arrayListCarrera.get(persona.getIdCarrera()-1).getCarrera());
             }
             
             vistaApp.verUsuarios(personaEnviar, carreraEnviar);
@@ -322,6 +322,7 @@ public class ControladorApp {
                             
                             switch(vistaApp.opcionesCuenta()){
                                 case 1: clave1 = vistaApp.getEntrada("Ingrese la nueva contraseña: ");
+                                        vistaApp.getEntrada("");
                                         clave2 = vistaApp.getEntrada("Ingrese nuevamente la contraseña: ");
 
                                         if(clave1.equals(clave2)){
@@ -600,15 +601,15 @@ public class ControladorApp {
                 mensaje = "La fecha de prestamo no puede ser mayor a la fecha de entrega";
             }
 
-            if(arrayListMulta.get(i).getDocumentoPersona() == idPersona){
+           /*if(arrayListMulta.get(i).getDocumentoPersona() == idPersona){
                 multa = true;
 
             }
             else{
                 mensaje = "El Usuario ingresado tiene multas pendientes";
-            }
+            }*/
             
-            if(arrayListLibro.get(i).getIdEstado() == 0){
+            if(arrayListLibro.get(i).getIdEstado() == 1){
                 mensaje = "El libro no se encuentra disponible";
                 libroDisponible = false;
             }
@@ -654,9 +655,6 @@ public class ControladorApp {
             vistaApp.setTextoError("No se ha registrado la entrega del libro");
         }
         
-        
-        verPrestamo(arrayListPrestamos, arrayListPersonas, arrayListLibro, arrayListEstado);
-        
     }
 
     //Funciones de multa
@@ -694,6 +692,7 @@ public class ControladorApp {
                                         if(estado.getIdEstado() == multa.getEstadoMulta()){
                                             multa.setIdMulta(multa.getIdMulta()+1);
                                             vistaApp.verMultas(multa, prestamo, persona, libro, estado);
+                                            vistaApp.setTexto("Se motraron " + arrayListMulta.size() + " multas.");
                                         }
                                     }
                                 }

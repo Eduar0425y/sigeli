@@ -58,11 +58,11 @@ public class DaoPrestamos extends Conexion implements IDaoPrestamos{
         try {            
             PreparedStatement ps=getConexion().prepareStatement(sql);
             ps.setInt(1, prestamo.getIdPrestamo());
-            ps.setInt(1, prestamo.getIdPersona());
-            ps.setString(1, prestamo.getIsbnLibro());
-            ps.setDate(1, prestamo.getFechaPrestamo());
-            ps.setDate(1, prestamo.getFechaEntrega());
-            ps.setInt(1, prestamo.getIdEstado());
+            ps.setInt(2, prestamo.getIdPersona());
+            ps.setString(3, prestamo.getIsbnLibro());
+            ps.setDate(4, prestamo.getFechaPrestamo());
+            ps.setDate(5, prestamo.getFechaEntrega());
+            ps.setInt(6, prestamo.getIdEstado());
             
             ps.executeUpdate();
             
@@ -84,7 +84,7 @@ public class DaoPrestamos extends Conexion implements IDaoPrestamos{
 
     @Override
     public boolean validarPrestamo(Prestamos prestamo) {
-        String sql = "UPDATE " + Constantes.T_PRESTAMO + " SET " + Constantes.TPR_IDESTADO + "= ?," +
+        String sql = "UPDATE " + Constantes.T_PRESTAMO + " SET " + Constantes.TPR_IDESTADO + "= ," +
                     " WHERE " + Constantes.T_PRESTAMO + "." + Constantes.TPR_ID + "=" + prestamo.getIdPrestamo();
         
         try {

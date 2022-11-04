@@ -38,31 +38,31 @@ public class Constantes {
     public static final String TL_FILA = "fila_libro";
     public static final String TL_IDESTADO = "id_estado";
     
-    public static final String T_MULTA = "";
-    public static final String TM_ID = "";
-    public static final String TM_DOCUMENTO = "";
-    public static final String TM_IDPRESTAMO = "";
-    public static final String TM_VALOR = "";
-    public static final String TM_IDESTADO = "";
+    public static final String T_MULTA = "multa";
+    public static final String TM_ID = "id_multa";
+    public static final String TM_DOCUMENTO = "documento_persona";
+    public static final String TM_IDPRESTAMO = "id_prestamo";
+    public static final String TM_VALOR = "valor_multa";
+    public static final String TM_IDESTADO = "id_estado";
     
-    public static final String T_PERSONA = "";
-    public static final String TP_DOCUMENTO = "";
-    public static final String TP_NOMBRE = "";
-    public static final String TP_IDCARRERA = "";
-    public static final String TP_EMAIL = "";
-    public static final String TP_TELEFONO = "";
+    public static final String T_PERSONA = "persona";
+    public static final String TP_DOCUMENTO = "documento_persona";
+    public static final String TP_NOMBRE = "nombre";
+    public static final String TP_IDCARRERA = "id_carrera";
+    public static final String TP_EMAIL = "correo_electronico";
+    public static final String TP_TELEFONO = "id_carrera";
     
-    public static final String T_PRESTAMO = "";
-    public static final String TPR_ID = "";
-    public static final String TPR_DOCUMENTO = "";
-    public static final String TPR_ISBN = "";
-    public static final String TPR_FECHAPRESTAMO = "";
-    public static final String TPR_FECHAENTREGA = "";
-    public static final String TPR_IDESTADO = "";
+    public static final String T_PRESTAMO = "prestamos";
+    public static final String TPR_ID = "id_prestamo";
+    public static final String TPR_DOCUMENTO = "documento_persona";
+    public static final String TPR_ISBN = "isbn_libro";
+    public static final String TPR_FECHAPRESTAMO = "fecha_prestamo";
+    public static final String TPR_FECHAENTREGA = "fecha_entrega";
+    public static final String TPR_IDESTADO = "id_estado";
     
-    public static final String T_USUARIO = "";
-    public static final String TU_DOCUMENTO = "";
-    public static final String TU_CLAVE = "";
-    public static final String TU_CARGO = "";
+    public static final String T_USUARIO = "usuario";
+    public static final String TU_DOCUMENTO = "documento_persona";
+    public static final String TU_CLAVE = "clave";
+    public static final String TU_CARGO = "id_cargo";
     
 }

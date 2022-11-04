@@ -82,8 +82,8 @@ public class DaoMulta extends Conexion implements IDaoMulta{
 
     @Override
     public boolean pagarMulta(int id, Multa multa) {
-        String sql = "UPDATE " + Constantes.T_MULTA + " SET " + Constantes.TM_IDESTADO + "= ?," +
-                    " WHERE " + Constantes.T_MULTA + "." + Constantes.TM_ID + "=" + id ;
+        String sql = "UPDATE " + Constantes.T_MULTA + " SET " + Constantes.TM_IDESTADO + "= ?" +
+                    " WHERE " + Constantes.T_MULTA + "." + Constantes.TM_ID + " = " + id ;
         
         try {
             PreparedStatement ps=getConexion().prepareStatement(sql);

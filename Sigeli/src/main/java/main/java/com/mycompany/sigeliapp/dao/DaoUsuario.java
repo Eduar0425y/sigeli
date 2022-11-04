@@ -1,11 +1,50 @@
 package main.java.com.mycompany.sigeliapp.dao;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import main.java.com.mycompany.sigeliapp.modelos.Multa;
 import main.java.com.mycompany.sigeliapp.modelos.Usuario;
 
 
 public class DaoUsuario extends Conexion implements IDaoUsuario{
+
+    @Override
+    public ArrayList<Usuario> verUsuarios() {
+        ArrayList<Usuario> arrayListUsuario = new ArrayList<>();
+        
+        String sql = "SELECT * FROM " + Constantes.T_USUARIO;
+
+        try {
+            PreparedStatement ps = getConexion().prepareStatement(sql);
+            ResultSet resultSet=ps.executeQuery();
+            
+            while(resultSet.next()){
+                Usuario usuario = new Usuario();
+                usuario.setDocumento(resultSet.getInt(Constantes.TU_DOCUMENTO));
+                usuario.setClave(resultSet.getString(Constantes.TU_CLAVE));
+                usuario.setIdCargo(resultSet.getInt(Constantes.TU_CARGO));
+                
+                arrayListUsuario.add(usuario);
+            }
+            
+            return arrayListUsuario;
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DaoCarrera.class.getName()).log(Level.SEVERE, null, ex);
+            return arrayListUsuario;
+        }
+        finally{
+            try {
+                getConexion().close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexion "+e);
+            }
+        }
+    }
 
     @Override
     public boolean addUsuario(Usuario usuario) {
