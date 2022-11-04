@@ -63,16 +63,4 @@ public class Multa {
     }
     
     
-    
-    
-    public ArrayList<Multa> arrayListMulta(){
-        
-        ArrayList<Multa> arrayListMulta = new ArrayList<>();
-        arrayListMulta.add(new Multa(0, 1094045112, 1, 25000, 5));
-        arrayListMulta.add(new Multa(1, 1092525868, 2, 25000, 5));
-        arrayListMulta.add(new Multa(2, 1094045112, 3, 25000, 5));
-        arrayListMulta.add(new Multa(3, 1094045112, 4, 25000, 6));
-        
-        return arrayListMulta;
-    }
 }

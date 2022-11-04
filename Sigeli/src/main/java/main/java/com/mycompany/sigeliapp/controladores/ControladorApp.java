@@ -35,6 +35,9 @@ public class ControladorApp {
     private IDaoEstado iDaoEstado;
     private IDaoLibro iDaoLibro;
     private IDaoMulta iDaoMulta;
+    private IDaoPrestamos iDaoPrestamos;
+    private IDaoPersona iDaoPersona;
+    private IDaoUsuario iDaoUsuario;
     
     int documentoLogin = 0;
     String claveLogin = "";
@@ -60,12 +63,15 @@ public class ControladorApp {
         this.iDaoEstado = new DaoEstado();
         this.iDaoLibro = new DaoLibro();
         this.iDaoMulta = new DaoMulta();
+        this.iDaoPrestamos = new DaoPrestamos();
+        this.iDaoPersona = new DaoPersona();
+        this.iDaoUsuario = new DaoUsuario();
 
     }
 
     public void inicio() {
                        
-        crearMultas(multa.arrayListMulta(), prestamo.arrayListPrestamos());
+        crearMultas(iDaoMulta.verMultas(), iDaoPrestamos.verPrestamos());
         
         int opcion = 0;
         
@@ -123,8 +129,10 @@ public class ControladorApp {
                     idCargo = vistaApp.getEntradaInt("Ingrese su cargo: \n1. Administrador\n2. Estudiante");
                     clave = vistaApp.getEntrada("Ingrese su clave: ");
                     
-                    arrayListPersona.add(new Persona(documento, nombre, idCarrera, email, telefono));
-                    arrayListUsuario.add(new Usuario(documento, clave, idCargo));
+                    Persona persona = new Persona(documento, nombre, idCarrera, email, telefono);
+                    Usuario usuarioE = new Usuario(documento, clave, idCargo);
+                    iDaoPersona.addPersona(persona);
+                    iDaoUsuario.addUsuario(usuarioE);
                     
                     vistaApp.setTexto("Usuario Ingresado con éxito");
                 }
@@ -146,7 +154,7 @@ public class ControladorApp {
                     adminLibros();
                     break;
                 case "2":
-                    verUsuarios(persona.arrayListPersonas(), iDaoCarrera.verCarreras());
+                    verUsuarios(iDaoPersona.verPersonas(), iDaoCarrera.verCarreras());
                     break;
                 case "3":
                     addLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
@@ -161,7 +169,7 @@ public class ControladorApp {
                     reportes();
                     break;
                 case "7":
-                    opcionesCuenta(persona.arrayListPersonas(), usuario.arrayListUsuario(), documentoLogin, iDaoCarrera.verCarreras());
+                    opcionesCuenta(iDaoPersona.verPersonas(), usuario.arrayListUsuario(), documentoLogin, iDaoCarrera.verCarreras());
                     break;
                 case "8":
                     opcion = false;
@@ -183,7 +191,7 @@ public class ControladorApp {
                 busquedaLibro(iDaoLibro.verLibros(), iDaoEstado.verEstados(), iDaoCategoriaLibro.verCategoriaLibros(), iDaoCategoria.verCategorias());
                 break;
             case 2:
-                opcionesCuenta(persona.arrayListPersonas(), usuario.arrayListUsuario(), documentoLogin, iDaoCarrera.verCarreras());
+                opcionesCuenta(iDaoPersona.verPersonas(), usuario.arrayListUsuario(), documentoLogin, iDaoCarrera.verCarreras());
                 break;
              case 3:
                     opcion = false;
@@ -198,6 +206,8 @@ public class ControladorApp {
     
     //funciones de los paneles
     
+    
+    //con DAO
     public void adminLibros() {
 
         switch (vistaApp.menuAdminLibros()) {
@@ -247,7 +257,8 @@ public class ControladorApp {
         }
         
     }
-
+    
+    //con DAO
     public void addLibros(ArrayList<Libro> arrayListLibro, ArrayList<Estado> arrayListEstado) {
 
         Libro libroAdd = new Libro();
@@ -259,21 +270,19 @@ public class ControladorApp {
         libroAdd.setEstanteLibro(vistaApp.getEntrada("Ingrese el estante del libro: "));
         libroAdd.setFilaLibro(Integer.parseInt(vistaApp.getEntrada("Ingrese la fila del libro: ")));
         libroAdd.setIdEstado(Integer.parseInt(vistaApp.getEntrada("Ingrese el estado del libro: \n1. No disponible\n2.Disponible"))-1);
-
-        arrayListLibro.add(libroAdd);
-
-        verLibros(arrayListLibro, arrayListEstado);
+        
+        iDaoLibro.addLibro(libroAdd);
 
     }
 
     public void prestamoLibros() {
         
         switch(vistaApp.prestamo()){
-            case 1: verPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
+            case 1: verPrestamo(iDaoPrestamos.verPrestamos(), iDaoPersona.verPersonas(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
-            case 2: crearPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), iDaoLibro.verLibros(), iDaoMulta.verMultas(), iDaoEstado.verEstados());
+            case 2: crearPrestamo(iDaoPrestamos.verPrestamos(), iDaoPersona.verPersonas(), iDaoLibro.verLibros(), iDaoMulta.verMultas(), iDaoEstado.verEstados());
                 break;
-            case 3: validarPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
+            case 3: validarPrestamo(iDaoPrestamos.verPrestamos(), iDaoPersona.verPersonas(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
             default :
                 break;
@@ -283,11 +292,13 @@ public class ControladorApp {
 
     public void adminMultas(){
         switch(vistaApp.adminMultas()){
-            case 1: multas(multa.arrayListMulta(), persona.arrayListPersonas(), prestamo.arrayListPrestamos(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
+            case 1: multas(iDaoMulta.verMultas(), iDaoPersona.verPersonas(), iDaoPrestamos.verPrestamos(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
-            case 2: buscarMulta(multa.arrayListMulta(), persona.arrayListPersonas(), prestamo.arrayListPrestamos(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
+            case 2: buscarMulta(iDaoMulta.verMultas(), iDaoPersona.verPersonas(), iDaoPrestamos.verPrestamos(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
-            case 3: pagoMultas(multa.arrayListMulta());
+            case 3: pagoMultas(iDaoMulta.verMultas());
+                break;
+            case 4: eliminarMulta();
                 break;
             default: 
                 break;
@@ -315,6 +326,7 @@ public class ControladorApp {
 
                                         if(clave1.equals(clave2)){
                                             usuario.setClave(clave2);
+                                            iDaoUsuario.cambioClave(usuario);
                                             vistaApp.setTexto("La clave ha sido cambiada con éxito");
                                         }                
                                         else{
@@ -338,6 +350,7 @@ public class ControladorApp {
     
     //funciones de libro
     
+    //con DAO
     public void busquedaLibro(ArrayList<Libro> arrayListLibro, ArrayList<Estado> arrayListEstado, ArrayList<CategoriaLibro> arrayListCategoriaLibro, ArrayList<Categoria> arrayListCategoria) {
         
         vistaApp.getEntrada("");
@@ -386,6 +399,7 @@ public class ControladorApp {
  
     }
 
+    //con DAO
     public void verLibros(ArrayList<Libro> arrayListLibro, ArrayList<Estado> arrayListEstado) {
 
         int cantLibros = 0;
@@ -413,6 +427,7 @@ public class ControladorApp {
         vistaApp.setTexto("Se mostraron " + cantLibros + " Libros");
     }
 
+    //con DAO
     public void modificarLibros(ArrayList<Libro> arrayListLibro, ArrayList<Estado> arrayListEstado) {
 
         vistaApp.getEntrada("");
@@ -473,10 +488,11 @@ public class ControladorApp {
                 persona.setEmailPersona(vistaApp.getEntrada("Ingrese el nuevo email de la persona: "));
             }
             
+            iDaoPersona.editarPersona(persona);
             
         }
         
-        buscarUsuario(arrayListPersona, iDaoCarrera.verCarreras(), documento);
+        //buscarUsuario(arrayListPersona, iDaoCarrera.verCarreras(), documento);
         
     }
     
@@ -540,6 +556,9 @@ public class ControladorApp {
                             }
 
                         }
+                        
+                        iDaoPrestamos.cambioEstado(prestamo);
+                        
                         vistaApp.verPrestamo(prestamo, personaF, libroF, estadoM);
                         vistaApp.setTexto("Libro enviado");
                     }
@@ -607,10 +626,9 @@ public class ControladorApp {
             prestamoAdd.setIdEstado(3);
             
 
-            arrayListPrestamos.add(prestamoAdd);
+            iDaoPrestamos.addPrestamo(prestamoAdd);
 
-            verPrestamo(arrayListPrestamos, arrayListPersonas, arrayListLibro, arrayListEstado);
-            vistaApp.setTexto("El prestamo ha sido realizado con éxito");
+            //vistaApp.setTexto("El prestamo ha sido realizado con éxito");
         }
         else{
             vistaApp.setTextoError("El libro no fue ingresado");
@@ -625,7 +643,12 @@ public class ControladorApp {
         int idPrestamo = vistaApp.getEntradaInt("Ingrese el id del prestamo: ");
         vistaApp.getEntrada("");
         if(vistaApp.getEntrada("¿Quiere validar la entrega?\n1. Si\n2. No").equals("1")){
-            arrayListPrestamos.get(idPrestamo-1).setIdEstado(2);
+            for(Prestamos prestamo : arrayListPrestamos){
+                if((idPrestamo-1) == prestamo.getIdPrestamo()){
+                    prestamo.setIdEstado(2);
+                    iDaoPrestamos.validarPrestamo(prestamo);
+                }
+            }
         }
         else{
             vistaApp.setTextoError("No se ha registrado la entrega del libro");
@@ -638,6 +661,7 @@ public class ControladorApp {
 
     //Funciones de multa
     
+    //con DAO
     public void pagoMultas(ArrayList<Multa> arrayListMulta){
         int idMulta = vistaApp.getEntradaInt("Ingrese el id de la multa: ");
         
@@ -656,6 +680,7 @@ public class ControladorApp {
         }
     }
     
+    //con DAO
     public void multas(ArrayList<Multa> arrayListMulta, ArrayList<Persona> arrayListPersona, ArrayList<Prestamos> arrayListPrestamos, ArrayList<Libro> arrayListLibro, ArrayList<Estado> arrayListEstado){
         
         for(Multa multa : arrayListMulta){
@@ -680,6 +705,7 @@ public class ControladorApp {
         }
     }
 
+    //con DAO
     public void buscarMulta(ArrayList<Multa> arrayListMulta, ArrayList<Persona> arrayListPersona, ArrayList<Prestamos> arrayListPrestamos, ArrayList<Libro> arrayListLibro, ArrayList<Estado> arrayListEstado){
         
         vistaApp.getEntrada("");
@@ -707,14 +733,24 @@ public class ControladorApp {
         }
     }
 
+    //con DAO
+    public void eliminarMulta(){
+        int id = vistaApp.getEntradaInt("Ingrese el id de la multa: ");
+        
+        iDaoMulta.eliminarMulta(id);
+    }
+    
     //metodos no funcionales
     
+    
+    //con DAO
     public void mostrarCarreras(ArrayList<Carrera> arrayListCarrera){
         for(Carrera carrera : arrayListCarrera){
             vistaApp.setTexto(carrera.getIdCarrera() + " " + carrera.getCarrera());
         }
     }
     
+    //con DAO
     public void crearMultas(ArrayList<Multa> arrayListMulta, ArrayList<Prestamos> arrayListPrestamos){
         
         ArrayList<Multa> arrayListMultas = arrayListMulta;
@@ -729,8 +765,9 @@ public class ControladorApp {
                     multa.setDocumentoPersona(prestamo.getIdPersona());
                     multa.setIdPrestamo(prestamo.getIdPrestamo());
                     multa.setValorMulta(30000);
-                    
-                    arrayListMulta.add(new Multa((arrayListMulta.size()), prestamo.getIdPersona(), prestamo.getIdPrestamo(), 30000, 6));
+                    multa.setEstadoMulta(6);
+
+                    iDaoMulta.hacerMultas(multa);
                 }
             }
         }
@@ -740,4 +777,6 @@ public class ControladorApp {
         }*/
         
     }
+    
+    
 }

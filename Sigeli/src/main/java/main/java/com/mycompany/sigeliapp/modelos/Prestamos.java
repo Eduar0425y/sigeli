@@ -73,15 +73,4 @@ public class Prestamos {
     }
     
     
-    
-    public ArrayList<Prestamos> arrayListPrestamos(){
-        ArrayList<Prestamos> arrayListPrestamo = new ArrayList<>();
-        arrayListPrestamo.add(new Prestamos(1, 1094045112, "3456", Date.valueOf("2022-05-20"), Date.valueOf("2022-06-20"), 2));
-        arrayListPrestamo.add(new Prestamos(2, 1092525868, "56789", Date.valueOf("2022-05-20"), Date.valueOf("2022-11-03"), 3));
-        arrayListPrestamo.add(new Prestamos(3, 1092525868, "56789", Date.valueOf("2022-05-20"), Date.valueOf("2022-11-03"), 3));
-        arrayListPrestamo.add(new Prestamos(4, 1092525868, "56789", Date.valueOf("2022-05-20"), Date.valueOf("2022-11-03"), 3));
-        arrayListPrestamo.add(new Prestamos(5, 1094045112, "3456", Date.valueOf("2022-05-20"), Date.valueOf("2022-06-20"), 3));
-                
-        return arrayListPrestamo;
-    }
 }

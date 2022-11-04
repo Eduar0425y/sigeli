@@ -62,13 +62,4 @@ public class Persona {
     }
 
     
-    
-    public ArrayList<Persona> arrayListPersonas(){
-        
-        ArrayList<Persona> arrayListPersonas = new ArrayList<>();
-        arrayListPersonas.add(new Persona(1094045112, "eduar", 0, "xavieravendano9@gmail.com", "3115204339"));
-        arrayListPersonas.add(new Persona(1092525868, "zharick", 1, "xavieravendano9@gmail.com", "3202270366"));
-        
-        return arrayListPersonas;
-    }
 }
