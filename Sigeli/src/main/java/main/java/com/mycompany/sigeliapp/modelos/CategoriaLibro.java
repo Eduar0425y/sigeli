@@ -32,14 +32,4 @@ public class CategoriaLibro {
         this.idCategoria = idCategoria;
     }
     
-    public ArrayList<CategoriaLibro> arrayListCategoriaLibro(){
-        
-        ArrayList<CategoriaLibro> arrayListCategoriaLibro = new ArrayList<>();
-        
-        arrayListCategoriaLibro.add(new CategoriaLibro("3456", 1));
-        arrayListCategoriaLibro.add(new CategoriaLibro("3456", 2));
-        arrayListCategoriaLibro.add(new CategoriaLibro("56789", 3));
-        
-        return arrayListCategoriaLibro;
-    }
 }

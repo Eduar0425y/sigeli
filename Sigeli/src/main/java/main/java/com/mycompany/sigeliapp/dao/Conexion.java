@@ -16,9 +16,9 @@ public class Conexion {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection=DriverManager.getConnection(Constantes.URL+Constantes.DATABASE, Constantes.USER, Constantes.PASSWORD);
             
-            if(connection!=null){
+           /* if(connection!=null){
                 System.out.println("\nConexion establecida");
-            }
+            }*/
             
         } catch(SQLException e) {
             System.out.println("Error al conectar con la base de datos "+e.getMessage());

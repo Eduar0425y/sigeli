@@ -30,6 +30,11 @@ public class ControladorApp {
     
     
     private IDaoCarrera iDaoCarrera;
+    private IDaoCategoria iDaoCategoria;
+    private IDaoCategoriaLibro iDaoCategoriaLibro;
+    private IDaoEstado iDaoEstado;
+    private IDaoLibro iDaoLibro;
+    private IDaoMulta iDaoMulta;
     
     int documentoLogin = 0;
     String claveLogin = "";
@@ -50,6 +55,11 @@ public class ControladorApp {
         this.usuario = new Usuario();
         
         this.iDaoCarrera = new DaoCarrera();
+        this.iDaoCategoria = new DaoCategoria();
+        this.iDaoCategoriaLibro = new DaoCategoriaLibro();
+        this.iDaoEstado = new DaoEstado();
+        this.iDaoLibro = new DaoLibro();
+        this.iDaoMulta = new DaoMulta();
 
     }
 
@@ -139,7 +149,7 @@ public class ControladorApp {
                     verUsuarios(persona.arrayListPersonas(), iDaoCarrera.verCarreras());
                     break;
                 case "3":
-                    addLibros(libro.arrayListLibro(), estado.arrayListEstado());
+                    addLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
                     break;
                 case "4":
                     prestamoLibros();
@@ -170,7 +180,7 @@ public class ControladorApp {
         do{
         switch (vistaApp.menuEstudiante()) {
             case 1:
-                busquedaLibro(libro.arrayListLibro(), estado.arrayListEstado(), categoriaLibro.arrayListCategoriaLibro(), categoria.arrayListCategoria());
+                busquedaLibro(iDaoLibro.verLibros(), iDaoEstado.verEstados(), iDaoCategoriaLibro.verCategoriaLibros(), iDaoCategoria.verCategorias());
                 break;
             case 2:
                 opcionesCuenta(persona.arrayListPersonas(), usuario.arrayListUsuario(), documentoLogin, iDaoCarrera.verCarreras());
@@ -192,13 +202,13 @@ public class ControladorApp {
 
         switch (vistaApp.menuAdminLibros()) {
             case 1:
-                verLibros(libro.arrayListLibro(), estado.arrayListEstado());
+                verLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
             case 2:
-                modificarLibros(libro.arrayListLibro(), estado.arrayListEstado());
+                modificarLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
             case 3: 
-                busquedaLibro(libro.arrayListLibro(), estado.arrayListEstado(), categoriaLibro.arrayListCategoriaLibro(), categoria.arrayListCategoria());
+                busquedaLibro(iDaoLibro.verLibros(), iDaoEstado.verEstados(), iDaoCategoriaLibro.verCategoriaLibros(), iDaoCategoria.verCategorias());
                 break;
             default: 
                 break;
@@ -259,11 +269,11 @@ public class ControladorApp {
     public void prestamoLibros() {
         
         switch(vistaApp.prestamo()){
-            case 1: verPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), libro.arrayListLibro(), estado.arrayListEstado());
+            case 1: verPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
-            case 2: crearPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), libro.arrayListLibro(), multa.arrayListMulta(), estado.arrayListEstado());
+            case 2: crearPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), iDaoLibro.verLibros(), iDaoMulta.verMultas(), iDaoEstado.verEstados());
                 break;
-            case 3: validarPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), libro.arrayListLibro(), estado.arrayListEstado());
+            case 3: validarPrestamo(prestamo.arrayListPrestamos(), persona.arrayListPersonas(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
             default :
                 break;
@@ -273,9 +283,9 @@ public class ControladorApp {
 
     public void adminMultas(){
         switch(vistaApp.adminMultas()){
-            case 1: multas(multa.arrayListMulta(), persona.arrayListPersonas(), prestamo.arrayListPrestamos(), libro.arrayListLibro(), estado.arrayListEstado());
+            case 1: multas(multa.arrayListMulta(), persona.arrayListPersonas(), prestamo.arrayListPrestamos(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
-            case 2: buscarMulta(multa.arrayListMulta(), persona.arrayListPersonas(), prestamo.arrayListPrestamos(), libro.arrayListLibro(), estado.arrayListEstado());
+            case 2: buscarMulta(multa.arrayListMulta(), persona.arrayListPersonas(), prestamo.arrayListPrestamos(), iDaoLibro.verLibros(), iDaoEstado.verEstados());
                 break;
             case 3: pagoMultas(multa.arrayListMulta());
                 break;
@@ -413,20 +423,6 @@ public class ControladorApp {
             for (Libro libro : arrayListLibro) {
 
                 if (libro.getIsbnLibro().equals(isbn)) {
-                    Libro libroEnviar = new Libro();
-                    Estado estadoEnviar = new Estado();
-
-                        libroEnviar.setIsbnLibro(libro.getIsbnLibro());
-                        libroEnviar.setNombreLibro(libro.getNombreLibro());
-                        libroEnviar.setNombreAutor(libro.getNombreAutor());
-                        libroEnviar.setEdicionLibro(libro.getEdicionLibro());
-                        libroEnviar.setAnoLibro(libro.getAnoLibro());
-                        libroEnviar.setEstanteLibro(libro.getEstanteLibro());
-                        libroEnviar.setFilaLibro(libro.getFilaLibro());
-                        estadoEnviar.setIdEstado(libro.getIdEstado());
-                        estadoEnviar.setEstado(arrayListEstado.get(libro.getIdEstado()).getEstado());
-
-                        vistaApp.verLibros(libroEnviar, estadoEnviar);
 
                         vistaApp.setTexto("***Ingrese los nuevos datos del libro***");
                         libro.setNombreLibro(vistaApp.getEntrada("Ingrese el nuevo nombre del libro: "));
@@ -436,10 +432,8 @@ public class ControladorApp {
                         libro.setEstanteLibro(vistaApp.getEntrada("Ingrese el estante del libro: "));
                         libro.setFilaLibro(Integer.parseInt(vistaApp.getEntrada("Ingrese la fila del libro: ")));
                         libro.setIdEstado(Integer.parseInt(vistaApp.getEntrada("Ingrese el estado del libro: \n1. No disponible\n2. Disponible")) - 1);
-                        estadoEnviar.setEstado(arrayListEstado.get(libro.getIdEstado()).getEstado());
 
-
-                        vistaApp.verLibros(libro, estadoEnviar);
+                        iDaoLibro.modificarLibro(libro, isbn);
 
                 }
 
@@ -449,12 +443,11 @@ public class ControladorApp {
         else if(opcion == 2){                
             
             for(int i=0; i<arrayListLibro.size(); i++){
-                if(isbn.equals(arrayListLibro.get(i).getIsbnLibro())){
-                    arrayListLibro.remove(i);
-                }
+                
+                iDaoLibro.eliminarLibro(isbn);
+                
             }
-            
-            verLibros(arrayListLibro, arrayListEstado);
+
         }
                 
         else{
@@ -653,8 +646,7 @@ public class ControladorApp {
                 int opcion =vistaApp.getEntradaInt("La multa tiene un valor de: $" + multa.getValorMulta() + " pesos. ¿Desea confirmar el pago?\n1. Si\n2. No");
                 
                 if(opcion==1){
-                    multa.setEstadoMulta(5);
-                    vistaApp.setTexto("El pago ha sido subido con éxito...");
+                    iDaoMulta.pagarMulta(idMulta, multa);
                 }
                 
                 else{
@@ -730,6 +722,14 @@ public class ControladorApp {
         for(Prestamos prestamo : arrayListPrestamos){
             if(prestamo.getIdEstado() == 3 || prestamo.getIdEstado() == 4){
                 if(prestamo.getFechaEntrega().before(Date.valueOf(LocalDate.now()))){
+                    
+                    Multa multa = new Multa();
+                    
+                    multa.setIdMulta(arrayListMulta.size());
+                    multa.setDocumentoPersona(prestamo.getIdPersona());
+                    multa.setIdPrestamo(prestamo.getIdPrestamo());
+                    multa.setValorMulta(30000);
+                    
                     arrayListMulta.add(new Multa((arrayListMulta.size()), prestamo.getIdPersona(), prestamo.getIdPrestamo(), 30000, 6));
                 }
             }

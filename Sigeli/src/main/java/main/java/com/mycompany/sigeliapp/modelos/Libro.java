@@ -93,7 +93,7 @@ public class Libro {
     }
 
     
-    public ArrayList<Libro> arrayListLibro(){
+   /* public ArrayList<Libro> arrayListLibro(){
         ArrayList<Libro> arrayListLibro = new ArrayList<>();
         arrayListLibro.add(new Libro("3456", "El principito", "Eduar", 2, 2002, "B", 3, 1));
         arrayListLibro.add(new Libro("56789", "El principito2", "Eduar2", 3, 2002, "C", 2, 0));
@@ -102,5 +102,5 @@ public class Libro {
         arrayListLibro.add(new Libro("zzzz", "Java netbeans", "Eduar Avendaño", 2, 2022, "F", 2, 1));
         
         return arrayListLibro;
-    }
+    }*/
 }

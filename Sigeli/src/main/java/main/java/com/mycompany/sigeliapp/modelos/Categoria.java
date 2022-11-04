@@ -31,15 +31,4 @@ public class Categoria {
         this.nombreCategoria = nombreCategoria;
     }
     
-    
-    public ArrayList<Categoria> arrayListCategoria(){
-         ArrayList<Categoria> arrayListCategoria = new ArrayList<>();
-         arrayListCategoria.add(new Categoria(0, "Español"));
-         arrayListCategoria.add(new Categoria(1, "Matematicas"));
-         arrayListCategoria.add(new Categoria(2, "Historia"));
-         arrayListCategoria.add(new Categoria(3, "Politica"));
-         
-         return arrayListCategoria;
-         
-    }
 }

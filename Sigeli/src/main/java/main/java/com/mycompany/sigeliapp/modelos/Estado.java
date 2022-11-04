@@ -31,19 +31,4 @@ public class Estado {
         this.estado = estado;
     }
     
-    public ArrayList<Estado> arrayListEstado(){
-        
-        ArrayList<Estado> arrayListEstado = new ArrayList<>();
-        
-        arrayListEstado.add(new Estado(0, "No disponible"));
-        arrayListEstado.add(new Estado(1, "Disponible"));
-        arrayListEstado.add(new Estado(2, "Entregado"));
-        arrayListEstado.add(new Estado(3, "En deuda"));
-        arrayListEstado.add(new Estado(4, "Atrasado"));
-        arrayListEstado.add(new Estado(5, "Pago"));
-        arrayListEstado.add(new Estado(6, "No pago"));
-        
-        
-        return arrayListEstado;
-    }
 }
