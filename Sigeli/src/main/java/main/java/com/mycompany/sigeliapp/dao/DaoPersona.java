@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import main.java.com.mycompany.sigeliapp.modelos.Multa;
 import main.java.com.mycompany.sigeliapp.modelos.Persona;
 
 
@@ -50,7 +49,7 @@ public class DaoPersona extends Conexion implements IDaoPersona{
 
     @Override
     public boolean editarPersona(Persona persona) {
-        String sql = "UPDATE " + Constantes.T_PERSONA+ " SET " + Constantes.TP_NOMBRE + "= ?," + Constantes.TP_EMAIL + "= ?," +
+        String sql = "UPDATE " + Constantes.T_PERSONA+ " SET " + Constantes.TP_NOMBRE + "= ?," + Constantes.TP_EMAIL + "= ?" +
                     " WHERE " + Constantes.T_PERSONA + "." + Constantes.TP_DOCUMENTO + "=" + persona.getDocumentoPersona() ;
         
         try {

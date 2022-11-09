@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import main.java.com.mycompany.sigeliapp.modelos.Multa;
 import main.java.com.mycompany.sigeliapp.modelos.Prestamos;
 
 
@@ -84,7 +83,7 @@ public class DaoPrestamos extends Conexion implements IDaoPrestamos{
 
     @Override
     public boolean validarPrestamo(Prestamos prestamo) {
-        String sql = "UPDATE " + Constantes.T_PRESTAMO + " SET " + Constantes.TPR_IDESTADO + "= ," +
+        String sql = "UPDATE " + Constantes.T_PRESTAMO + " SET " + Constantes.TPR_IDESTADO + "= ?" +
                     " WHERE " + Constantes.T_PRESTAMO + "." + Constantes.TPR_ID + "=" + prestamo.getIdPrestamo();
         
         try {
@@ -111,7 +110,7 @@ public class DaoPrestamos extends Conexion implements IDaoPrestamos{
 
     @Override
     public boolean cambioEstado(Prestamos prestamo) {
-        String sql = "UPDATE " + Constantes.T_PRESTAMO + " SET " + Constantes.TPR_IDESTADO + "= ?," +
+        String sql = "UPDATE " + Constantes.T_PRESTAMO + " SET " + Constantes.TPR_IDESTADO + "= ?" +
                     " WHERE " + Constantes.T_PRESTAMO + "." + Constantes.TPR_ID + "=" + prestamo.getIdPrestamo();
         
         try {

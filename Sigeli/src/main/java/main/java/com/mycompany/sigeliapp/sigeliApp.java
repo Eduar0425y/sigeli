@@ -7,9 +7,13 @@ public class sigeliApp {
     
     public static void main(String[] args) {
         
-        ControladorApp controlador = new ControladorApp();
+       /* ControladorApp controlador = new ControladorApp();
         
-        controlador.inicio();
+        controlador.inicio();*/
+       
+       ControladorLogin controlador = new ControladorLogin();
+
+       controlador.visibleLogin();
         
     }
 }

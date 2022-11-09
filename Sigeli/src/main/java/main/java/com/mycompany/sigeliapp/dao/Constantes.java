@@ -50,7 +50,7 @@ public class Constantes {
     public static final String TP_NOMBRE = "nombre";
     public static final String TP_IDCARRERA = "id_carrera";
     public static final String TP_EMAIL = "correo_electronico";
-    public static final String TP_TELEFONO = "id_carrera";
+    public static final String TP_TELEFONO = "telefono";
     
     public static final String T_PRESTAMO = "prestamos";
     public static final String TPR_ID = "id_prestamo";

@@ -77,7 +77,7 @@ public class DaoUsuario extends Conexion implements IDaoUsuario{
 
     @Override
     public boolean cambioClave(Usuario usuario) {
-        String sql = "UPDATE " + Constantes.T_USUARIO + " SET " + Constantes.TU_CLAVE + "= ?," +
+        String sql = "UPDATE " + Constantes.T_USUARIO + " SET " + Constantes.TU_CLAVE + "= ?" +
                     " WHERE " + Constantes.T_USUARIO + "." + Constantes.TU_DOCUMENTO + "=" + usuario.getDocumento() ;
         
         try {

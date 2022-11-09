@@ -11,6 +11,7 @@ import main.java.com.mycompany.sigeliapp.dao.*;
 import main.java.com.mycompany.sigeliapp.vistas.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import main.java.com.mycompany.sigeliapp.modelos.utiles.Portapapeles;
 
 
 
@@ -69,18 +70,15 @@ public class ControladorApp {
 
     }
 
-    public void inicio() {
-                       
+    /*public void inicio() {
+                               
         crearMultas(iDaoMulta.verMultas(), iDaoPrestamos.verPrestamos());
         
         int opcion = 0;
         
         do{
             switch(vistaApp.login()){
-                case 1: vistaApp.getEntrada("");
-                        documentoLogin = Integer.parseInt(vistaApp.getEntrada("Ingrese su usuario: "));
-                        claveLogin = vistaApp.getEntrada("Ingrese su clave: ");
-                        login(iDaoUsuario.verUsuarios());
+                case 1: //login(iDaoUsuario.verUsuarios());
                     break;
                 case 2: //registrarUsuario(persona.arrayListPersonas(), usuario.arrayListUsuario());
                     break;
@@ -92,7 +90,10 @@ public class ControladorApp {
 
     }
     
-    public void login(ArrayList<Usuario> arrayListUsuario){
+    public void login(ArrayList<Usuario> arrayListUsuario, int documento, String clave){
+
+        this.documentoLogin = documento;
+        this.claveLogin = clave;
         
         for(Usuario usuario : arrayListUsuario){
             if(documentoLogin == usuario.getDocumento() && claveLogin.equals(usuario.getClave())){
@@ -139,7 +140,7 @@ public class ControladorApp {
             }
         }
         
-    }
+    }*/
 
 
     public void panelAdmin() {
@@ -587,6 +588,12 @@ public class ControladorApp {
             }
             if(arrayListLibro.get(i).getIsbnLibro().equals(isbn)){
                 isbnValido = true;
+                
+                if(arrayListLibro.get(i).getIdEstado() == 1){
+                    mensaje = "El libro no se encuentra disponible";
+                    libroDisponible = false;
+                }
+                
             }
             else{
                 mensaje = "El libro ingresado no existe";
@@ -600,22 +607,16 @@ public class ControladorApp {
             else{
                 mensaje = "La fecha de prestamo no puede ser mayor a la fecha de entrega";
             }
-
-           /*if(arrayListMulta.get(i).getDocumentoPersona() == idPersona){
-                multa = true;
-
-            }
-            else{
-                mensaje = "El Usuario ingresado tiene multas pendientes";
-            }*/
             
-            if(arrayListLibro.get(i).getIdEstado() == 1){
-                mensaje = "El libro no se encuentra disponible";
-                libroDisponible = false;
-            }
-
             i += 1;
                 
+        }
+        
+        for(Multa multas : arrayListMulta){
+            if(multas.getDocumentoPersona() == idPersona){
+                multa = true;
+                mensaje = "El Usuario ingresado tiene multas pendientes";
+            }
         }
 
         if(cantDocumento <= 2 && isbnValido == true && fechaValida == true && multa == false && libroDisponible == true){

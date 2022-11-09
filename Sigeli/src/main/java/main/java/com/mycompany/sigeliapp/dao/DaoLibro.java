@@ -16,7 +16,7 @@ public class DaoLibro extends Conexion implements IDaoLibro{
     public ArrayList<Libro> verLibros() {
         ArrayList<Libro> arrayListLibro = new ArrayList<>();
         
-        String sql = "SELECT * FROM " + Constantes.T_LIBRO;
+        String sql = "SELECT * FROM " + Constantes.T_LIBRO ;
 
         try {
             PreparedStatement ps = getConexion().prepareStatement(sql);
