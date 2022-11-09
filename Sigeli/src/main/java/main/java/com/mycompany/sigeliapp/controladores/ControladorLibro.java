@@ -2,6 +2,8 @@ package main.java.com.mycompany.sigeliapp.controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,7 +11,7 @@ import main.java.com.mycompany.sigeliapp.dao.*;
 import main.java.com.mycompany.sigeliapp.modelos.*;
 import main.java.com.mycompany.sigeliapp.vistas.*;
 
-public class ControladorLibro  implements ActionListener{
+public class ControladorLibro  implements ActionListener, MouseListener{
     
     private VistaApp vistaApp;
     
@@ -68,22 +70,54 @@ public class ControladorLibro  implements ActionListener{
         this.panelAdminLibros.btnBusqueda.addActionListener(this);
         this.panelAdminLibros.nextPagAdmin.addActionListener(this);
         this.panelAdminLibros.backPagAdmin.addActionListener(this);
-        this.panelAdminLibros.btnVolverPanel.addActionListener(this);
-        
+        this.panelAdminLibros.btnVolverMenu.addActionListener(this);
+        this.panelAdminLibros.btnCerrarSesion.addMouseListener(this);
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if(e.getSource() == panelAdminLibros.btnCerrarSesion){
+            ControladorLogin controladorLogin = new ControladorLogin();
+            cerrarPanelAdminLibros();
+            controladorLogin.visibleLogin();
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+ 
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
         
     }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
+    }
+    
+    
+    
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == panelAdminLibros.btnBusqueda){
             busquedaLibro(iDaoLibro.verLibros(), iDaoCategoriaLibro.verCategoriaLibros(), iDaoCategoria.verCategorias());
-         }
-         else if(e.getSource() == panelAdminLibros.nextPagAdmin){
+        }
+        else if(e.getSource() == panelAdminLibros.nextPagAdmin){
              cantMenorLibro = cantMayorLibro;
              cantMayorLibro +=4;
              verLibros(iDaoLibro.verLibros());
-         }
-         else if(e.getSource() == panelAdminLibros.backPagAdmin){
+        }
+        else if(e.getSource() == panelAdminLibros.backPagAdmin){
              
              cantMayorLibro = cantMenorLibro;
              
@@ -101,11 +135,11 @@ public class ControladorLibro  implements ActionListener{
 
            verLibros(iDaoLibro.verLibros());
            
-         }
-         else if(e.getSource() == panelAdminLibros.btnVolverPanel){
+        }
+        else if(e.getSource() == panelAdminLibros.btnVolverMenu){
              cerrarPanelAdminLibros();
              visiblePanelAdmin();
-         }
+        }
     }
     
     

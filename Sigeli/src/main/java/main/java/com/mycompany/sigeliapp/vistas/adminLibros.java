@@ -35,7 +35,7 @@ public class adminLibros extends javax.swing.JFrame {
         btnOpcionesPanelAdmin = new javax.swing.JButton();
         txtCargo = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnVolverPanel = new javax.swing.JButton();
+        btnVolverMenu = new javax.swing.JButton();
         panel1 = new javax.swing.JPanel();
         txtNombreLibro1 = new javax.swing.JLabel();
         txtNombreAutor1 = new javax.swing.JLabel();
@@ -81,16 +81,21 @@ public class adminLibros extends javax.swing.JFrame {
         txtDisponibilidadLibro5 = new javax.swing.JLabel();
         txtAnoLibro5 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
-        btnCopiarISBN5 = new javax.swing.JButton();
         btnBusqueda = new javax.swing.JButton();
-        btnCopiarISBN2 = new javax.swing.JButton();
-        btnCopiarISBN3 = new javax.swing.JButton();
-        btnCopiarISBN4 = new javax.swing.JButton();
-        btnCopiarISBN1 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        panel1Opciones = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        panel2Opciones = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btnCerrarSesion = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        panel1Opciones1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         jFormattedTextField1.setText("jFormattedTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 0, 0));
 
         jPanel1.setBackground(new java.awt.Color(102, 0, 0));
 
@@ -154,18 +159,19 @@ public class adminLibros extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(246, 114, 114));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnVolverPanel.setBackground(new java.awt.Color(255, 255, 255));
-        btnVolverPanel.setText("btnVolver");
-        btnVolverPanel.setBorder(null);
-        btnVolverPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnVolverPanel.addActionListener(new java.awt.event.ActionListener() {
+        btnVolverMenu.setBackground(new java.awt.Color(255, 255, 255));
+        btnVolverMenu.setText("btnVolver");
+        btnVolverMenu.setBorder(null);
+        btnVolverMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVolverMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVolverPanelActionPerformed(evt);
+                btnVolverMenuActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVolverPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 39, 36));
+        jPanel2.add(btnVolverMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 39, 36));
 
         panel1.setBackground(new java.awt.Color(255, 51, 51));
+        panel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro1.setText("jLabel3");
 
@@ -191,11 +197,11 @@ public class adminLibros extends javax.swing.JFrame {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNombreLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
                     .addComponent(txtNombreAutor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDisponibilidadLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addGap(39, 39, 39)
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtDisponibilidadLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
                     .addComponent(txtAnoLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,40 +230,43 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 590, 60));
+        jPanel2.add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 590, 60));
 
         backPagAdmin.setText("jButton1");
+        backPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backPagAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backPagAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 450, 50, 40));
+        jPanel2.add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 50, 40));
 
         nextPagAdmin.setText("jButton1");
+        nextPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nextPagAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextPagAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 50, 40));
+        jPanel2.add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 50, 40));
 
         txtIngresoBusqueda.setBackground(new java.awt.Color(153, 153, 153));
         txtIngresoBusqueda.setForeground(new java.awt.Color(51, 51, 51));
         txtIngresoBusqueda.setBorder(null);
-        jPanel2.add(txtIngresoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 560, 30));
+        jPanel2.add(txtIngresoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 560, 30));
 
         txtBusquedaAdmin.setForeground(new java.awt.Color(51, 51, 51));
         txtBusquedaAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtBusquedaAdmin.setText("jLabel1");
-        jPanel2.add(txtBusquedaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 60, 580, -1));
+        jPanel2.add(txtBusquedaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 580, -1));
 
         txtCantLibroAdmin.setForeground(new java.awt.Color(51, 51, 51));
         txtCantLibroAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCantLibroAdmin.setText("jLabel2");
-        jPanel2.add(txtCantLibroAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 470, 280, -1));
+        jPanel2.add(txtCantLibroAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 280, -1));
 
         panel2.setBackground(new java.awt.Color(255, 51, 51));
+        panel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro2.setText("jLabel3");
 
@@ -316,9 +325,10 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        jPanel2.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         panel3.setBackground(new java.awt.Color(255, 51, 51));
+        panel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro3.setText("jLabel3");
 
@@ -377,9 +387,10 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+        jPanel2.add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
 
         panel4.setBackground(new java.awt.Color(255, 51, 51));
+        panel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro4.setText("jLabel3");
 
@@ -438,9 +449,10 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        jPanel2.add(panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
 
         panel5.setBackground(new java.awt.Color(255, 51, 51));
+        panel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro5.setText("jLabel3");
 
@@ -499,71 +511,169 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 370, -1, -1));
-
-        btnCopiarISBN5.setText("jButton1");
-        btnCopiarISBN5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCopiarISBN5ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnCopiarISBN5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 30, 40));
+        jPanel2.add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
 
         btnBusqueda.setText("jButton1");
+        btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBusquedaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 20, 30, 30));
+        jPanel2.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 30, 30));
 
-        btnCopiarISBN2.setText("jButton1");
-        btnCopiarISBN2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCopiarISBN2ActionPerformed(evt);
+        jPanel3.setBackground(new java.awt.Color(102, 0, 0));
+
+        panel1Opciones.setBackground(new java.awt.Color(102, 0, 0));
+        panel1Opciones.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panel1Opciones.setForeground(new java.awt.Color(153, 153, 153));
+        panel1Opciones.setToolTipText("¿Cómo buscar libros?");
+        panel1Opciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel1Opciones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                panel1OpcionesMouseClicked(evt);
             }
         });
-        jPanel2.add(btnCopiarISBN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 30, 40));
 
-        btnCopiarISBN3.setText("jButton1");
-        btnCopiarISBN3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCopiarISBN3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnCopiarISBN3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 30, 40));
+        jLabel4.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel4.setText("¿Cómo modificar un libro?");
 
-        btnCopiarISBN4.setText("jButton1");
-        btnCopiarISBN4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCopiarISBN4ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnCopiarISBN4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 30, 40));
+        javax.swing.GroupLayout panel1OpcionesLayout = new javax.swing.GroupLayout(panel1Opciones);
+        panel1Opciones.setLayout(panel1OpcionesLayout);
+        panel1OpcionesLayout.setHorizontalGroup(
+            panel1OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1OpcionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel1OpcionesLayout.setVerticalGroup(
+            panel1OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1OpcionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        btnCopiarISBN1.setText("jButton1");
-        btnCopiarISBN1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCopiarISBN1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnCopiarISBN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 30, 40));
+        panel2Opciones.setBackground(new java.awt.Color(102, 0, 0));
+        panel2Opciones.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panel2Opciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel1.setText("¿Cómo hacer un prestamo?");
+
+        javax.swing.GroupLayout panel2OpcionesLayout = new javax.swing.GroupLayout(panel2Opciones);
+        panel2Opciones.setLayout(panel2OpcionesLayout);
+        panel2OpcionesLayout.setHorizontalGroup(
+            panel2OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2OpcionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel2OpcionesLayout.setVerticalGroup(
+            panel2OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel2OpcionesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
+        btnCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel2.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel2.setText("Salir de la cuenta");
+
+        javax.swing.GroupLayout btnCerrarSesionLayout = new javax.swing.GroupLayout(btnCerrarSesion);
+        btnCerrarSesion.setLayout(btnCerrarSesionLayout);
+        btnCerrarSesionLayout.setHorizontalGroup(
+            btnCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCerrarSesionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        btnCerrarSesionLayout.setVerticalGroup(
+            btnCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btnCerrarSesionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        panel1Opciones1.setBackground(new java.awt.Color(102, 0, 0));
+        panel1Opciones1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panel1Opciones1.setForeground(new java.awt.Color(153, 153, 153));
+        panel1Opciones1.setToolTipText("¿Cómo buscar libros?");
+        panel1Opciones1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        jLabel3.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel3.setText("¿Cómo buscar los libros?");
+
+        javax.swing.GroupLayout panel1Opciones1Layout = new javax.swing.GroupLayout(panel1Opciones1);
+        panel1Opciones1.setLayout(panel1Opciones1Layout);
+        panel1Opciones1Layout.setHorizontalGroup(
+            panel1Opciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Opciones1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panel1Opciones1Layout.setVerticalGroup(
+            panel1Opciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel1Opciones1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel2Opciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel1Opciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panel1Opciones1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(275, 275, 275)
+                .addComponent(panel1Opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel1Opciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panel2Opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(260, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();
@@ -573,26 +683,6 @@ public class adminLibros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBusquedaActionPerformed
 
-    private void btnCopiarISBN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarISBN1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCopiarISBN1ActionPerformed
-
-    private void btnCopiarISBN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarISBN2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCopiarISBN2ActionPerformed
-
-    private void btnCopiarISBN3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarISBN3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCopiarISBN3ActionPerformed
-
-    private void btnCopiarISBN4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarISBN4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCopiarISBN4ActionPerformed
-
-    private void btnCopiarISBN5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCopiarISBN5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCopiarISBN5ActionPerformed
-
     private void backPagAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backPagAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_backPagAdminActionPerformed
@@ -601,13 +691,17 @@ public class adminLibros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nextPagAdminActionPerformed
 
-    private void btnVolverPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverPanelActionPerformed
+    private void btnVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnVolverPanelActionPerformed
+    }//GEN-LAST:event_btnVolverMenuActionPerformed
 
     private void btnOpcionesPanelAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcionesPanelAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOpcionesPanelAdminActionPerformed
+
+    private void panel1OpcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel1OpcionesMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_panel1OpcionesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -648,16 +742,17 @@ public class adminLibros extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton backPagAdmin;
     public javax.swing.JButton btnBusqueda;
-    private javax.swing.JButton btnCopiarISBN1;
-    private javax.swing.JButton btnCopiarISBN2;
-    private javax.swing.JButton btnCopiarISBN3;
-    private javax.swing.JButton btnCopiarISBN4;
-    private javax.swing.JButton btnCopiarISBN5;
+    public javax.swing.JPanel btnCerrarSesion;
     public javax.swing.JButton btnOpcionesPanelAdmin;
-    public javax.swing.JButton btnVolverPanel;
+    public javax.swing.JButton btnVolverMenu;
     private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JSeparator jSeparator1;
@@ -668,7 +763,10 @@ public class adminLibros extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     public javax.swing.JButton nextPagAdmin;
     public javax.swing.JPanel panel1;
+    public javax.swing.JPanel panel1Opciones;
+    public javax.swing.JPanel panel1Opciones1;
     public javax.swing.JPanel panel2;
+    public javax.swing.JPanel panel2Opciones;
     public javax.swing.JPanel panel3;
     public javax.swing.JPanel panel4;
     public javax.swing.JPanel panel5;
