@@ -71,17 +71,17 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         this.panelAdminLibros.nextPagAdmin.addActionListener(this);
         this.panelAdminLibros.backPagAdmin.addActionListener(this);
         this.panelAdminLibros.btnVolverMenu.addActionListener(this);
-        this.panelAdminLibros.btnCerrarSesion.addMouseListener(this);
+        //this.panelAdminLibros.btnCerrarSesion.addMouseListener(this);
 
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        if(e.getSource() == panelAdminLibros.btnCerrarSesion){
+        /*if(e.getSource() == panelAdminLibros.btnCerrarSesion){
             ControladorLogin controladorLogin = new ControladorLogin();
             cerrarPanelAdminLibros();
             controladorLogin.visibleLogin();
-        }
+        }*/
     }
 
     @Override

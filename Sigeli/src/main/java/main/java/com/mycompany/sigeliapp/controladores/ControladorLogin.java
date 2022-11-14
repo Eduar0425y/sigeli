@@ -29,8 +29,10 @@ public class ControladorLogin implements ActionListener{
     public ControladorLogin() {
         this.controlador = new ControladorApp();
         this.controladorPanelAdmin = new ControladorPanelAdmin();
+        
         this.vistaLogin = new Login();
         this.vistaRegistro= new Registro();
+        
         this.iDaoUsuario = new DaoUsuario();
         this.iDaoPersona = new DaoPersona();
         this.iDaoCarrera = new DaoCarrera();

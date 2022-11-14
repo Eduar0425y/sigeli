@@ -26,21 +26,30 @@ public class panelAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPopupMenu1 = new javax.swing.JPopupMenu();
         jPanel1 = new javax.swing.JPanel();
         txtNombrePersona = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        btnOpcionesPanelAdmin = new javax.swing.JButton();
         txtCargo = new javax.swing.JLabel();
+        btnOpcionesPanelAdmin = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        btnAddLibros = new javax.swing.JButton();
-        btnAdminLibros = new javax.swing.JButton();
+        panelConfig = new javax.swing.JPanel();
+        opcion1Config = new javax.swing.JLabel();
+        opcion2Config = new javax.swing.JLabel();
+        separadorCofing = new javax.swing.JSeparator();
+        btnAddLibros = new javax.swing.JLabel();
+        btnAdminLibros = new javax.swing.JLabel();
+        btnAdmnUsuario1 = new javax.swing.JLabel();
+        btnSalirPanelAdmin = new javax.swing.JLabel();
+        btnReportes = new javax.swing.JLabel();
+        btnDeudas = new javax.swing.JLabel();
+        btnPrestamos = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnReportes = new javax.swing.JButton();
-        btnAdmnUsuario = new javax.swing.JButton();
-        btnPrestamos = new javax.swing.JButton();
-        btnDeudas = new javax.swing.JButton();
-        btnSalirPanelAdmin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,15 +64,14 @@ public class panelAdministrador extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(204, 204, 204));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        btnOpcionesPanelAdmin.setBackground(new java.awt.Color(255, 255, 255));
-        btnOpcionesPanelAdmin.setText("jButton7");
-        btnOpcionesPanelAdmin.setBorder(null);
-        btnOpcionesPanelAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         txtCargo.setBackground(new java.awt.Color(204, 204, 204));
         txtCargo.setForeground(new java.awt.Color(204, 204, 204));
         txtCargo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCargo.setText("jLabel1");
+
+        btnOpcionesPanelAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnOpcionesPanelAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoUsuario.png")); // NOI18N
+        btnOpcionesPanelAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -76,107 +84,141 @@ public class panelAdministrador extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNombrePersona, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addComponent(txtCargo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(36, 36, 36)
-                .addComponent(btnOpcionesPanelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addGap(18, 18, 18)
+                .addComponent(btnOpcionesPanelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(8, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnOpcionesPanelAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtNombrePersona, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCargo))
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap())))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtNombrePersona, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCargo))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOpcionesPanelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(246, 114, 114));
+        jPanel2.setBackground(new java.awt.Color(231, 231, 231));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAddLibros.setBackground(new java.awt.Color(127, 116, 116));
-        btnAddLibros.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        btnAddLibros.setForeground(new java.awt.Color(51, 51, 51));
-        btnAddLibros.setText("Añadir libros");
-        btnAddLibros.setBorder(null);
+        panelConfig.setBackground(new java.awt.Color(102, 0, 0));
+        panelConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        opcion1Config.setBackground(new java.awt.Color(204, 204, 204));
+        opcion1Config.setForeground(new java.awt.Color(204, 204, 204));
+        opcion1Config.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        opcion1Config.setText("Configuración");
+
+        opcion2Config.setBackground(new java.awt.Color(204, 204, 204));
+        opcion2Config.setForeground(new java.awt.Color(204, 204, 204));
+        opcion2Config.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        opcion2Config.setText("Cerrar sesión");
+
+        separadorCofing.setBackground(new java.awt.Color(204, 204, 204));
+        separadorCofing.setForeground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout panelConfigLayout = new javax.swing.GroupLayout(panelConfig);
+        panelConfig.setLayout(panelConfigLayout);
+        panelConfigLayout.setHorizontalGroup(
+            panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConfigLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelConfigLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(opcion2Config, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(separadorCofing)
+                        .addComponent(opcion1Config, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(11, 11, 11))
+        );
+        panelConfigLayout.setVerticalGroup(
+            panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelConfigLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(opcion1Config)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(separadorCofing, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(3, 3, 3)
+                .addComponent(opcion2Config)
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(panelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 130, 70));
+
+        btnAddLibros.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoAddLibros.png")); // NOI18N
         btnAddLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnAddLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 60, 150, 150));
+        jPanel2.add(btnAddLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 160, 150));
 
-        btnAdminLibros.setBackground(new java.awt.Color(127, 116, 116));
-        btnAdminLibros.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnAdminLibros.setForeground(new java.awt.Color(51, 51, 51));
-        btnAdminLibros.setText("Administrar libros");
-        btnAdminLibros.setBorder(null);
+        btnAdminLibros.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoAdminLibros.png")); // NOI18N
         btnAdminLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnAdminLibros.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAdminLibrosActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnAdminLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 150, 150));
+        jPanel2.add(btnAdminLibros, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 160, 150));
 
-        jLabel1.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Usuarios");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
+        btnAdmnUsuario1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoAdminUsuarios.png")); // NOI18N
+        btnAdmnUsuario1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnAdmnUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 160, 150));
 
-        btnReportes.setBackground(new java.awt.Color(127, 116, 116));
-        btnReportes.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        btnReportes.setForeground(new java.awt.Color(51, 51, 51));
-        btnReportes.setText("Reportes");
-        btnReportes.setBorder(null);
-        btnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 280, 150, 150));
-
-        btnAdmnUsuario.setBackground(new java.awt.Color(127, 116, 116));
-        btnAdmnUsuario.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        btnAdmnUsuario.setForeground(new java.awt.Color(51, 51, 51));
-        btnAdmnUsuario.setText("Administrar usuarios");
-        btnAdmnUsuario.setBorder(null);
-        btnAdmnUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnAdmnUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 150, 150));
-
-        btnPrestamos.setBackground(new java.awt.Color(127, 116, 116));
-        btnPrestamos.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        btnPrestamos.setForeground(new java.awt.Color(51, 51, 51));
-        btnPrestamos.setText("Prestamos");
-        btnPrestamos.setBorder(null);
-        btnPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPrestamos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrestamosActionPerformed(evt);
-            }
-        });
-        jPanel2.add(btnPrestamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 150, 150));
-
-        btnDeudas.setBackground(new java.awt.Color(127, 116, 116));
-        btnDeudas.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        btnDeudas.setForeground(new java.awt.Color(51, 51, 51));
-        btnDeudas.setText("Deudas");
-        btnDeudas.setBorder(null);
-        btnDeudas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnDeudas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 150, 150));
-
-        btnSalirPanelAdmin.setBackground(new java.awt.Color(255, 255, 255));
-        btnSalirPanelAdmin.setText("jButton7");
-        btnSalirPanelAdmin.setBorder(null);
+        btnSalirPanelAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnSalirPanelAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\inconoExit.png")); // NOI18N
         btnSalirPanelAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnSalirPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 490, 39, 36));
+        jPanel2.add(btnSalirPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 50, 40));
+
+        btnReportes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoReportes.png")); // NOI18N
+        btnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnReportes, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 270, 160, 150));
+
+        btnDeudas.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoAdminMultas.png")); // NOI18N
+        btnDeudas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnDeudas, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 160, 150));
+
+        btnPrestamos.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoPrestamoLibros.png")); // NOI18N
+        btnPrestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnPrestamos, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 160, 150));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Reportes");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 440, -1, 20));
+
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setText("Administrar libros");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 130, 20));
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("Administrar usuarios");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, 150, 20));
+
+        jLabel4.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("Añadir libros");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 220, -1, 20));
+
+        jLabel5.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Prestamo de libros");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 440, -1, 20));
+
+        jLabel6.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Administrar multas");
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, 20));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\bannerLoginSinLogo.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(99, 260, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
@@ -184,19 +226,13 @@ public class panelAdministrador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnAdminLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdminLibrosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdminLibrosActionPerformed
-
-    private void btnPrestamosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestamosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPrestamosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,19 +270,28 @@ public class panelAdministrador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnAddLibros;
-    public javax.swing.JButton btnAdminLibros;
-    public javax.swing.JButton btnAdmnUsuario;
-    public javax.swing.JButton btnDeudas;
-    public javax.swing.JButton btnOpcionesPanelAdmin;
-    public javax.swing.JButton btnPrestamos;
-    public javax.swing.JButton btnReportes;
-    public javax.swing.JButton btnSalirPanelAdmin;
+    public javax.swing.JLabel btnAddLibros;
+    public javax.swing.JLabel btnAdminLibros;
+    public javax.swing.JLabel btnAdmnUsuario1;
+    public javax.swing.JLabel btnDeudas;
+    public javax.swing.JLabel btnOpcionesPanelAdmin;
+    public javax.swing.JLabel btnPrestamos;
+    public javax.swing.JLabel btnReportes;
+    public javax.swing.JLabel btnSalirPanelAdmin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JSeparator jSeparator1;
+    public javax.swing.JLabel opcion1Config;
+    public javax.swing.JLabel opcion2Config;
+    public javax.swing.JPanel panelConfig;
+    public javax.swing.JSeparator separadorCofing;
     public javax.swing.JLabel txtCargo;
     public javax.swing.JLabel txtNombrePersona;
     // End of variables declaration//GEN-END:variables

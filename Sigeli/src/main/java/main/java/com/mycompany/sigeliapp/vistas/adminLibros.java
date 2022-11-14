@@ -82,15 +82,6 @@ public class adminLibros extends javax.swing.JFrame {
         txtAnoLibro5 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         btnBusqueda = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        panel1Opciones = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        panel2Opciones = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        btnCerrarSesion = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        panel1Opciones1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         jFormattedTextField1.setText("jFormattedTextField1");
 
@@ -128,7 +119,7 @@ public class adminLibros extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(654, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -156,7 +147,7 @@ public class adminLibros extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        jPanel2.setBackground(new java.awt.Color(246, 114, 114));
+        jPanel2.setBackground(new java.awt.Color(231, 231, 231));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVolverMenu.setBackground(new java.awt.Color(255, 255, 255));
@@ -168,9 +159,9 @@ public class adminLibros extends javax.swing.JFrame {
                 btnVolverMenuActionPerformed(evt);
             }
         });
-        jPanel2.add(btnVolverMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 39, 36));
+        jPanel2.add(btnVolverMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 470, 39, 36));
 
-        panel1.setBackground(new java.awt.Color(255, 51, 51));
+        panel1.setBackground(new java.awt.Color(153, 0, 0));
         panel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro1.setText("jLabel3");
@@ -230,7 +221,7 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 590, 60));
+        jPanel2.add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 590, 60));
 
         backPagAdmin.setText("jButton1");
         backPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -239,7 +230,7 @@ public class adminLibros extends javax.swing.JFrame {
                 backPagAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 50, 40));
+        jPanel2.add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 80, 40));
 
         nextPagAdmin.setText("jButton1");
         nextPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -248,24 +239,24 @@ public class adminLibros extends javax.swing.JFrame {
                 nextPagAdminActionPerformed(evt);
             }
         });
-        jPanel2.add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 450, 50, 40));
+        jPanel2.add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 80, 40));
 
         txtIngresoBusqueda.setBackground(new java.awt.Color(153, 153, 153));
         txtIngresoBusqueda.setForeground(new java.awt.Color(51, 51, 51));
         txtIngresoBusqueda.setBorder(null);
-        jPanel2.add(txtIngresoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 560, 30));
+        jPanel2.add(txtIngresoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 560, 30));
 
         txtBusquedaAdmin.setForeground(new java.awt.Color(51, 51, 51));
         txtBusquedaAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtBusquedaAdmin.setText("jLabel1");
-        jPanel2.add(txtBusquedaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 580, -1));
+        jPanel2.add(txtBusquedaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 580, -1));
 
         txtCantLibroAdmin.setForeground(new java.awt.Color(51, 51, 51));
         txtCantLibroAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCantLibroAdmin.setText("jLabel2");
-        jPanel2.add(txtCantLibroAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, 280, -1));
+        jPanel2.add(txtCantLibroAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, 280, -1));
 
-        panel2.setBackground(new java.awt.Color(255, 51, 51));
+        panel2.setBackground(new java.awt.Color(153, 0, 0));
         panel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro2.setText("jLabel3");
@@ -325,9 +316,9 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        jPanel2.add(panel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
 
-        panel3.setBackground(new java.awt.Color(255, 51, 51));
+        panel3.setBackground(new java.awt.Color(153, 0, 0));
         panel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro3.setText("jLabel3");
@@ -387,9 +378,9 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, -1, -1));
+        jPanel2.add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, -1, -1));
 
-        panel4.setBackground(new java.awt.Color(255, 51, 51));
+        panel4.setBackground(new java.awt.Color(153, 0, 0));
         panel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro4.setText("jLabel3");
@@ -449,9 +440,9 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, -1, -1));
+        jPanel2.add(panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, -1));
 
-        panel5.setBackground(new java.awt.Color(255, 51, 51));
+        panel5.setBackground(new java.awt.Color(153, 0, 0));
         panel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         txtNombreLibro5.setText("jLabel3");
@@ -511,169 +502,30 @@ public class adminLibros extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
+        jPanel2.add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 380, -1, -1));
 
-        btnBusqueda.setText("jButton1");
+        btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoLupaBusqueda.png")); // NOI18N
         btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBusquedaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 30, 30));
-
-        jPanel3.setBackground(new java.awt.Color(102, 0, 0));
-
-        panel1Opciones.setBackground(new java.awt.Color(102, 0, 0));
-        panel1Opciones.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panel1Opciones.setForeground(new java.awt.Color(153, 153, 153));
-        panel1Opciones.setToolTipText("¿Cómo buscar libros?");
-        panel1Opciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panel1Opciones.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                panel1OpcionesMouseClicked(evt);
-            }
-        });
-
-        jLabel4.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel4.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel4.setText("¿Cómo modificar un libro?");
-
-        javax.swing.GroupLayout panel1OpcionesLayout = new javax.swing.GroupLayout(panel1Opciones);
-        panel1Opciones.setLayout(panel1OpcionesLayout);
-        panel1OpcionesLayout.setHorizontalGroup(
-            panel1OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1OpcionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel1OpcionesLayout.setVerticalGroup(
-            panel1OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1OpcionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        panel2Opciones.setBackground(new java.awt.Color(102, 0, 0));
-        panel2Opciones.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panel2Opciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel1.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("¿Cómo hacer un prestamo?");
-
-        javax.swing.GroupLayout panel2OpcionesLayout = new javax.swing.GroupLayout(panel2Opciones);
-        panel2Opciones.setLayout(panel2OpcionesLayout);
-        panel2OpcionesLayout.setHorizontalGroup(
-            panel2OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel2OpcionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel2OpcionesLayout.setVerticalGroup(
-            panel2OpcionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel2OpcionesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        btnCerrarSesion.setBackground(new java.awt.Color(102, 0, 0));
-        btnCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel2.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("Salir de la cuenta");
-
-        javax.swing.GroupLayout btnCerrarSesionLayout = new javax.swing.GroupLayout(btnCerrarSesion);
-        btnCerrarSesion.setLayout(btnCerrarSesionLayout);
-        btnCerrarSesionLayout.setHorizontalGroup(
-            btnCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCerrarSesionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        btnCerrarSesionLayout.setVerticalGroup(
-            btnCerrarSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btnCerrarSesionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        panel1Opciones1.setBackground(new java.awt.Color(102, 0, 0));
-        panel1Opciones1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        panel1Opciones1.setForeground(new java.awt.Color(153, 153, 153));
-        panel1Opciones1.setToolTipText("¿Cómo buscar libros?");
-        panel1Opciones1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel3.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("¿Cómo buscar los libros?");
-
-        javax.swing.GroupLayout panel1Opciones1Layout = new javax.swing.GroupLayout(panel1Opciones1);
-        panel1Opciones1.setLayout(panel1Opciones1Layout);
-        panel1Opciones1Layout.setHorizontalGroup(
-            panel1Opciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1Opciones1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panel1Opciones1Layout.setVerticalGroup(
-            panel1Opciones1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel1Opciones1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panel2Opciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panel1Opciones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(panel1Opciones1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(275, 275, 275)
-                .addComponent(panel1Opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel1Opciones1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel2Opciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnCerrarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel2.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 30, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 759, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE))
         );
 
         pack();
@@ -698,10 +550,6 @@ public class adminLibros extends javax.swing.JFrame {
     private void btnOpcionesPanelAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcionesPanelAdminActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOpcionesPanelAdminActionPerformed
-
-    private void panel1OpcionesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panel1OpcionesMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_panel1OpcionesMouseClicked
 
     /**
      * @param args the command line arguments
@@ -742,17 +590,11 @@ public class adminLibros extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton backPagAdmin;
     public javax.swing.JButton btnBusqueda;
-    public javax.swing.JPanel btnCerrarSesion;
     public javax.swing.JButton btnOpcionesPanelAdmin;
     public javax.swing.JButton btnVolverMenu;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JSeparator jSeparator1;
@@ -763,10 +605,7 @@ public class adminLibros extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     public javax.swing.JButton nextPagAdmin;
     public javax.swing.JPanel panel1;
-    public javax.swing.JPanel panel1Opciones;
-    public javax.swing.JPanel panel1Opciones1;
     public javax.swing.JPanel panel2;
-    public javax.swing.JPanel panel2Opciones;
     public javax.swing.JPanel panel3;
     public javax.swing.JPanel panel4;
     public javax.swing.JPanel panel5;

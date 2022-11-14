@@ -2,6 +2,8 @@ package main.java.com.mycompany.sigeliapp.controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import main.java.com.mycompany.sigeliapp.vistas.*;
 import main.java.com.mycompany.sigeliapp.modelos.*;
@@ -11,7 +13,7 @@ import java.util.regex.Pattern;
 import main.java.com.mycompany.sigeliapp.modelos.utiles.Portapapeles;
 
 
-public class ControladorPanelAdmin implements ActionListener{
+public class ControladorPanelAdmin implements ActionListener, MouseListener{
     
     private panelAdministrador vistaAdministrador;
     private ControladorApp controladorApp;
@@ -20,6 +22,7 @@ public class ControladorPanelAdmin implements ActionListener{
     
     private int documentoLogin;
     private String nombre;
+    private boolean panelConfig = false;
     
     private IDaoPersona iDaoPersona;
     private IDaoUsuario iDaoUsuario;
@@ -39,58 +42,111 @@ public class ControladorPanelAdmin implements ActionListener{
         this.iDaoEstado = new DaoEstado();
         this.iDaoCarrera = new DaoCarrera();
         
-        this.vistaAdministrador.btnAddLibros.addActionListener(this);
-        this.vistaAdministrador.btnAdminLibros.addActionListener(this);
-        this.vistaAdministrador.btnAdmnUsuario.addActionListener(this);
-        this.vistaAdministrador.btnDeudas.addActionListener(this);
-        this.vistaAdministrador.btnOpcionesPanelAdmin.addActionListener(this);
-        this.vistaAdministrador.btnPrestamos.addActionListener(this);
-        this.vistaAdministrador.btnReportes.addActionListener(this);
-        this.vistaAdministrador.btnSalirPanelAdmin.addActionListener(this);
+        this.vistaAdministrador.btnAddLibros.addMouseListener(this);
+        this.vistaAdministrador.btnAdminLibros.addMouseListener(this);
+        this.vistaAdministrador.btnAddLibros.addMouseListener(this);
+        this.vistaAdministrador.btnDeudas.addMouseListener(this);
+        this.vistaAdministrador.btnOpcionesPanelAdmin.addMouseListener(this);
+        this.vistaAdministrador.btnPrestamos.addMouseListener(this);
+        this.vistaAdministrador.btnReportes.addMouseListener(this);
+        this.vistaAdministrador.btnSalirPanelAdmin.addMouseListener(this);
+        this.vistaAdministrador.opcion1Config.addMouseListener(this);
+        this.vistaAdministrador.opcion2Config.addMouseListener(this);
     }
     
      public void actionPerformed(ActionEvent e){
-         
-         if(e.getSource() == vistaAdministrador.btnAdminLibros){
-             cerrarPanelAdmin();
-             controladorLibro.inicio(documentoLogin, nombre);
-         }
-         
-         else if(e.getSource() == vistaAdministrador.btnAdmnUsuario){
-             cerrarPanelAdmin();
-             controladorApp.administrarUsuario(iDaoPersona.verPersonas());
-         }
-         
-         else if(e.getSource() == vistaAdministrador.btnAddLibros){
-             cerrarPanelAdmin();
-             controladorApp.addLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
-         }
-         
-         else if(e.getSource() == vistaAdministrador.btnPrestamos){
-             cerrarPanelAdmin();
-             controladorApp.prestamoLibros();
-         }
-         
-         else if(e.getSource() == vistaAdministrador.btnDeudas){
-             cerrarPanelAdmin();
-             controladorApp.adminMultas();
-         }
-         
-         else if(e.getSource() == vistaAdministrador.btnReportes){
-             cerrarPanelAdmin();
-             controladorApp.reportes();
-         }
-         
-         else if(e.getSource() == vistaAdministrador.btnOpcionesPanelAdmin){
-             cerrarPanelAdmin();
-             controladorApp.opcionesCuenta(iDaoPersona.verPersonas(), iDaoUsuario.verUsuarios(), documentoLogin, iDaoCarrera.verCarreras());
-         }
-         else if(e.getSource() == vistaAdministrador.btnSalirPanelAdmin){
-             cerrarPanelAdmin();
-             visibleLogin();
-         }
-         
+
      }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        
+       if(e.getSource() == vistaAdministrador.btnAdminLibros){
+            cerrarPanelAdmin();
+            controladorLibro.inicio(documentoLogin, nombre);
+        }
+
+        else if(e.getSource() == vistaAdministrador.btnAddLibros){
+            cerrarPanelAdmin();
+            controladorApp.administrarUsuario(iDaoPersona.verPersonas());
+        }
+
+        else if(e.getSource() == vistaAdministrador.btnAddLibros){
+            cerrarPanelAdmin();
+            controladorApp.addLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
+        }
+
+        else if(e.getSource() == vistaAdministrador.btnPrestamos){
+            cerrarPanelAdmin();
+            controladorApp.prestamoLibros();
+        }
+
+        else if(e.getSource() == vistaAdministrador.btnDeudas){
+            cerrarPanelAdmin();
+            controladorApp.adminMultas();
+        }
+
+        else if(e.getSource() == vistaAdministrador.btnReportes){
+            cerrarPanelAdmin();
+            controladorApp.reportes();
+        }
+
+        else if(e.getSource() == vistaAdministrador.btnOpcionesPanelAdmin){
+            if(panelConfig == true){
+                vistaAdministrador.panelConfig.setVisible(false);
+                vistaAdministrador.opcion1Config.setVisible(false);
+                vistaAdministrador.opcion2Config.setVisible(false);
+                vistaAdministrador.separadorCofing.setVisible(false);
+                panelConfig = false;
+            }
+            else if(panelConfig == false){
+                vistaAdministrador.panelConfig.setVisible(true);
+                vistaAdministrador.opcion1Config.setVisible(true);
+                vistaAdministrador.opcion2Config.setVisible(true);
+                vistaAdministrador.separadorCofing.setVisible(true);
+                panelConfig = true;
+            }
+        }
+        else if(e.getSource() == vistaAdministrador.btnSalirPanelAdmin){
+            cerrarPanelAdmin();
+            visibleLogin();
+        }
+        
+        else if(e.getSource() == vistaAdministrador.opcion1Config){
+            cerrarPanelAdmin();
+            controladorApp.opcionesCuenta(iDaoPersona.verPersonas(), iDaoUsuario.verUsuarios(), documentoLogin, iDaoCarrera.verCarreras());
+        }
+       
+        else if(e.getSource() == vistaAdministrador.opcion2Config){
+            cerrarPanelAdmin();
+            visibleLogin();
+        }
+       
+       
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
+    }
+     
+     
+    
      
     public void inicio(int documento, ArrayList<Persona> arrayListPersona){
         this.documentoLogin = documento;
@@ -101,6 +157,12 @@ public class ControladorPanelAdmin implements ActionListener{
                 vistaAdministrador.txtCargo.setText("Administrador");
             }
         }
+        
+        vistaAdministrador.panelConfig.setVisible(false);
+        vistaAdministrador.opcion1Config.setVisible(false);
+        vistaAdministrador.opcion2Config.setVisible(false);
+        vistaAdministrador.separadorCofing.setVisible(false);
+        
         visiblePanelAdmin();
     }
     
