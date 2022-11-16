@@ -2,6 +2,8 @@ package main.java.com.mycompany.sigeliapp.controladores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import main.java.com.mycompany.sigeliapp.dao.*;
@@ -11,7 +13,7 @@ import main.java.com.mycompany.sigeliapp.modelos.Usuario;
 import main.java.com.mycompany.sigeliapp.vistas.Login;
 import main.java.com.mycompany.sigeliapp.vistas.Registro;
 
-public class ControladorLogin implements ActionListener{
+public class ControladorLogin implements ActionListener, MouseListener{
     
     private ControladorApp controlador;
     private ControladorPanelAdmin controladorPanelAdmin;
@@ -85,6 +87,36 @@ public class ControladorLogin implements ActionListener{
             visibleLogin();
         }
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        if(e.getSource() == vistaRegistro.volverLogin){
+            vistaRegistro.volverLogin.setBackground(new java.awt.Color(255, 51, 51));
+            vistaRegistro.volverLogin.setForeground(new java.awt.Color(204, 204, 204));
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
+    }
+    
+    
     
     public void ingresar(ArrayList<Usuario> arrayListUsuario){
         
