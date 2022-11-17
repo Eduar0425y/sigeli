@@ -15,7 +15,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     
     private VistaApp vistaApp;
     
-    private adminLibros panelAdminLibros;
+    private panelAdminLibros panelAdminLibros;
     
     private Persona persona;
     private Categoria categoria;
@@ -43,7 +43,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
 
     public ControladorLibro(){
     
-        this.panelAdminLibros = new adminLibros();
+        this.panelAdminLibros = new panelAdminLibros();
         
         this.vistaApp = new VistaApp();
         this.persona = new Persona();
@@ -70,18 +70,34 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         this.panelAdminLibros.btnBusqueda.addActionListener(this);
         this.panelAdminLibros.nextPagAdmin.addActionListener(this);
         this.panelAdminLibros.backPagAdmin.addActionListener(this);
-        this.panelAdminLibros.btnVolverMenu.addActionListener(this);
-        //this.panelAdminLibros.btnCerrarSesion.addMouseListener(this);
+        
+        this.panelAdminLibros.btnExtenPanel.addMouseListener(this);
+        this.panelAdminLibros.btnExtenPanelOff.addMouseListener(this);
+        this.panelAdminLibros.btnVolverMenu.addMouseListener(this);
+        this.panelAdminLibros.btnCerrarSesion.addMouseListener(this);
 
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        /*if(e.getSource() == panelAdminLibros.btnCerrarSesion){
+        if(e.getSource() == panelAdminLibros.btnCerrarSesion){
             ControladorLogin controladorLogin = new ControladorLogin();
             cerrarPanelAdminLibros();
             controladorLogin.visibleLogin();
-        }*/
+        }
+        else if(e.getSource() == panelAdminLibros.btnVolverMenu){
+            cerrarPanelAdminLibros();
+            visiblePanelAdmin();
+        }
+        else if(e.getSource() == panelAdminLibros.btnExtenPanel){
+            panelAdminLibros.panelExten.setVisible(true);
+            panelAdminLibros.btnVolverMenu.setVisible(false);
+        }
+        else if(e.getSource() == panelAdminLibros.btnExtenPanelOff){
+            panelAdminLibros.btnVolverMenu.setVisible(true);
+            panelAdminLibros.panelExten.setVisible(false);
+        }
+        
     }
 
     @Override
@@ -136,10 +152,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
            verLibros(iDaoLibro.verLibros());
            
         }
-        else if(e.getSource() == panelAdminLibros.btnVolverMenu){
-             cerrarPanelAdminLibros();
-             visiblePanelAdmin();
-        }
+
     }
     
     
@@ -260,7 +273,8 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     public void inicio(int documento, String nombre){
         this.documentoLogin = documento;
         panelAdminLibros.txtNombrePersona.setText(nombre);
-        panelAdminLibros.txtCargo.setText("Administrador");
+        panelAdminLibros.txtNombrePersona1.setText(nombre);
+        panelAdminLibros.panelExten.setVisible(false);
         verLibros(iDaoLibro.verLibros());
         
         visiblePanelAdminLibros();

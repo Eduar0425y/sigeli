@@ -24,7 +24,7 @@ public class DaoPrestamos extends Conexion implements IDaoPrestamos{
             while(resultSet.next()){
                 Prestamos prestamo = new Prestamos();
                 prestamo.setIdPrestamo(resultSet.getInt(Constantes.TPR_ID));
-                prestamo.setIdPersona(resultSet.getInt(Constantes.TPR_DOCUMENTO));
+                prestamo.setIdPersona(Integer.valueOf(resultSet.getString(Constantes.TPR_DOCUMENTO)));
                 prestamo.setIsbnLibro(resultSet.getString(Constantes.TPR_ISBN));
                 prestamo.setFechaPrestamo(resultSet.getDate(Constantes.TPR_FECHAPRESTAMO));
                 prestamo.setFechaEntrega(resultSet.getDate(Constantes.TPR_FECHAENTREGA));
@@ -57,7 +57,7 @@ public class DaoPrestamos extends Conexion implements IDaoPrestamos{
         try {            
             PreparedStatement ps=getConexion().prepareStatement(sql);
             ps.setInt(1, prestamo.getIdPrestamo());
-            ps.setInt(2, prestamo.getIdPersona());
+            ps.setString(2, String.valueOf(prestamo.getIdPersona()));
             ps.setString(3, prestamo.getIsbnLibro());
             ps.setDate(4, prestamo.getFechaPrestamo());
             ps.setDate(5, prestamo.getFechaEntrega());

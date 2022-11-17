@@ -82,6 +82,8 @@ public class adminLibros extends javax.swing.JFrame {
         txtAnoLibro5 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         btnBusqueda = new javax.swing.JButton();
+        btnOpcionesPanelAdmin1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         jFormattedTextField1.setText("jFormattedTextField1");
 
@@ -119,7 +121,7 @@ public class adminLibros extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(654, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -513,12 +515,35 @@ public class adminLibros extends javax.swing.JFrame {
         });
         jPanel2.add(btnBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 30, 30, 30));
 
+        btnOpcionesPanelAdmin1.setBackground(new java.awt.Color(255, 255, 255));
+        btnOpcionesPanelAdmin1.setText("jButton7");
+        btnOpcionesPanelAdmin1.setBorder(null);
+        btnOpcionesPanelAdmin1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOpcionesPanelAdmin1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOpcionesPanelAdmin1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\interfazPaneles.png")); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 843, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(btnOpcionesPanelAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -526,6 +551,11 @@ public class adminLibros extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 516, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(82, 82, 82)
+                .addComponent(btnOpcionesPanelAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -543,13 +573,17 @@ public class adminLibros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nextPagAdminActionPerformed
 
+    private void btnOpcionesPanelAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcionesPanelAdminActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOpcionesPanelAdminActionPerformed
+
     private void btnVolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverMenuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnVolverMenuActionPerformed
 
-    private void btnOpcionesPanelAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcionesPanelAdminActionPerformed
+    private void btnOpcionesPanelAdmin1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOpcionesPanelAdmin1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnOpcionesPanelAdminActionPerformed
+    }//GEN-LAST:event_btnOpcionesPanelAdmin1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -591,8 +625,10 @@ public class adminLibros extends javax.swing.JFrame {
     public javax.swing.JButton backPagAdmin;
     public javax.swing.JButton btnBusqueda;
     public javax.swing.JButton btnOpcionesPanelAdmin;
-    public javax.swing.JButton btnVolverMenu;
+    public javax.swing.JButton btnOpcionesPanelAdmin1;
+    private javax.swing.JButton btnVolverMenu;
     private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPopupMenu jPopupMenu1;

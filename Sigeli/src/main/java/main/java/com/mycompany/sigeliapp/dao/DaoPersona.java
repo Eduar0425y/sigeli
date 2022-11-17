@@ -23,7 +23,7 @@ public class DaoPersona extends Conexion implements IDaoPersona{
             
             while(resultSet.next()){
                 Persona persona = new Persona();
-                persona.setDocumentoPersona(resultSet.getInt(Constantes.TP_DOCUMENTO));
+                persona.setDocumentoPersona(Integer.parseInt(resultSet.getString(Constantes.TP_DOCUMENTO)));
                 persona.setNombrePersona(resultSet.getString(Constantes.TP_NOMBRE));
                 persona.setIdCarrera(resultSet.getInt(Constantes.TP_IDCARRERA));
                 persona.setEmailPersona(resultSet.getString(Constantes.TP_EMAIL));
@@ -50,7 +50,7 @@ public class DaoPersona extends Conexion implements IDaoPersona{
     @Override
     public boolean editarPersona(Persona persona) {
         String sql = "UPDATE " + Constantes.T_PERSONA+ " SET " + Constantes.TP_NOMBRE + "= ?," + Constantes.TP_EMAIL + "= ?" +
-                    " WHERE " + Constantes.T_PERSONA + "." + Constantes.TP_DOCUMENTO + "=" + persona.getDocumentoPersona() ;
+                    " WHERE " + Constantes.T_PERSONA + "." + Constantes.TP_DOCUMENTO + "=\"" + persona.getDocumentoPersona() +"\"";
         
         try {
             PreparedStatement ps=getConexion().prepareStatement(sql);
@@ -83,7 +83,7 @@ public class DaoPersona extends Conexion implements IDaoPersona{
                 "VALUES (?,?,?,?,?)";
         try {            
             PreparedStatement ps=getConexion().prepareStatement(sql);
-            ps.setInt(1, persona.getDocumentoPersona());
+            ps.setString(1, String.valueOf(persona.getDocumentoPersona()));
             ps.setString(2, persona.getNombrePersona());
             ps.setInt(3, persona.getIdCarrera());
             ps.setString(4, persona.getEmailPersona());

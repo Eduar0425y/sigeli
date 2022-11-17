@@ -24,7 +24,7 @@ public class DaoUsuario extends Conexion implements IDaoUsuario{
             
             while(resultSet.next()){
                 Usuario usuario = new Usuario();
-                usuario.setDocumento(resultSet.getInt(Constantes.TU_DOCUMENTO));
+                usuario.setDocumento(Integer.parseInt(resultSet.getString(Constantes.TU_DOCUMENTO)));
                 usuario.setClave(resultSet.getString(Constantes.TU_CLAVE));
                 usuario.setIdCargo(resultSet.getInt(Constantes.TU_CARGO));
                 
@@ -53,7 +53,7 @@ public class DaoUsuario extends Conexion implements IDaoUsuario{
                 "VALUES (?,?,?)";
         try {            
             PreparedStatement ps=getConexion().prepareStatement(sql);
-            ps.setInt(1, usuario.getDocumento());
+            ps.setString(1, String.valueOf(usuario.getDocumento()));
             ps.setString(2, usuario.getClave());
             ps.setInt(3, usuario.getIdCargo());
             
@@ -78,7 +78,7 @@ public class DaoUsuario extends Conexion implements IDaoUsuario{
     @Override
     public boolean cambioClave(Usuario usuario) {
         String sql = "UPDATE " + Constantes.T_USUARIO + " SET " + Constantes.TU_CLAVE + "= ?" +
-                    " WHERE " + Constantes.T_USUARIO + "." + Constantes.TU_DOCUMENTO + "=" + usuario.getDocumento() ;
+                    " WHERE " + Constantes.T_USUARIO + "." + Constantes.TU_DOCUMENTO + "=\"" + usuario.getDocumento() + "\"";
         
         try {
             PreparedStatement ps=getConexion().prepareStatement(sql);
