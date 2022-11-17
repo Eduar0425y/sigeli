@@ -17,26 +17,11 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     
     private panelAdminLibros panelAdminLibros;
     
-    private Persona persona;
-    private Categoria categoria;
-    private CategoriaLibro categoriaLibro;
-    private Estado estado;
-    private Libro libro;
-    private Multa multa;
-    private Carrera carrera;
-    private Usuario usuario;
-    private Prestamos prestamo;
     
-    
-    private IDaoCarrera iDaoCarrera;
     private IDaoCategoria iDaoCategoria;
     private IDaoCategoriaLibro iDaoCategoriaLibro;
-    private IDaoEstado iDaoEstado;
     private IDaoLibro iDaoLibro;
-    private IDaoMulta iDaoMulta;
-    private IDaoPrestamos iDaoPrestamos;
     private IDaoPersona iDaoPersona;
-    private IDaoUsuario iDaoUsuario;
     
     private int documentoLogin;
     private int cantMenorLibro = 0, cantMayorLibro = 4, cantLibrosPag = 0;
@@ -46,25 +31,11 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         this.panelAdminLibros = new panelAdminLibros();
         
         this.vistaApp = new VistaApp();
-        this.persona = new Persona();
-        this.categoria = new Categoria();
-        this.categoriaLibro = new CategoriaLibro();
-        this.estado = new Estado();
-        this.libro = new Libro();
-        this.multa = new Multa();
-        this.carrera = new Carrera();
-        this.prestamo = new Prestamos();
-        this.usuario = new Usuario();
-        
-        this.iDaoCarrera = new DaoCarrera();
+
         this.iDaoCategoria = new DaoCategoria();
         this.iDaoCategoriaLibro = new DaoCategoriaLibro();
-        this.iDaoEstado = new DaoEstado();
         this.iDaoLibro = new DaoLibro();
-        this.iDaoMulta = new DaoMulta();
-        this.iDaoPrestamos = new DaoPrestamos();
         this.iDaoPersona = new DaoPersona();
-        this.iDaoUsuario = new DaoUsuario();
         
         
         this.panelAdminLibros.btnBusqueda.addActionListener(this);
