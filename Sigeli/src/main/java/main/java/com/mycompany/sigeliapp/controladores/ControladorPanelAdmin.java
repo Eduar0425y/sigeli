@@ -19,6 +19,7 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
     private ControladorApp controladorApp;
     
     private ControladorLibro controladorLibro;
+    ControladorPersona controladorPersona;
     
     private int documentoLogin;
     private String nombre;
@@ -35,6 +36,7 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
         this.controladorApp = new ControladorApp();
         
         this.controladorLibro = new ControladorLibro();
+        this.controladorPersona = new ControladorPersona();
         
         this.iDaoPersona = new DaoPersona();
         this.iDaoUsuario = new DaoUsuario();
@@ -44,12 +46,11 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
         
         this.vistaAdministrador.btnAddLibros.addMouseListener(this);
         this.vistaAdministrador.btnAdminLibros.addMouseListener(this);
-        this.vistaAdministrador.btnAddLibros.addMouseListener(this);
+        this.vistaAdministrador.btnAdmnUsuario1.addMouseListener(this);
         this.vistaAdministrador.btnDeudas.addMouseListener(this);
         this.vistaAdministrador.btnOpcionesPanelAdmin.addMouseListener(this);
         this.vistaAdministrador.btnPrestamos.addMouseListener(this);
         this.vistaAdministrador.btnReportes.addMouseListener(this);
-        this.vistaAdministrador.btnSalirPanelAdmin.addMouseListener(this);
         this.vistaAdministrador.opcion1Config.addMouseListener(this);
         this.vistaAdministrador.opcion2Config.addMouseListener(this);
     }
@@ -66,9 +67,10 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
             controladorLibro.inicio(documentoLogin, nombre);
         }
 
-        else if(e.getSource() == vistaAdministrador.btnAddLibros){
+        else if(e.getSource() == vistaAdministrador.btnAdmnUsuario1){
             cerrarPanelAdmin();
-            controladorApp.administrarUsuario(iDaoPersona.verPersonas());
+            //controladorApp.administrarUsuario(iDaoPersona.verPersonas());
+            controladorPersona.inicio(documentoLogin, nombre);
         }
 
         else if(e.getSource() == vistaAdministrador.btnAddLibros){
@@ -106,10 +108,6 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
                 vistaAdministrador.separadorCofing.setVisible(true);
                 panelConfig = true;
             }
-        }
-        else if(e.getSource() == vistaAdministrador.btnSalirPanelAdmin){
-            cerrarPanelAdmin();
-            visibleLogin();
         }
         
         else if(e.getSource() == vistaAdministrador.opcion1Config){

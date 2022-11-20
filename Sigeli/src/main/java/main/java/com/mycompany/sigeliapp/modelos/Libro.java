@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 public class Libro {
+    private int idLibro;
     private String isbnLibro;
     private String nombreLibro;
     private String nombreAutor;
@@ -16,7 +17,8 @@ public class Libro {
     public Libro() {
     }
 
-    public Libro(String isbnLibro, String nombreLibro, String nombreAutor, int edicionLibro, int anoLibro, String estanteLibro, int filaLibro, int idEstado) {
+    public Libro(int idLibro, String isbnLibro, String nombreLibro, String nombreAutor, int edicionLibro, int anoLibro, String estanteLibro, int filaLibro, int idEstado) {
+        this.idLibro = idLibro;
         this.isbnLibro = isbnLibro;
         this.nombreLibro = nombreLibro;
         this.nombreAutor = nombreAutor;
@@ -26,6 +28,16 @@ public class Libro {
         this.filaLibro = filaLibro;
         this.idEstado = idEstado;
     }
+
+    public int getIdLibro() {
+        return idLibro;
+    }
+
+    public void setIdLibro(int idLibro) {
+        this.idLibro = idLibro;
+    }
+    
+    
 
     public String getIsbnLibro() {
         return isbnLibro;

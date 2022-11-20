@@ -16,7 +16,7 @@ public class DaoLibro extends Conexion implements IDaoLibro{
     public ArrayList<Libro> verLibros() {
         ArrayList<Libro> arrayListLibro = new ArrayList<>();
         
-        String sql = "SELECT * FROM " + Constantes.T_LIBRO ;
+        String sql = "SELECT * FROM " + Constantes.T_LIBRO + " ORDER BY " + Constantes.T_LIBRO + "." + Constantes.TL_NOMBRE + " ASC";
 
         try {
             PreparedStatement ps = getConexion().prepareStatement(sql);
@@ -24,6 +24,7 @@ public class DaoLibro extends Conexion implements IDaoLibro{
             
             while(resultSet.next()){
                 Libro libro = new Libro();
+                libro.setIdLibro(resultSet.getInt(Constantes.TL_IDLIBRO)-1);
                 libro.setIsbnLibro(resultSet.getString(Constantes.TL_ISBN));
                 libro.setNombreLibro(resultSet.getString(Constantes.TL_NOMBRE));
                 libro.setNombreAutor(resultSet.getString(Constantes.TL_AUTOR));
@@ -55,21 +56,22 @@ public class DaoLibro extends Conexion implements IDaoLibro{
     @Override
     public boolean addLibro(Libro libro) {
         
-        String sql = "INSERT INTO "+ Constantes.T_LIBRO + "(" + Constantes.TL_ISBN + "," + 
+        String sql = "INSERT INTO "+ Constantes.T_LIBRO + "(" + Constantes.TL_IDLIBRO + "," + Constantes.TL_ISBN + "," + 
                 Constantes.TL_NOMBRE + "," + Constantes.TL_AUTOR + "," +
                 Constantes.TL_EDICION + "," + Constantes.TL_ANO + "," + 
                 Constantes.TL_ESTANTE + "," + Constantes.TL_FILA + "," +
-                Constantes.TL_IDESTADO + ") VALUES (?,?,?,?,?,?,?,?)";
+                Constantes.TL_IDESTADO + ") VALUES (?,?,?,?,?,?,?,?,?)";
         try {            
             PreparedStatement ps=getConexion().prepareStatement(sql);
-            ps.setString(1, libro.getIsbnLibro());
-            ps.setString(2, libro.getNombreLibro());
-            ps.setString(3, libro.getNombreAutor());
-            ps.setInt(4, libro.getEdicionLibro());
-            ps.setInt(5, libro.getAnoLibro());
-            ps.setString(6, libro.getEstanteLibro());
-            ps.setInt(7, libro.getFilaLibro());
-            ps.setInt(8, libro.getIdEstado());
+            ps.setInt(1, verLibros().size()+1);
+            ps.setString(2, libro.getIsbnLibro());
+            ps.setString(3, libro.getNombreLibro());
+            ps.setString(4, libro.getNombreAutor());
+            ps.setInt(5, libro.getEdicionLibro());
+            ps.setInt(6, libro.getAnoLibro());
+            ps.setString(7, libro.getEstanteLibro());
+            ps.setInt(8, libro.getFilaLibro());
+            ps.setInt(9, libro.getIdEstado());
             
             ps.executeUpdate();
             

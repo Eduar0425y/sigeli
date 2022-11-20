@@ -150,28 +150,26 @@ public class ControladorLogin implements ActionListener, MouseListener{
         String nombre, email, telefono, clave;
         int documento, idCarrera, idCargo;
 
-        for(Usuario usuario : arrayListUsuario){
-            if(usuario.getIdCargo() == 1){
-                documento = Integer.parseInt(vistaRegistro.txtDocumentoRegistro.getText());
-                nombre = vistaRegistro.txtNombreRegistro.getText();
-                email = vistaRegistro.txtEmailRegistro.getText();
-                telefono = vistaRegistro.txtTelefonoRegistro.getText();
+        
+        documento = Integer.parseInt(vistaRegistro.txtDocumentoRegistro.getText());
+        nombre = vistaRegistro.txtNombreRegistro.getText();
+        email = vistaRegistro.txtEmailRegistro.getText();
+        telefono = vistaRegistro.txtTelefonoRegistro.getText();
 
-                idCarrera = vistaRegistro.boxCarreraRegistro.getSelectedIndex();
+        idCarrera = vistaRegistro.boxCarreraRegistro.getSelectedIndex();
 
-                idCargo = vistaRegistro.boxTipoRegistro.getSelectedIndex();
-                clave = vistaRegistro.txtClaveRegistro.getText();
+        idCargo = vistaRegistro.boxTipoRegistro.getSelectedIndex();
+        clave = vistaRegistro.txtClaveRegistro.getText();
 
-                Persona persona = new Persona(documento, nombre, idCarrera, email, telefono);
-                Usuario usuarioE = new Usuario(documento, clave, idCargo);
+        Persona persona = new Persona(documento, nombre, idCarrera, email, telefono);
+        Usuario usuarioE = new Usuario(documento, clave, idCargo);
 
-                if(registro == true){
-                    iDaoPersona.addPersona(persona);
-                    iDaoUsuario.addUsuario(usuarioE);
-                    JOptionPane.showMessageDialog(null, "El usuario ha sido creado");
-                }
-            }
+        if(registro == true){
+            iDaoPersona.addPersona(persona);
+            iDaoUsuario.addUsuario(usuarioE);
+            JOptionPane.showMessageDialog(null, "El usuario ha sido creado");
         }
+
 
     }
     

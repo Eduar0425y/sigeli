@@ -29,6 +29,7 @@ public class Constantes {
     public static final String TE_ESTADO = "estado";
     
     public static final String T_LIBRO = "libro";
+    public static final String TL_IDLIBRO = "id_libro";
     public static final String TL_ISBN = "isbn_libro";
     public static final String TL_NOMBRE = "nombre_libro";
     public static final String TL_AUTOR = "nombre_autor";

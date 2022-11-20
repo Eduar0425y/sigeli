@@ -1,6 +1,6 @@
 package main.java.com.mycompany.sigeliapp.controladores;
-
-
-public class ControladorPanelEstudiante {
     
+public class ControladorPanelEstudiante{
+
 }
+

@@ -39,7 +39,6 @@ public class panelAdministrador extends javax.swing.JFrame {
         btnAddLibros = new javax.swing.JLabel();
         btnAdminLibros = new javax.swing.JLabel();
         btnAdmnUsuario1 = new javax.swing.JLabel();
-        btnSalirPanelAdmin = new javax.swing.JLabel();
         btnReportes = new javax.swing.JLabel();
         btnDeudas = new javax.swing.JLabel();
         btnPrestamos = new javax.swing.JLabel();
@@ -52,6 +51,7 @@ public class panelAdministrador extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(102, 0, 0));
 
@@ -78,7 +78,7 @@ public class panelAdministrador extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(741, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -101,6 +101,8 @@ public class panelAdministrador extends javax.swing.JFrame {
                     .addComponent(btnOpcionesPanelAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1026, -1));
 
         jPanel2.setBackground(new java.awt.Color(231, 231, 231));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -130,7 +132,7 @@ public class panelAdministrador extends javax.swing.JFrame {
                 .addGroup(panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelConfigLayout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(opcion2Config, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(opcion2Config, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(separadorCofing)
                         .addComponent(opcion1Config, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -148,7 +150,7 @@ public class panelAdministrador extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 130, 70));
+        jPanel2.add(panelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 140, 70));
 
         btnAddLibros.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoAddLibros.png")); // NOI18N
         btnAddLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -161,11 +163,6 @@ public class panelAdministrador extends javax.swing.JFrame {
         btnAdmnUsuario1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoAdminUsuarios.png")); // NOI18N
         btnAdmnUsuario1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(btnAdmnUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 160, 150));
-
-        btnSalirPanelAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnSalirPanelAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\inconoExit.png")); // NOI18N
-        btnSalirPanelAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnSalirPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 50, 40));
 
         btnReportes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoReportes.png")); // NOI18N
         btnReportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -209,27 +206,10 @@ public class panelAdministrador extends javax.swing.JFrame {
         jLabel6.setText("Administrar multas");
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 440, -1, 20));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\bannerLoginSinLogo.png")); // NOI18N
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(296, 68, 730, 550));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\bannerLoginSinLogo.png")); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 68, 310, 550));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -277,7 +257,6 @@ public class panelAdministrador extends javax.swing.JFrame {
     public javax.swing.JLabel btnOpcionesPanelAdmin;
     public javax.swing.JLabel btnPrestamos;
     public javax.swing.JLabel btnReportes;
-    public javax.swing.JLabel btnSalirPanelAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
