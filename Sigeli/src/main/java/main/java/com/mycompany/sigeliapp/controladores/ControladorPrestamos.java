@@ -63,7 +63,8 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         this.panelAdminPrestamos.panel3.addMouseListener(this);
         this.panelAdminPrestamos.panel4.addMouseListener(this);
         this.panelAdminPrestamos.panel5.addMouseListener(this);
-        this.panelAdminPrestamos.btnBusqueda.addMouseListener(this);
+        this.panelAdminPrestamos.btnBusqueda.addActionListener(this);
+        this.panelAdminPrestamos.btnPegar.addActionListener(this);
         this.panelAdminPrestamos.btnCerrarSesion.addMouseListener(this);
         this.panelAdminPrestamos.btnCrearPrestamo.addMouseListener(this);
         this.panelAdminPrestamos.btnVolverMenu.addMouseListener(this);
@@ -143,6 +144,17 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
             cerrarPanelAddPrestamo();
             visiblePanelAdmin();
         }
+        else if(e.getSource() == panelAdminPrestamos.btnPegar){
+            try {
+                panelAdminPrestamos.txtIngresoBusqueda.setText(Portapapeles.get());
+            } catch (Exception ex) {
+                Logger.getLogger(ControladorPrestamos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        else if(e.getSource() == panelAdminPrestamos.btnBusqueda){
+            buscarPrestamo(panelAdminPrestamos.txtIngresoBusqueda.getText());
+        }
         
     }
 
@@ -163,8 +175,6 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         
         else if(e.getSource() == panelAddPrestamo.btnVolverMenu){
             cerrarPanelAddPrestamo();
-            /*inicio(documentoLogin, nombre);
-            visiblePanelAdminPrestamos();*/
             visiblePanelAdmin();
         }
         
@@ -383,7 +393,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         
     }
     
-    
+    //Sin necesidad de validación
     public void verPrestamo(int documento, int id){
         
             for(Prestamos prestamo : iDaoPrestamo.verPrestamos()){
@@ -436,7 +446,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         
     }
     
-    
+    //Sin necesidad de validación
     public void validarPrestamo(int id){
         Prestamos prestamo = new Prestamos();
         Libro libro = new Libro();
@@ -454,6 +464,38 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
         }
     }
+    
+    public void buscarPrestamo(String busqueda){
+        
+        ArrayList<Prestamos> arrayListPrestamos = new ArrayList<>();
+        
+        if(busqueda.equals("")){
+            cantMayorPrestamo =4;
+            cantMenorPrestamo = 0;
+            this.busqueda = false;
+            verPrestamos(iDaoPrestamo.verPrestamos());  
+        }
+        else{
+            cantMayorPrestamo =4;
+            cantMenorPrestamo = 0;
+        
+        
+            for(Prestamos prestamo : iDaoPrestamo.verPrestamos()){
+                if(String.valueOf(prestamo.getIdPrestamo()).equals(busqueda) || String.valueOf(prestamo.getIdPersona()).equals(busqueda)){
+                    if(arrayListPrestamos.size() < 4){
+                        if(prestamo.getIdEstado() == 3){
+                            arrayListPrestamos.add(prestamo);
+                        }
+                    }
+                }
+            }
+            
+            this.busqueda = true;
+            setDatosPrestamo(arrayListPrestamos, arrayListPrestamos.size(), busqueda); 
+        }
+    }
+    
+    
     
     
     
@@ -571,6 +613,8 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
            panelAdminPrestamos.panel3.setVisible(false);
            panelAdminPrestamos.panel4.setVisible(false);
            panelAdminPrestamos.panel5.setVisible(false);
+           panelAdminPrestamos.nextPagAdmin.setVisible(false);
+           panelAdminPrestamos.backPagAdmin.setVisible(false);
            busqueda += "\" - No se han encontrado resultados";
         }
         
@@ -783,7 +827,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
             panelAdminPrestamos.txtBusquedaAdmin.setText("");
         }
         cantPrestamosPag = arrayListPrestamos.size();
-        panelAdminPrestamos.txtCantLibroAdmin.setText("Se mostraron " + arrayListPrestamos.size() + " usuarios de: " + cantPrestamos);
+        panelAdminPrestamos.txtCantLibroAdmin.setText("Se mostraron " + arrayListPrestamos.size() + " prestamos de: " + cantPrestamos);
         
         
     }

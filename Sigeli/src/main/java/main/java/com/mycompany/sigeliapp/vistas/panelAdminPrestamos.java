@@ -43,17 +43,20 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
         txtDocumento4 = new javax.swing.JLabel();
         fechaPrestamo4 = new javax.swing.JLabel();
         fechaEntrega4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         panel5 = new javax.swing.JPanel();
         txtNombre5 = new javax.swing.JLabel();
         txtDocumento5 = new javax.swing.JLabel();
         fechaPrestamo5 = new javax.swing.JLabel();
         fechaEntrega5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         backPagAdmin = new javax.swing.JButton();
         panel2 = new javax.swing.JPanel();
         txtNombre2 = new javax.swing.JLabel();
         txtDocumento2 = new javax.swing.JLabel();
         fechaPrestamo2 = new javax.swing.JLabel();
         fechaEntrega2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         txtCantLibroAdmin = new javax.swing.JLabel();
         panel1 = new javax.swing.JPanel();
         txtNombre1 = new javax.swing.JLabel();
@@ -68,6 +71,7 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
         txtDocumento3 = new javax.swing.JLabel();
         fechaPrestamo3 = new javax.swing.JLabel();
         fechaEntrega3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         btnCrearPrestamo = new javax.swing.JButton();
         btnPegar = new javax.swing.JButton();
         btnBusqueda = new javax.swing.JButton();
@@ -215,15 +219,21 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
         fechaEntrega4.setForeground(new java.awt.Color(51, 51, 51));
         fechaEntrega4.setText("jLabel8");
 
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("ID :");
+
         javax.swing.GroupLayout panel4Layout = new javax.swing.GroupLayout(panel4);
         panel4.setLayout(panel4Layout);
         panel4Layout.setHorizontalGroup(
             panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel4Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombre4, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtDocumento4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtNombre4, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel4Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDocumento4, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(74, 74, 74)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(fechaPrestamo4, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
@@ -238,7 +248,9 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
                     .addGroup(panel4Layout.createSequentialGroup()
                         .addComponent(txtNombre4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDocumento4))
+                        .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDocumento4)
+                            .addComponent(jLabel6)))
                     .addGroup(panel4Layout.createSequentialGroup()
                         .addComponent(fechaPrestamo4)
                         .addGap(14, 14, 14)
@@ -265,15 +277,21 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
         fechaEntrega5.setForeground(new java.awt.Color(51, 51, 51));
         fechaEntrega5.setText("jLabel8");
 
+        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel7.setText("ID :");
+
         javax.swing.GroupLayout panel5Layout = new javax.swing.GroupLayout(panel5);
         panel5.setLayout(panel5Layout);
         panel5Layout.setHorizontalGroup(
             panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel5Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombre5, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtDocumento5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtNombre5, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel5Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDocumento5, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(fechaPrestamo5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,7 +308,9 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel5Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDocumento5)
+                        .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDocumento5)
+                            .addComponent(jLabel7))
                         .addContainerGap(16, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel5Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -327,15 +347,21 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
         fechaEntrega2.setForeground(new java.awt.Color(51, 51, 51));
         fechaEntrega2.setText("jLabel8");
 
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("ID :");
+
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombre2, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtDocumento2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtNombre2, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDocumento2, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(74, 74, 74)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(fechaPrestamo2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
@@ -350,7 +376,9 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addComponent(txtNombre2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDocumento2))
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDocumento2)
+                            .addComponent(jLabel4)))
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addComponent(fechaPrestamo2)
                         .addGap(14, 14, 14)
@@ -456,15 +484,21 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
         fechaEntrega3.setForeground(new java.awt.Color(51, 51, 51));
         fechaEntrega3.setText("jLabel8");
 
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("ID :");
+
         javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
         panel3.setLayout(panel3Layout);
         panel3Layout.setHorizontalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombre3, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtDocumento3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtNombre3, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDocumento3, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(74, 74, 74)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(fechaPrestamo3, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
@@ -479,7 +513,9 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
                     .addGroup(panel3Layout.createSequentialGroup()
                         .addComponent(txtNombre3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDocumento3))
+                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtDocumento3)
+                            .addComponent(jLabel5)))
                     .addGroup(panel3Layout.createSequentialGroup()
                         .addComponent(fechaPrestamo3)
                         .addGap(14, 14, 14)
@@ -646,6 +682,10 @@ public class panelAdminPrestamos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     public javax.swing.JLabel multas;
     public javax.swing.JButton nextPagAdmin;
     public javax.swing.JPanel panel1;
