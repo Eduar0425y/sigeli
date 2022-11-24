@@ -75,12 +75,16 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
 
         else if(e.getSource() == vistaAdministrador.btnAddLibros){
             cerrarPanelAdmin();
-            controladorApp.addLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
+            //controladorApp.addLibros(iDaoLibro.verLibros(), iDaoEstado.verEstados());
+            controladorLibro.inicioAddLibros(documentoLogin, nombre);
         }
 
         else if(e.getSource() == vistaAdministrador.btnPrestamos){
             cerrarPanelAdmin();
-            controladorApp.prestamoLibros();
+            //controladorApp.prestamoLibros();
+            ControladorPrestamos controladorPrestamos = new ControladorPrestamos();
+            
+            controladorPrestamos.inicio(documentoLogin, nombre);
         }
 
         else if(e.getSource() == vistaAdministrador.btnDeudas){

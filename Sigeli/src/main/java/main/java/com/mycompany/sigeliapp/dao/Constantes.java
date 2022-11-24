@@ -7,9 +7,6 @@ public class Constantes {
     public static final String USER="root";
     public static final String PASSWORD="";
     
-    public static final String T_ROL = "";
-    public static final String TR_ID = "";
-    public static final String TR_ROL = "";
     
     public static final String T_CARRERA = "carrera";
     public static final String TC_ID = "id_carrera";

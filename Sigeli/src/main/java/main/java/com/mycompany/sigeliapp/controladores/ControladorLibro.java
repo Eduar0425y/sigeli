@@ -21,6 +21,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     
     private panelAdminLibros panelAdminLibros;
     private PanelVistaLibro panelVistaLibro;
+    private PanelAddLibro panelAddLibro;
     
     
     private IDaoCategoria iDaoCategoria;
@@ -29,7 +30,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     private IDaoPersona iDaoPersona;
     
     private int documentoLogin;
-    private String nombre;
+    private String nombre, nombreCorto;
     private boolean busqueda = false;
     private int cantMenorLibro = 0, cantMayorLibro = 4, cantLibrosPag = 0;
 
@@ -37,6 +38,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     
         this.panelAdminLibros = new panelAdminLibros();
         this.panelVistaLibro = new PanelVistaLibro();
+        this.panelAddLibro = new PanelAddLibro();
         
         this.vistaApp = new VistaApp();
 
@@ -71,28 +73,59 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         this.panelVistaLibro.btnCerrarSesion.addMouseListener(this);
         this.panelVistaLibro.btnActualizarLibro.addActionListener(this);
         this.panelVistaLibro.btnEliminarLibro.addActionListener(this);
+        this.panelVistaLibro.btnPrestarLibro.addActionListener(this);
         
         
         this.panelVistaLibro.txtISBN.addMouseListener(this);
         
+        //panel ADD libro
+        
+        this.panelAddLibro.btnAddlibro.addActionListener(this);
+        this.panelAddLibro.btnCerrarSesion.addMouseListener(this);
+        this.panelAddLibro.btnExtenPanel.addMouseListener(this);
+        this.panelAddLibro.btnExtenPanelOff.addMouseListener(this);
+        this.panelAddLibro.btnVolverMenu.addMouseListener(this);
+        this.panelAddLibro.btnCerrarSesion.addMouseListener(this);
+        
         //Acciones del panel extendido
         
         this.panelAdminLibros.adminLibros.addMouseListener(this);
+        this.panelAdminLibros.adminUsuarios.addMouseListener(this);
+        this.panelAdminLibros.addLibro.addMouseListener(this);
+        this.panelAdminLibros.prestamos.addMouseListener(this);
+        this.panelAdminLibros.multas.addMouseListener(this);
+        this.panelAdminLibros.reportes.addMouseListener(this);
         
         
         this.panelVistaLibro.adminLibros.addMouseListener(this);
-
+        this.panelVistaLibro.adminUsuarios.addMouseListener(this);
+        this.panelVistaLibro.addLibros.addMouseListener(this);
+        this.panelVistaLibro.prestamos.addMouseListener(this);
+        this.panelVistaLibro.multas.addMouseListener(this);
+        this.panelVistaLibro.reportes.addMouseListener(this);
+        
+        
+        this.panelAddLibro.adminLibros.addMouseListener(this);
+        this.panelAddLibro.adminUsuarios.addMouseListener(this);
+        this.panelAddLibro.addLibros.addMouseListener(this);
+        this.panelAddLibro.prestamos.addMouseListener(this);
+        this.panelAddLibro.multas.addMouseListener(this);
+        this.panelAddLibro.reportes.addMouseListener(this);
+        
     }
 
     @Override
     public void mouseClicked(MouseEvent e) {
         //Panel administrador de libros
-        if(e.getSource() == panelAdminLibros.btnCerrarSesion || e.getSource() == panelVistaLibro.btnCerrarSesion){
+        if(e.getSource() == panelAdminLibros.btnCerrarSesion || e.getSource() == panelVistaLibro.btnCerrarSesion || e.getSource() == panelAddLibro.btnCerrarSesion){
             ControladorLogin controladorLogin = new ControladorLogin();
+            cerrarPanelAddLibro();
+            cerrarVerLibro();
             cerrarPanelAdminLibros();
             controladorLogin.visibleLogin();
         }
-        else if(e.getSource() == panelAdminLibros.btnVolverMenu){
+        else if(e.getSource() == panelAdminLibros.btnVolverMenu || e.getSource() == panelAddLibro.btnVolverMenu){
+            cerrarPanelAddLibro();
             cerrarPanelAdminLibros();
             visiblePanelAdmin();
         }
@@ -162,11 +195,65 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         
         //Opciones panel Extendido
         
-        else if(e.getSource() == panelVistaLibro.adminLibros || e.getSource() == panelAdminLibros.adminLibros){
+        else if(e.getSource() == panelVistaLibro.adminLibros || e.getSource() == panelAdminLibros.adminLibros || e.getSource() == panelAddLibro.adminLibros){
+            cerrarPanelAddLibro();
             cerrarPanelAdminLibros();
             cerrarVerLibro();
             visiblePanelAdminLibros();
         }
+        
+        else if(e.getSource() == panelVistaLibro.adminUsuarios || e.getSource() == panelAdminLibros.adminUsuarios || e.getSource() == panelAddLibro.adminUsuarios){
+            cerrarPanelAddLibro();
+            cerrarPanelAdminLibros();
+            cerrarVerLibro();
+            
+            ControladorPersona controladorPersona = new ControladorPersona();
+            controladorPersona.inicio(documentoLogin, nombre);
+            
+        }
+        
+        else if(e.getSource() == panelVistaLibro.addLibros || e.getSource() == panelAdminLibros.addLibro || e.getSource() == panelAddLibro.addLibros){
+            cerrarPanelAddLibro();
+            cerrarPanelAdminLibros();
+            cerrarVerLibro();
+            inicioAddLibros(documentoLogin, nombre);
+        }
+        
+        //Sin controladores
+        
+        else if(e.getSource() == panelVistaLibro.prestamos || e.getSource() == panelAdminLibros.prestamos || e.getSource() == panelAddLibro.prestamos){
+            cerrarPanelAddLibro();
+            cerrarPanelAdminLibros();
+            cerrarVerLibro();
+
+        }
+        
+        else if(e.getSource() == panelVistaLibro.multas || e.getSource() == panelAdminLibros.multas || e.getSource() == panelAddLibro.multas){
+            cerrarPanelAddLibro();
+            cerrarPanelAdminLibros();
+            cerrarVerLibro();
+
+        }
+        
+        else if(e.getSource() == panelVistaLibro.reportes || e.getSource() == panelAdminLibros.reportes || e.getSource() == panelAddLibro.reportes){
+            cerrarPanelAddLibro();
+            cerrarPanelAdminLibros();
+            cerrarVerLibro();
+
+        }
+        
+        
+        //opciones panel Add libros
+        
+        else if(e.getSource() == panelAddLibro.btnExtenPanel){
+            panelAddLibro.panelExten.setVisible(true);
+            panelAddLibro.btnVolverMenu.setVisible(false);
+        }
+        else if(e.getSource() == panelAddLibro.btnExtenPanelOff){
+            panelAddLibro.btnVolverMenu.setVisible(true);
+            panelAddLibro.panelExten.setVisible(false);
+        }
+        
         
     }
 
@@ -236,6 +323,20 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         
         else if(e.getSource() == panelVistaLibro.btnActualizarLibro){
             modificarLibros(iDaoLibro.verLibros());
+        }
+        
+        //opciones de vista Add libro
+        
+        else if(e.getSource() == panelAddLibro.btnAddlibro){
+            addLibro();
+            cerrarPanelAddLibro();
+            visiblePanelAdmin();
+        }
+        
+        else if(e.getSource() == panelVistaLibro.btnPrestarLibro){
+            cerrarVerLibro();
+            ControladorPrestamos controladorPrestamos = new ControladorPrestamos();
+            controladorPrestamos.inicioCrearPrestamo(documentoLogin, nombre, panelVistaLibro.txtISBN.getText());
         }
 
     }
@@ -389,6 +490,27 @@ public class ControladorLibro  implements ActionListener, MouseListener{
             }
     }
     
+    public void addLibro(){
+        
+        Libro libro = new Libro();
+        
+        libro.setNombreLibro(panelAddLibro.txtNombreLibro.getText());
+        libro.setIsbnLibro(panelAddLibro.txtIsbn.getText());
+        libro.setNombreAutor(panelAddLibro.txtAutor.getText());
+        libro.setEdicionLibro(Integer.parseInt(panelAddLibro.txtEdicion.getText()));
+        libro.setAnoLibro(Integer.parseInt(panelAddLibro.txtAno.getText()));
+        libro.setEstanteLibro(panelAddLibro.txtEstante.getText());
+        libro.setFilaLibro(Integer.parseInt(panelAddLibro.txtFila.getText()));
+        
+        if(iDaoLibro.addLibro(libro)){
+            JOptionPane.showMessageDialog(null, "Libro añadido con éxito");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+        }
+        
+    }
+    
     
     
     
@@ -398,13 +520,51 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     public void inicio(int documento, String nombre){
         this.documentoLogin = documento;
         this.nombre = nombre;
-        panelAdminLibros.txtNombrePersona.setText(nombre);
+        
+        String nombreCorto = "";
+        
+        for(int i=0; i <= nombre.length(); i++){
+            if(nombre.charAt(i) == ' '){
+                i = nombre.length();
+            }
+            else{
+                nombreCorto += nombre.charAt(i);
+            }
+        }
+        this.nombreCorto = nombreCorto;
+        
+        panelAdminLibros.txtNombrePersona.setText(nombreCorto);
         panelAdminLibros.txtNombrePersona1.setText(nombre);
         panelAdminLibros.panelExten.setVisible(false);
         verLibros(iDaoLibro.verLibros());
         
         visiblePanelAdminLibros();
     }
+    
+    public void inicioAddLibros(int documento, String nombre){
+        
+        this.documentoLogin = documento;
+        this.nombre = nombre;
+        
+        String nombreCorto = "";
+        
+        for(int i=0; i <= nombre.length(); i++){
+            if(nombre.charAt(i) == ' '){
+                i = nombre.length();
+            }
+            else{
+                nombreCorto += nombre.charAt(i);
+            }
+        }
+        this.nombreCorto = nombreCorto;
+        
+        panelAddLibro.txtNombrePersona.setText(nombreCorto);
+        panelAddLibro.txtNombrePersona1.setText(nombre);
+        panelAddLibro.panelExten.setVisible(false);
+        
+        visiblePanelAddLibro();
+    }
+    
     
     public void setDatosLibro(ArrayList<Libro> arrayListLibro, int cantLibros, String busqueda){
         
@@ -613,7 +773,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         
     }
     
-     public void cerrarPanelAdminLibros(){
+    public void cerrarPanelAdminLibros(){
         panelAdminLibros.setVisible(false);
     }
 
@@ -633,7 +793,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
     }
     
     public void visibleVerLibro(){
-        panelVistaLibro.txtNombrePersona.setText(nombre);
+        panelVistaLibro.txtNombrePersona.setText(nombreCorto);
         panelVistaLibro.txtNombrePersona1.setText(nombre);
         panelVistaLibro.panelExten.setVisible(false);
         panelVistaLibro.setTitle("Panel Administrar Libros - Sigeli");
@@ -645,4 +805,15 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         panelVistaLibro.setVisible(false);
     }
     
+    public void visiblePanelAddLibro(){
+        
+        panelAddLibro.setTitle("Panel añadir Libros - Sigeli");
+        panelAddLibro.setLocationRelativeTo(null);
+        panelAddLibro.setVisible(true);
+        
+    }
+    
+    public void cerrarPanelAddLibro(){
+        panelAddLibro.setVisible(false);
+    }
 }

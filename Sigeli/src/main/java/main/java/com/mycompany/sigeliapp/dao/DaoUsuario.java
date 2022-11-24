@@ -102,5 +102,31 @@ public class DaoUsuario extends Conexion implements IDaoUsuario{
         }
     }
 
+    @Override
+    public boolean eliminarUsuario(int documento) {
+        String sql = "DELETE FROM " + Constantes.T_USUARIO + " WHERE " + Constantes.TU_DOCUMENTO + " =\"" + documento + "\"";
+        
+        try {            
+            PreparedStatement ps=getConexion().prepareStatement(sql);
+            ps.executeUpdate();
+            
+            System.out.println("Usuario Eliminado con éxito");
+            
+            return true;
+            
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar el usuario "+e.getMessage());
+            return false;
+        }finally{
+            try {
+                getConexion().close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexion "+e);
+            }
+        }
+    }
+    
+    
+
     
 }

@@ -9,12 +9,12 @@ package main.java.com.mycompany.sigeliapp.vistas;
  *
  * @author Eduar Xavier
  */
-public class PanelVistaLibro extends javax.swing.JFrame {
+public class PanelVistaPersona extends javax.swing.JFrame {
 
     /**
      * Creates new form PanelVistaLibro
      */
-    public PanelVistaLibro() {
+    public PanelVistaPersona() {
         initComponents();
     }
 
@@ -44,24 +44,19 @@ public class PanelVistaLibro extends javax.swing.JFrame {
         btnOpcionesPanelAdmin = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtEstante = new javax.swing.JTextField();
-        txtNombreLibro = new javax.swing.JTextField();
-        txtISBN = new javax.swing.JTextField();
-        txtEdicion = new javax.swing.JTextField();
-        txtAutor = new javax.swing.JTextField();
-        txtAno = new javax.swing.JTextField();
-        txtFila = new javax.swing.JTextField();
-        btnPrestarLibro = new javax.swing.JButton();
-        btnEliminarLibro = new javax.swing.JButton();
-        btnActualizarLibro = new javax.swing.JButton();
+        txtCarrera = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtDocumentoPersona = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        btnEliminarPersona = new javax.swing.JButton();
+        btnActualizarPersona = new javax.swing.JButton();
         txtDisponibilidad = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        txtCarreraTxt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -211,169 +206,125 @@ public class PanelVistaLibro extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Detalles del libro");
+        jLabel2.setText("Detalles de la persona");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, 270, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\inconoCopiar.png")); // NOI18N
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 210, -1, 40));
 
-        txtEstante.setBackground(new java.awt.Color(249, 249, 249));
-        txtEstante.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtEstante.setForeground(new java.awt.Color(51, 51, 51));
-        txtEstante.setText("jTextField1");
-        txtEstante.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
-        txtEstante.addActionListener(new java.awt.event.ActionListener() {
+        txtCarrera.setEditable(false);
+        txtCarrera.setBackground(new java.awt.Color(249, 249, 249));
+        txtCarrera.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtCarrera.setForeground(new java.awt.Color(102, 102, 102));
+        txtCarrera.setText("jTextField1");
+        txtCarrera.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        txtCarrera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEstanteActionPerformed(evt);
+                txtCarreraActionPerformed(evt);
             }
         });
-        getContentPane().add(txtEstante, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 290, 40));
+        getContentPane().add(txtCarrera, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 590, 40));
 
-        txtNombreLibro.setBackground(new java.awt.Color(249, 249, 249));
-        txtNombreLibro.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtNombreLibro.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreLibro.setText("jTextField1");
-        txtNombreLibro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
-        getContentPane().add(txtNombreLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 590, 40));
+        txtNombre.setBackground(new java.awt.Color(249, 249, 249));
+        txtNombre.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(51, 51, 51));
+        txtNombre.setText("jTextField1");
+        txtNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
+        getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 590, 40));
 
-        txtISBN.setEditable(false);
-        txtISBN.setBackground(new java.awt.Color(249, 249, 249));
-        txtISBN.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtISBN.setForeground(new java.awt.Color(102, 102, 102));
-        txtISBN.setText("jTextField1");
-        txtISBN.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
-        txtISBN.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        txtISBN.addActionListener(new java.awt.event.ActionListener() {
+        txtDocumentoPersona.setEditable(false);
+        txtDocumentoPersona.setBackground(new java.awt.Color(249, 249, 249));
+        txtDocumentoPersona.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtDocumentoPersona.setForeground(new java.awt.Color(102, 102, 102));
+        txtDocumentoPersona.setText("jTextField1");
+        txtDocumentoPersona.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        txtDocumentoPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtDocumentoPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtISBNActionPerformed(evt);
+                txtDocumentoPersonaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtISBN, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 590, 40));
+        getContentPane().add(txtDocumentoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 590, 40));
 
-        txtEdicion.setBackground(new java.awt.Color(249, 249, 249));
-        txtEdicion.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtEdicion.setForeground(new java.awt.Color(51, 51, 51));
-        txtEdicion.setText("jTextField1");
-        txtEdicion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
-        txtEdicion.addActionListener(new java.awt.event.ActionListener() {
+        txtTelefono.setEditable(false);
+        txtTelefono.setBackground(new java.awt.Color(249, 249, 249));
+        txtTelefono.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtTelefono.setForeground(new java.awt.Color(102, 102, 102));
+        txtTelefono.setText("jTextField1");
+        txtTelefono.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 1, true));
+        txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEdicionActionPerformed(evt);
+                txtTelefonoActionPerformed(evt);
             }
         });
-        getContentPane().add(txtEdicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 290, 40));
+        getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 350, 590, 40));
 
-        txtAutor.setBackground(new java.awt.Color(249, 249, 249));
-        txtAutor.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtAutor.setForeground(new java.awt.Color(51, 51, 51));
-        txtAutor.setText("jTextField1");
-        txtAutor.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
-        txtAutor.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.setBackground(new java.awt.Color(249, 249, 249));
+        txtEmail.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail.setText("jTextField1");
+        txtEmail.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAutorActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(txtAutor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 590, 40));
+        getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 590, 40));
 
-        txtAno.setBackground(new java.awt.Color(249, 249, 249));
-        txtAno.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtAno.setForeground(new java.awt.Color(51, 51, 51));
-        txtAno.setText("jTextField1");
-        txtAno.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
-        txtAno.addActionListener(new java.awt.event.ActionListener() {
+        btnEliminarPersona.setBackground(new java.awt.Color(249, 249, 249));
+        btnEliminarPersona.setForeground(new java.awt.Color(51, 51, 51));
+        btnEliminarPersona.setText("Eliminar");
+        btnEliminarPersona.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 0), 2, true));
+        btnEliminarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnEliminarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAnoActionPerformed(evt);
+                btnEliminarPersonaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtAno, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 290, 40));
+        getContentPane().add(btnEliminarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 550, 140, 30));
 
-        txtFila.setBackground(new java.awt.Color(249, 249, 249));
-        txtFila.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        txtFila.setForeground(new java.awt.Color(51, 51, 51));
-        txtFila.setText("jTextField1");
-        txtFila.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 1, true));
-        txtFila.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizarPersona.setBackground(new java.awt.Color(249, 249, 249));
+        btnActualizarPersona.setForeground(new java.awt.Color(51, 51, 51));
+        btnActualizarPersona.setText("Actualizar");
+        btnActualizarPersona.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 0), 2, true));
+        btnActualizarPersona.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnActualizarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFilaActionPerformed(evt);
+                btnActualizarPersonaActionPerformed(evt);
             }
         });
-        getContentPane().add(txtFila, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 430, 290, 40));
+        getContentPane().add(btnActualizarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 550, 140, 30));
 
-        btnPrestarLibro.setBackground(new java.awt.Color(126, 0, 0));
-        btnPrestarLibro.setForeground(new java.awt.Color(255, 255, 255));
-        btnPrestarLibro.setText("Prestar libro");
-        btnPrestarLibro.setBorder(null);
-        btnPrestarLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnPrestarLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrestarLibroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnPrestarLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 550, 250, 30));
-
-        btnEliminarLibro.setBackground(new java.awt.Color(249, 249, 249));
-        btnEliminarLibro.setForeground(new java.awt.Color(51, 51, 51));
-        btnEliminarLibro.setText("Eliminar");
-        btnEliminarLibro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 0), 2, true));
-        btnEliminarLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminarLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarLibroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnEliminarLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 140, 30));
-
-        btnActualizarLibro.setBackground(new java.awt.Color(249, 249, 249));
-        btnActualizarLibro.setForeground(new java.awt.Color(51, 51, 51));
-        btnActualizarLibro.setText("Actualizar");
-        btnActualizarLibro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 204, 0), 2, true));
-        btnActualizarLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnActualizarLibro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarLibroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnActualizarLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, 140, 30));
-
-        txtDisponibilidad.setForeground(new java.awt.Color(51, 51, 51));
+        txtDisponibilidad.setForeground(new java.awt.Color(204, 0, 0));
         txtDisponibilidad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtDisponibilidad.setText("jLabel3");
         getContentPane().add(txtDisponibilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 500, 580, -1));
 
-        jLabel4.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("Fila");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 140, -1));
-
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setText("Nombre del libro");
+        jLabel5.setText("Nombre");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel6.setText("ISBN del libro");
+        jLabel6.setText("Documento");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 140, -1));
 
         jLabel7.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Autor del libro");
+        jLabel7.setText("Email");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, 140, -1));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Edición");
+        jLabel8.setText("Telefono");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, 140, -1));
 
-        jLabel9.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel9.setText("Año del libro");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 330, 140, -1));
-
-        jLabel10.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel10.setText("Estante");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 140, -1));
+        txtCarreraTxt.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
+        txtCarreraTxt.setForeground(new java.awt.Color(51, 51, 51));
+        txtCarreraTxt.setText("Carrera");
+        getContentPane().add(txtCarreraTxt, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, 140, -1));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\interfazPaneles.png")); // NOI18N
@@ -382,41 +333,29 @@ public class PanelVistaLibro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtEstanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstanteActionPerformed
+    private void txtCarreraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCarreraActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEstanteActionPerformed
+    }//GEN-LAST:event_txtCarreraActionPerformed
 
-    private void txtISBNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtISBNActionPerformed
+    private void txtDocumentoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDocumentoPersonaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtISBNActionPerformed
+    }//GEN-LAST:event_txtDocumentoPersonaActionPerformed
 
-    private void txtEdicionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEdicionActionPerformed
+    private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtEdicionActionPerformed
+    }//GEN-LAST:event_txtTelefonoActionPerformed
 
-    private void txtAutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAutorActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void txtFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFilaActionPerformed
+    private void btnEliminarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarPersonaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFilaActionPerformed
+    }//GEN-LAST:event_btnEliminarPersonaActionPerformed
 
-    private void txtAnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnoActionPerformed
+    private void btnActualizarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarPersonaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAnoActionPerformed
-
-    private void btnEliminarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarLibroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarLibroActionPerformed
-
-    private void btnActualizarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarLibroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnActualizarLibroActionPerformed
-
-    private void btnPrestarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrestarLibroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnPrestarLibroActionPerformed
+    }//GEN-LAST:event_btnActualizarPersonaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -435,20 +374,21 @@ public class PanelVistaLibro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PanelVistaLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelVistaPersona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PanelVistaLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelVistaPersona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PanelVistaLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelVistaPersona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PanelVistaLibro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PanelVistaPersona.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PanelVistaLibro().setVisible(true);
+                new PanelVistaPersona().setVisible(true);
             }
         });
     }
@@ -457,38 +397,33 @@ public class PanelVistaLibro extends javax.swing.JFrame {
     public javax.swing.JLabel addLibros;
     public javax.swing.JLabel adminLibros;
     public javax.swing.JLabel adminUsuarios;
-    public javax.swing.JButton btnActualizarLibro;
+    public javax.swing.JButton btnActualizarPersona;
     public javax.swing.JLabel btnCerrarSesion;
-    public javax.swing.JButton btnEliminarLibro;
+    public javax.swing.JButton btnEliminarPersona;
     public javax.swing.JLabel btnExtenPanel;
     public javax.swing.JLabel btnExtenPanelOff;
     public javax.swing.JLabel btnOpcionesPanelAdmin;
     public javax.swing.JLabel btnOpcionesPanelAdmin1;
-    public javax.swing.JButton btnPrestarLibro;
     public javax.swing.JLabel btnVolverMenu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     public javax.swing.JLabel multas;
     public javax.swing.JPanel panelExten;
     public javax.swing.JLabel prestamos;
     public javax.swing.JLabel reportes;
-    public javax.swing.JTextField txtAno;
-    public javax.swing.JTextField txtAutor;
+    public javax.swing.JTextField txtCarrera;
+    public javax.swing.JLabel txtCarreraTxt;
     public javax.swing.JLabel txtDisponibilidad;
-    public javax.swing.JTextField txtEdicion;
-    public javax.swing.JTextField txtEstante;
-    public javax.swing.JTextField txtFila;
-    public javax.swing.JTextField txtISBN;
-    public javax.swing.JTextField txtNombreLibro;
+    public javax.swing.JTextField txtDocumentoPersona;
+    public javax.swing.JTextField txtEmail;
+    public javax.swing.JTextField txtNombre;
     public javax.swing.JLabel txtNombrePersona;
     public javax.swing.JLabel txtNombrePersona1;
+    public javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -151,6 +151,35 @@ public class DaoLibro extends Conexion implements IDaoLibro{
             }
         }
     }
+
+    @Override
+    public boolean cambioEstadoLibro(Libro libro) {
+        String sql = "UPDATE " + Constantes.T_LIBRO + " SET " + Constantes.TL_IDESTADO + "= ?" +
+                    " WHERE " + Constantes.T_LIBRO + "." + Constantes.TL_ISBN + "=\"" + libro.getIsbnLibro() + "\"";
+        
+        try {
+            PreparedStatement ps=getConexion().prepareStatement(sql);
+            ps.setInt(1, libro.getIdEstado());
+            ps.executeUpdate();
+            
+            System.out.println("Libro actualizado con éxito");
+            
+            return true;
+            
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar el libro "+e.getMessage());
+            return false;
+        }finally{
+            try {
+                getConexion().close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexion "+e);
+            }
+        }
+        
+    }
+    
+    
     
     
     

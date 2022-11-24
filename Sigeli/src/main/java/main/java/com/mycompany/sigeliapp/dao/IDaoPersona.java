@@ -13,4 +13,6 @@ public interface IDaoPersona {
     
     public boolean addPersona(Persona persona);
     
+    public boolean eliminarPersona(int documento);
+    
 }

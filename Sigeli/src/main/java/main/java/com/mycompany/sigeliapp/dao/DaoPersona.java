@@ -49,7 +49,7 @@ public class DaoPersona extends Conexion implements IDaoPersona{
 
     @Override
     public boolean editarPersona(Persona persona) {
-        String sql = "UPDATE " + Constantes.T_PERSONA+ " SET " + Constantes.TP_NOMBRE + "= ?," + Constantes.TP_EMAIL + "= ?" +
+        String sql = "UPDATE " + Constantes.T_PERSONA+ " SET " + Constantes.TP_NOMBRE + "= ?, " + Constantes.TP_EMAIL + "= ?" +
                     " WHERE " + Constantes.T_PERSONA + "." + Constantes.TP_DOCUMENTO + "=\"" + persona.getDocumentoPersona() +"\"";
         
         try {
@@ -106,7 +106,32 @@ public class DaoPersona extends Conexion implements IDaoPersona{
             }
         }
     }
-    
+
+    @Override
+    public boolean eliminarPersona(int documento) {
+        String sql = "DELETE FROM " + Constantes.T_PERSONA + " WHERE " + 
+                    Constantes.T_PERSONA + "." + Constantes.TPR_DOCUMENTO + "=" + "\"" + documento +"\"";
+        
+        try {            
+            PreparedStatement ps=getConexion().prepareStatement(sql);
+            ps.executeUpdate();
+            
+            System.out.println("Persona Eliminada con éxito");
+            
+            return true;
+            
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar la persona "+e.getMessage());
+            return false;
+        }finally{
+            try {
+                getConexion().close();
+            } catch (SQLException e) {
+                System.out.println("Error al cerrar la conexion "+e);
+            }
+        }
+    }
+
     
     
 }

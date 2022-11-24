@@ -12,4 +12,6 @@ public interface IDaoUsuario {
     
     public boolean cambioClave(Usuario usuario);
     
+    public boolean eliminarUsuario(int documento);
+    
 }

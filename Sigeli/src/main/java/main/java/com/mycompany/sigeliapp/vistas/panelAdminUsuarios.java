@@ -33,40 +33,40 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         btnCerrarSesion = new javax.swing.JLabel();
         btnExtenPanelOff = new javax.swing.JLabel();
         adminLibros = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        addLibros = new javax.swing.JLabel();
+        adminUsuarios = new javax.swing.JLabel();
+        prestamos = new javax.swing.JLabel();
+        multas = new javax.swing.JLabel();
+        reportes = new javax.swing.JLabel();
         panel4 = new javax.swing.JPanel();
         txtNombre4 = new javax.swing.JLabel();
-        txtNombreAutor4 = new javax.swing.JLabel();
-        txtDisponibilidadLibro4 = new javax.swing.JLabel();
-        txtAnoLibro4 = new javax.swing.JLabel();
+        txtDocumento4 = new javax.swing.JLabel();
+        txtTelefono4 = new javax.swing.JLabel();
+        txtEmail4 = new javax.swing.JLabel();
         panel5 = new javax.swing.JPanel();
         txtNombre5 = new javax.swing.JLabel();
-        txtNombreAutor5 = new javax.swing.JLabel();
-        txtDisponibilidadLibro5 = new javax.swing.JLabel();
-        txtAnoLibro5 = new javax.swing.JLabel();
+        txtDocumento5 = new javax.swing.JLabel();
+        txtTelefono5 = new javax.swing.JLabel();
+        txtEmail5 = new javax.swing.JLabel();
         backPagAdmin = new javax.swing.JButton();
         panel2 = new javax.swing.JPanel();
         txtNombre2 = new javax.swing.JLabel();
-        txtNombreAutor2 = new javax.swing.JLabel();
-        txtDisponibilidadLibro2 = new javax.swing.JLabel();
-        txtAnoLibro2 = new javax.swing.JLabel();
+        txtDocumento2 = new javax.swing.JLabel();
+        txtTelefono2 = new javax.swing.JLabel();
+        txtEmail2 = new javax.swing.JLabel();
         txtCantLibroAdmin = new javax.swing.JLabel();
         panel1 = new javax.swing.JPanel();
         txtNombre1 = new javax.swing.JLabel();
-        txtNombreAutor1 = new javax.swing.JLabel();
-        txtDisponibilidadLibro1 = new javax.swing.JLabel();
-        txtAnoLibro1 = new javax.swing.JLabel();
+        txtDocumento1 = new javax.swing.JLabel();
+        txtTelefono1 = new javax.swing.JLabel();
+        txtEmail1 = new javax.swing.JLabel();
         txtBusquedaAdmin = new javax.swing.JLabel();
         nextPagAdmin = new javax.swing.JButton();
         panel3 = new javax.swing.JPanel();
         txtNombre3 = new javax.swing.JLabel();
-        txtNombreAutor3 = new javax.swing.JLabel();
-        txtDisponibilidadLibro3 = new javax.swing.JLabel();
-        txtAnoLibro3 = new javax.swing.JLabel();
+        txtDocumento3 = new javax.swing.JLabel();
+        txtTelefono3 = new javax.swing.JLabel();
+        txtEmail3 = new javax.swing.JLabel();
         btnPegar = new javax.swing.JButton();
         btnBusqueda = new javax.swing.JButton();
         txtIngresoBusqueda = new javax.swing.JTextField();
@@ -104,35 +104,35 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         adminLibros.setText("Administrar libros");
         adminLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel5.setForeground(java.awt.Color.white);
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Añadir libros");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addLibros.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        addLibros.setForeground(java.awt.Color.white);
+        addLibros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addLibros.setText("Añadir libros");
+        addLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel6.setForeground(java.awt.Color.white);
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Administrar usuarios");
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        adminUsuarios.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        adminUsuarios.setForeground(java.awt.Color.white);
+        adminUsuarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        adminUsuarios.setText("Administrar usuarios");
+        adminUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel7.setForeground(java.awt.Color.white);
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Ver prestamos");
-        jLabel7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        prestamos.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        prestamos.setForeground(java.awt.Color.white);
+        prestamos.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        prestamos.setText("Ver prestamos");
+        prestamos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel8.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel8.setForeground(java.awt.Color.white);
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Ver Multas");
-        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        multas.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        multas.setForeground(java.awt.Color.white);
+        multas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        multas.setText("Ver Multas");
+        multas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        jLabel9.setForeground(java.awt.Color.white);
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Reportes");
-        jLabel9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reportes.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        reportes.setForeground(java.awt.Color.white);
+        reportes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        reportes.setText("Reportes");
+        reportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout panelExtenLayout = new javax.swing.GroupLayout(panelExten);
         panelExten.setLayout(panelExtenLayout);
@@ -160,12 +160,12 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
             .addGroup(panelExtenLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(adminUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(multas, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reportes, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         panelExtenLayout.setVerticalGroup(
@@ -180,15 +180,15 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addComponent(adminLibros)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel6)
+                .addComponent(adminUsuarios)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel5)
+                .addComponent(addLibros)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel7)
+                .addComponent(prestamos)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel8)
+                .addComponent(multas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel9)
+                .addComponent(reportes)
                 .addGap(268, 268, 268)
                 .addComponent(btnCerrarSesion)
                 .addGap(40, 40, 40))
@@ -204,14 +204,14 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         txtNombre4.setForeground(new java.awt.Color(51, 51, 51));
         txtNombre4.setText("jLabel3");
 
-        txtNombreAutor4.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor4.setText("jLabel4");
+        txtDocumento4.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento4.setText("jLabel4");
 
-        txtDisponibilidadLibro4.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro4.setText("jLabel7");
+        txtTelefono4.setForeground(new java.awt.Color(51, 51, 51));
+        txtTelefono4.setText("jLabel7");
 
-        txtAnoLibro4.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro4.setText("jLabel8");
+        txtEmail4.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail4.setText("jLabel8");
 
         javax.swing.GroupLayout panel4Layout = new javax.swing.GroupLayout(panel4);
         panel4.setLayout(panel4Layout);
@@ -221,11 +221,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNombre4, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtDocumento4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDisponibilidadLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtTelefono4, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                    .addComponent(txtEmail4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
         panel4Layout.setVerticalGroup(
@@ -236,11 +236,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                     .addGroup(panel4Layout.createSequentialGroup()
                         .addComponent(txtNombre4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor4))
+                        .addComponent(txtDocumento4))
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addComponent(txtDisponibilidadLibro4)
+                        .addComponent(txtTelefono4)
                         .addGap(14, 14, 14)
-                        .addComponent(txtAnoLibro4)))
+                        .addComponent(txtEmail4)))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -254,14 +254,14 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         txtNombre5.setForeground(new java.awt.Color(51, 51, 51));
         txtNombre5.setText("jLabel3");
 
-        txtNombreAutor5.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor5.setText("jLabel4");
+        txtDocumento5.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento5.setText("jLabel4");
 
-        txtDisponibilidadLibro5.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro5.setText("jLabel7");
+        txtTelefono5.setForeground(new java.awt.Color(51, 51, 51));
+        txtTelefono5.setText("jLabel7");
 
-        txtAnoLibro5.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro5.setText("jLabel8");
+        txtEmail5.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail5.setText("jLabel8");
 
         javax.swing.GroupLayout panel5Layout = new javax.swing.GroupLayout(panel5);
         panel5.setLayout(panel5Layout);
@@ -271,11 +271,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNombre5, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtDocumento5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDisponibilidadLibro5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtAnoLibro5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTelefono5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(17, 17, 17))
         );
         panel5Layout.setVerticalGroup(
@@ -284,15 +284,15 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtNombre5)
-                    .addComponent(txtDisponibilidadLibro5))
+                    .addComponent(txtTelefono5))
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel5Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor5)
+                        .addComponent(txtDocumento5)
                         .addContainerGap(16, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel5Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtAnoLibro5)
+                        .addComponent(txtEmail5)
                         .addContainerGap())))
         );
 
@@ -316,14 +316,14 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         txtNombre2.setForeground(new java.awt.Color(51, 51, 51));
         txtNombre2.setText("jLabel3");
 
-        txtNombreAutor2.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor2.setText("jLabel4");
+        txtDocumento2.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento2.setText("jLabel4");
 
-        txtDisponibilidadLibro2.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro2.setText("jLabel7");
+        txtTelefono2.setForeground(new java.awt.Color(51, 51, 51));
+        txtTelefono2.setText("jLabel7");
 
-        txtAnoLibro2.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro2.setText("jLabel8");
+        txtEmail2.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail2.setText("jLabel8");
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -333,11 +333,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNombre2, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtDocumento2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDisponibilidadLibro2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtTelefono2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                    .addComponent(txtEmail2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(13, Short.MAX_VALUE))
         );
         panel2Layout.setVerticalGroup(
@@ -348,11 +348,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addComponent(txtNombre2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor2))
+                        .addComponent(txtDocumento2))
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addComponent(txtDisponibilidadLibro2)
+                        .addComponent(txtTelefono2)
                         .addGap(14, 14, 14)
-                        .addComponent(txtAnoLibro2)))
+                        .addComponent(txtEmail2)))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -371,14 +371,14 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         txtNombre1.setForeground(new java.awt.Color(51, 51, 51));
         txtNombre1.setText("jLabel3");
 
-        txtNombreAutor1.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor1.setText("jLabel4");
+        txtDocumento1.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento1.setText("jLabel4");
 
-        txtDisponibilidadLibro1.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro1.setText("jLabel7");
+        txtTelefono1.setForeground(new java.awt.Color(51, 51, 51));
+        txtTelefono1.setText("jLabel7");
 
-        txtAnoLibro1.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro1.setText("jLabel8");
+        txtEmail1.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail1.setText("jLabel8");
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -388,11 +388,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNombre1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtDocumento1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDisponibilidadLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtTelefono1, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                    .addComponent(txtEmail1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(15, 15, 15))
         );
         panel1Layout.setVerticalGroup(
@@ -403,12 +403,12 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNombre1)
-                            .addComponent(txtDisponibilidadLibro1))
+                            .addComponent(txtTelefono1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor1))
+                        .addComponent(txtDocumento1))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
-                        .addComponent(txtAnoLibro1)))
+                        .addComponent(txtEmail1)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -437,14 +437,14 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         txtNombre3.setForeground(new java.awt.Color(51, 51, 51));
         txtNombre3.setText("jLabel3");
 
-        txtNombreAutor3.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor3.setText("jLabel4");
+        txtDocumento3.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento3.setText("jLabel4");
 
-        txtDisponibilidadLibro3.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro3.setText("jLabel7");
+        txtTelefono3.setForeground(new java.awt.Color(51, 51, 51));
+        txtTelefono3.setText("jLabel7");
 
-        txtAnoLibro3.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro3.setText("jLabel8");
+        txtEmail3.setForeground(new java.awt.Color(51, 51, 51));
+        txtEmail3.setText("jLabel8");
 
         javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
         panel3.setLayout(panel3Layout);
@@ -454,11 +454,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(txtNombre3, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtDocumento3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDisponibilidadLibro3, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtTelefono3, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                    .addComponent(txtEmail3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         panel3Layout.setVerticalGroup(
@@ -469,11 +469,11 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                     .addGroup(panel3Layout.createSequentialGroup()
                         .addComponent(txtNombre3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor3))
+                        .addComponent(txtDocumento3))
                     .addGroup(panel3Layout.createSequentialGroup()
-                        .addComponent(txtDisponibilidadLibro3)
+                        .addComponent(txtTelefono3)
                         .addGap(14, 14, 14)
-                        .addComponent(txtAnoLibro3)))
+                        .addComponent(txtEmail3)))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -592,7 +592,9 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel addLibros;
     public javax.swing.JLabel adminLibros;
+    public javax.swing.JLabel adminUsuarios;
     public javax.swing.JButton backPagAdmin;
     public javax.swing.JButton btnBusqueda;
     public javax.swing.JLabel btnCerrarSesion;
@@ -604,11 +606,7 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
     public javax.swing.JLabel btnVolverMenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    public javax.swing.JLabel jLabel5;
-    public javax.swing.JLabel jLabel6;
-    public javax.swing.JLabel jLabel7;
-    public javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLabel9;
+    public javax.swing.JLabel multas;
     public javax.swing.JButton nextPagAdmin;
     public javax.swing.JPanel panel1;
     public javax.swing.JPanel panel2;
@@ -616,30 +614,32 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
     public javax.swing.JPanel panel4;
     public javax.swing.JPanel panel5;
     public javax.swing.JPanel panelExten;
-    public javax.swing.JLabel txtAnoLibro1;
-    public javax.swing.JLabel txtAnoLibro2;
-    public javax.swing.JLabel txtAnoLibro3;
-    public javax.swing.JLabel txtAnoLibro4;
-    public javax.swing.JLabel txtAnoLibro5;
+    public javax.swing.JLabel prestamos;
+    public javax.swing.JLabel reportes;
     public javax.swing.JLabel txtBusquedaAdmin;
     public javax.swing.JLabel txtCantLibroAdmin;
-    public javax.swing.JLabel txtDisponibilidadLibro1;
-    public javax.swing.JLabel txtDisponibilidadLibro2;
-    public javax.swing.JLabel txtDisponibilidadLibro3;
-    public javax.swing.JLabel txtDisponibilidadLibro4;
-    public javax.swing.JLabel txtDisponibilidadLibro5;
+    public javax.swing.JLabel txtDocumento1;
+    public javax.swing.JLabel txtDocumento2;
+    public javax.swing.JLabel txtDocumento3;
+    public javax.swing.JLabel txtDocumento4;
+    public javax.swing.JLabel txtDocumento5;
+    public javax.swing.JLabel txtEmail1;
+    public javax.swing.JLabel txtEmail2;
+    public javax.swing.JLabel txtEmail3;
+    public javax.swing.JLabel txtEmail4;
+    public javax.swing.JLabel txtEmail5;
     public javax.swing.JTextField txtIngresoBusqueda;
     public javax.swing.JLabel txtNombre1;
     public javax.swing.JLabel txtNombre2;
     public javax.swing.JLabel txtNombre3;
     public javax.swing.JLabel txtNombre4;
     public javax.swing.JLabel txtNombre5;
-    public javax.swing.JLabel txtNombreAutor1;
-    public javax.swing.JLabel txtNombreAutor2;
-    public javax.swing.JLabel txtNombreAutor3;
-    public javax.swing.JLabel txtNombreAutor4;
-    public javax.swing.JLabel txtNombreAutor5;
     public javax.swing.JLabel txtNombrePersona;
     public javax.swing.JLabel txtNombrePersona1;
+    public javax.swing.JLabel txtTelefono1;
+    public javax.swing.JLabel txtTelefono2;
+    public javax.swing.JLabel txtTelefono3;
+    public javax.swing.JLabel txtTelefono4;
+    public javax.swing.JLabel txtTelefono5;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,11 +14,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import main.java.com.mycompany.sigeliapp.dao.DaoCarrera;
 import main.java.com.mycompany.sigeliapp.dao.DaoPersona;
+import main.java.com.mycompany.sigeliapp.dao.DaoUsuario;
+import main.java.com.mycompany.sigeliapp.dao.IDaoCarrera;
 import main.java.com.mycompany.sigeliapp.dao.IDaoPersona;
+import main.java.com.mycompany.sigeliapp.dao.IDaoUsuario;
 import main.java.com.mycompany.sigeliapp.modelos.Carrera;
 import main.java.com.mycompany.sigeliapp.modelos.Persona;
 import main.java.com.mycompany.sigeliapp.modelos.utiles.Portapapeles;
+import main.java.com.mycompany.sigeliapp.vistas.PanelVistaPersona;
 import main.java.com.mycompany.sigeliapp.vistas.panelAdminUsuarios;
 
 /**
@@ -28,20 +34,26 @@ import main.java.com.mycompany.sigeliapp.vistas.panelAdminUsuarios;
 public class ControladorPersona implements ActionListener, MouseListener{
 
     private panelAdminUsuarios panelAdminUsuario;
+    private PanelVistaPersona panelVerPersona;
 
     private IDaoPersona iDaoPersona;
+    private IDaoCarrera iDaoCarrera;
+    private IDaoUsuario iDaoUsuario;
     
     private int documentoLogin;
-    private String nombre;
+    private String nombre, nombreCorto;
     private boolean busqueda = false;
     private int cantMenorPersona = 0, cantMayorPersona = 4, cantLibrosPag = 0;
 
     
     public ControladorPersona() {
         this.panelAdminUsuario = new panelAdminUsuarios();
+        this.panelVerPersona = new PanelVistaPersona();
         
 
         this.iDaoPersona = new DaoPersona();
+        this.iDaoCarrera = new DaoCarrera();
+        this.iDaoUsuario = new DaoUsuario();
         
         //Acciones del panel admin Usuarios
         this.panelAdminUsuario.btnPegar.addActionListener(this);
@@ -61,12 +73,32 @@ public class ControladorPersona implements ActionListener, MouseListener{
         this.panelAdminUsuario.panel4.addMouseListener(this);
         this.panelAdminUsuario.panel5.addMouseListener(this);
         
+        //Acciones del panel ver usuarios
+        
+        this.panelVerPersona.btnExtenPanel.addMouseListener(this);
+        this.panelVerPersona.btnExtenPanelOff.addMouseListener(this);
+        this.panelVerPersona.btnVolverMenu.addMouseListener(this);
+        this.panelVerPersona.btnActualizarPersona.addMouseListener(this);
+        this.panelVerPersona.btnEliminarPersona.addMouseListener(this);
+        this.panelVerPersona.btnCerrarSesion.addMouseListener(this);
+        this.panelVerPersona.txtDocumentoPersona.addMouseListener(this);
+        
         //Acciones del panel extendido
         
-        this.panelAdminUsuario.adminLibros.addMouseListener(this);
+        this.panelVerPersona.adminLibros.addMouseListener(this);
+        this.panelVerPersona.adminUsuarios.addMouseListener(this);
+        this.panelVerPersona.addLibros.addMouseListener(this);
+        this.panelVerPersona.prestamos.addMouseListener(this);
+        this.panelVerPersona.multas.addMouseListener(this);
+        this.panelVerPersona.reportes.addMouseListener(this);
         
-        
         this.panelAdminUsuario.adminLibros.addMouseListener(this);
+        this.panelAdminUsuario.adminUsuarios.addMouseListener(this);
+        this.panelAdminUsuario.addLibros.addMouseListener(this);
+        this.panelAdminUsuario.prestamos.addMouseListener(this);
+        this.panelAdminUsuario.multas.addMouseListener(this);
+        this.panelAdminUsuario.reportes.addMouseListener(this);
+        
     }
 
     @Override
@@ -128,6 +160,122 @@ public class ControladorPersona implements ActionListener, MouseListener{
             visiblePanelAdmin();
         }
         
+        //Acciones del panel ver usuario
+        
+        else if(e.getSource() == panelAdminUsuario.panel1){
+            verPersona(panelAdminUsuario.txtNombre1.getText());
+            cerrarPanelAdminUsuario();
+            visiblePanelVerPersona();
+        }
+        
+        else if(e.getSource() == panelAdminUsuario.panel2){
+            verPersona(panelAdminUsuario.txtNombre2.getText());
+            cerrarPanelAdminUsuario();
+            visiblePanelVerPersona();
+        }
+        
+        else if(e.getSource() == panelAdminUsuario.panel3){
+            verPersona(panelAdminUsuario.txtNombre3.getText());
+            cerrarPanelAdminUsuario();
+            visiblePanelVerPersona();
+        }
+        
+        else if(e.getSource() == panelAdminUsuario.panel4){
+            verPersona(panelAdminUsuario.txtNombre4.getText());
+            cerrarPanelAdminUsuario();
+            visiblePanelVerPersona();
+        }
+        
+        else if(e.getSource() == panelAdminUsuario.panel5){
+            verPersona(panelAdminUsuario.txtNombre5.getText());
+            cerrarPanelAdminUsuario();
+            visiblePanelVerPersona();
+        }
+        
+        else if(e.getSource() == panelVerPersona.txtDocumentoPersona){
+            Portapapeles.copiar(panelVerPersona.txtDocumentoPersona.getText());
+            JOptionPane.showMessageDialog(null, "Documento copiado al portapapeles");
+        }
+        
+        else if(e.getSource() == panelVerPersona.btnExtenPanel){
+            panelVerPersona.panelExten.setVisible(true);
+            panelVerPersona.btnVolverMenu.setVisible(false);
+        }
+        
+        else if(e.getSource() == panelVerPersona.btnExtenPanelOff){
+            panelVerPersona.btnVolverMenu.setVisible(true);
+            panelVerPersona.panelExten.setVisible(false);
+            
+        }
+        else if(e.getSource() == panelVerPersona.btnVolverMenu){
+            cerrarPanelVerPersona();
+            visiblePanelAdminUsuario();
+        }
+        
+        else if(e.getSource() == panelVerPersona.btnActualizarPersona){
+            
+            modificarPersona();
+            
+        }
+        
+        else if(e.getSource() == panelVerPersona.btnEliminarPersona){
+            
+            eliminarPersona();
+                    
+        }
+        
+        else if(e.getSource() == panelVerPersona.btnCerrarSesion || e.getSource() == panelAdminUsuario.btnCerrarSesion){
+            ControladorLogin controladorLogin = new ControladorLogin();
+            cerrarPanelAdminUsuario();
+            cerrarPanelVerPersona();
+            controladorLogin.visibleLogin();
+        }
+        
+        
+        //Opciones panel Extendido
+        
+        else if(e.getSource() == panelVerPersona.adminLibros || e.getSource() == panelAdminUsuario.adminLibros){
+            cerrarPanelAdminUsuario();
+            cerrarPanelVerPersona();
+            visiblePanelAdminLibros();
+        }
+        
+        else if(e.getSource() == panelVerPersona.adminUsuarios || e.getSource() == panelAdminUsuario.adminUsuarios){
+            cerrarPanelAdminUsuario();
+            cerrarPanelVerPersona();
+            
+            visiblePanelAdminUsuario();
+            
+        }
+        
+        else if(e.getSource() == panelVerPersona.addLibros || e.getSource() == panelAdminUsuario.addLibros){
+            cerrarPanelAdminUsuario();
+            cerrarPanelVerPersona();
+            
+            ControladorLibro controladorLibro = new ControladorLibro();
+            
+            controladorLibro.inicioAddLibros(documentoLogin, nombre);
+        }
+        
+        //Sin controladores
+        
+        else if(e.getSource() == panelVerPersona.prestamos || e.getSource() == panelAdminUsuario.prestamos){
+            cerrarPanelAdminUsuario();
+            cerrarPanelVerPersona();
+
+        }
+        
+        else if(e.getSource() == panelVerPersona.multas || e.getSource() == panelAdminUsuario.multas){
+            cerrarPanelAdminUsuario();
+            cerrarPanelVerPersona();
+
+        }
+        
+        else if(e.getSource() == panelVerPersona.reportes || e.getSource() == panelAdminUsuario.reportes){
+            cerrarPanelAdminUsuario();
+            cerrarPanelVerPersona();
+
+        }
         
     }
 
@@ -153,6 +301,38 @@ public class ControladorPersona implements ActionListener, MouseListener{
     
     
     
+    public void modificarPersona(){
+        Persona persona = new Persona();
+           
+        persona.setDocumentoPersona(Integer.parseInt(panelVerPersona.txtDocumentoPersona.getText()));
+        persona.setNombrePersona(panelVerPersona.txtNombre.getText());
+        persona.setEmailPersona(panelVerPersona.txtEmail.getText());
+
+        if(iDaoPersona.editarPersona(persona)){
+            JOptionPane.showMessageDialog(null, "Persona editada con éxito");
+            verPersonas(iDaoPersona.verPersonas());
+            cerrarPanelVerPersona();
+            visiblePanelAdminUsuario();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+        }
+    }
+    
+    public void eliminarPersona(){
+        
+        if(iDaoPersona.eliminarPersona(Integer.parseInt(panelVerPersona.txtDocumentoPersona.getText()))){
+            
+                iDaoUsuario.eliminarUsuario(Integer.parseInt(panelVerPersona.txtDocumentoPersona.getText()));
+                JOptionPane.showMessageDialog(null, "Persona eliminada con éxito");
+                verPersonas(iDaoPersona.verPersonas());
+                cerrarPanelVerPersona();
+                visiblePanelAdminUsuario();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+        }
+    }
     
     public void verPersonas(ArrayList<Persona> arrayListPersona) {
         
@@ -178,7 +358,7 @@ public class ControladorPersona implements ActionListener, MouseListener{
         
         cantMenorPersona = cant;
         
-        setDatosLibro(arrayListPersonaEnviar, arrayListPersonaEnviar.size(), "");
+        setDatosPersona(arrayListPersonaEnviar, arrayListPersonaEnviar.size(), "");
         this.busqueda = false;
         
 
@@ -210,11 +390,39 @@ public class ControladorPersona implements ActionListener, MouseListener{
                 }
             } 
             
-            setDatosLibro(arrayListPersonaEnviar, arrayListPersonaEnviar.size(), busqueda);
+            setDatosPersona(arrayListPersonaEnviar, arrayListPersonaEnviar.size(), busqueda);
         }
         
         
         
+    }
+    
+    public void verPersona(String nombre){
+        for(Persona persona : iDaoPersona.verPersonas()){
+            if(persona.getNombrePersona().equals(nombre)){
+                panelVerPersona.txtNombre.setText(persona.getNombrePersona());
+                panelVerPersona.txtDocumentoPersona.setText(String.valueOf(persona.getDocumentoPersona()));
+                panelVerPersona.txtTelefono.setText(persona.getTelefono());
+                panelVerPersona.txtEmail.setText(persona.getEmailPersona());
+                
+                if(persona.getIdCarrera() == 0){
+                    panelVerPersona.txtCarrera.setVisible(false);
+                    panelVerPersona.txtCarreraTxt.setVisible(false);
+                    panelVerPersona.txtDisponibilidad.setText("Este usuario es un administrador");
+                }
+                else{
+                    panelVerPersona.txtCarrera.setVisible(true);
+                    panelVerPersona.txtCarreraTxt.setVisible(true);
+                    
+                    for(Carrera carrera : iDaoCarrera.verCarreras()){
+                        if(carrera.getIdCarrera() == persona.getIdCarrera()){
+                            panelVerPersona.txtCarrera.setText(carrera.getCarrera());
+                        }
+                    }
+                    panelVerPersona.txtDisponibilidad.setText("");
+                }
+            }
+        }
     }
     
     
@@ -225,7 +433,20 @@ public class ControladorPersona implements ActionListener, MouseListener{
     public void inicio(int documento, String nombre){
         this.documentoLogin = documento;
         this.nombre = nombre;
-        panelAdminUsuario.txtNombrePersona.setText(nombre);
+        
+        String nombreCorto = "";
+        
+        for(int i=0; i <= nombre.length(); i++){
+            if(nombre.charAt(i) == ' '){
+                i = nombre.length();
+            }
+            else{
+                nombreCorto += nombre.charAt(i);
+            }
+        }
+        this.nombreCorto = nombreCorto;
+        
+        panelAdminUsuario.txtNombrePersona.setText(nombreCorto);
         panelAdminUsuario.txtNombrePersona1.setText(nombre);
         panelAdminUsuario.panelExten.setVisible(false);
         verPersonas(iDaoPersona.verPersonas());
@@ -257,10 +478,21 @@ public class ControladorPersona implements ActionListener, MouseListener{
         panelAdminUsuario.setVisible(false);
     }
     
+    public void visiblePanelVerPersona(){
+        panelVerPersona.setTitle("Detalles de la persona");
+        panelVerPersona.txtNombrePersona.setText(nombreCorto);
+        panelVerPersona.txtNombrePersona1.setText(nombre);
+        panelVerPersona.panelExten.setVisible(false);
+        panelVerPersona.setLocationRelativeTo(null);
+        panelVerPersona.setVisible(true);
+    }
     
     
+    public void cerrarPanelVerPersona(){
+        panelVerPersona.setVisible(false);
+    }
     
-     public void setDatosLibro(ArrayList<Persona> arrayListPersona, int cantPersonas, String busqueda){
+     public void setDatosPersona(ArrayList<Persona> arrayListPersona, int cantPersonas, String busqueda){
         
         if(this.busqueda){
             panelAdminUsuario.nextPagAdmin.setVisible(false);
@@ -293,11 +525,11 @@ public class ControladorPersona implements ActionListener, MouseListener{
            //nombre
            panelAdminUsuario.txtNombre1.setText(arrayListPersona.get(0).getNombrePersona());
            //documento
-           panelAdminUsuario.txtNombreAutor1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
            //email
-           panelAdminUsuario.txtAnoLibro1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
+           panelAdminUsuario.txtEmail1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
            //telefono
-           panelAdminUsuario.txtDisponibilidadLibro1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
+           panelAdminUsuario.txtTelefono1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
            
         }
         else if(arrayListPersona.size() == 2){
@@ -315,14 +547,14 @@ public class ControladorPersona implements ActionListener, MouseListener{
            panelAdminUsuario.txtNombre1.setText(arrayListPersona.get(0).getNombrePersona());
            panelAdminUsuario.txtNombre2.setText(arrayListPersona.get(1).getNombrePersona());
            //documento
-           panelAdminUsuario.txtNombreAutor1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
            //email
-           panelAdminUsuario.txtAnoLibro1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
+           panelAdminUsuario.txtEmail1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
+           panelAdminUsuario.txtEmail2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
            //telefono
-           panelAdminUsuario.txtDisponibilidadLibro1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
+           panelAdminUsuario.txtTelefono1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
+           panelAdminUsuario.txtTelefono2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
         }
         else if(arrayListPersona.size() == 3){
             panelAdminUsuario.nextPagAdmin.setVisible(false);
@@ -340,17 +572,17 @@ public class ControladorPersona implements ActionListener, MouseListener{
            panelAdminUsuario.txtNombre2.setText(arrayListPersona.get(1).getNombrePersona());
            panelAdminUsuario.txtNombre3.setText(arrayListPersona.get(2).getNombrePersona());
            //documento
-           panelAdminUsuario.txtNombreAutor1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor3.setText("Documento: " +arrayListPersona.get(2).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento3.setText("Documento: " +arrayListPersona.get(2).getDocumentoPersona());
            //email
-           panelAdminUsuario.txtAnoLibro1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro3.setText("Email: " + String.valueOf(arrayListPersona.get(2).getEmailPersona()));
+           panelAdminUsuario.txtEmail1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
+           panelAdminUsuario.txtEmail2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
+           panelAdminUsuario.txtEmail3.setText("Email: " + String.valueOf(arrayListPersona.get(2).getEmailPersona()));
            //telefono
-           panelAdminUsuario.txtDisponibilidadLibro1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro3.setText("Telefono: " + arrayListPersona.get(2).getTelefono() );
+           panelAdminUsuario.txtTelefono1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
+           panelAdminUsuario.txtTelefono2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
+           panelAdminUsuario.txtTelefono3.setText("Telefono: " + arrayListPersona.get(2).getTelefono() );
         }
         else if(arrayListPersona.size() == 4){
             panelAdminUsuario.nextPagAdmin.setVisible(false);
@@ -369,20 +601,20 @@ public class ControladorPersona implements ActionListener, MouseListener{
            panelAdminUsuario.txtNombre3.setText(arrayListPersona.get(2).getNombrePersona());
            panelAdminUsuario.txtNombre4.setText(arrayListPersona.get(3).getNombrePersona());
            //documento
-           panelAdminUsuario.txtNombreAutor1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor3.setText("Documento: " +arrayListPersona.get(2).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor4.setText("Documento: " +arrayListPersona.get(3).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento3.setText("Documento: " +arrayListPersona.get(2).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento4.setText("Documento: " +arrayListPersona.get(3).getDocumentoPersona());
            //email
-           panelAdminUsuario.txtAnoLibro1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro3.setText("Email: " + String.valueOf(arrayListPersona.get(2).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro4.setText("Email: " + String.valueOf(arrayListPersona.get(3).getEmailPersona()));
+           panelAdminUsuario.txtEmail1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
+           panelAdminUsuario.txtEmail2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
+           panelAdminUsuario.txtEmail3.setText("Email: " + String.valueOf(arrayListPersona.get(2).getEmailPersona()));
+           panelAdminUsuario.txtEmail4.setText("Email: " + String.valueOf(arrayListPersona.get(3).getEmailPersona()));
            //telefono
-           panelAdminUsuario.txtDisponibilidadLibro1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro3.setText("Telefono: " + arrayListPersona.get(2).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro4.setText("Telefono: " + arrayListPersona.get(4).getTelefono() );
+           panelAdminUsuario.txtTelefono1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
+           panelAdminUsuario.txtTelefono2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
+           panelAdminUsuario.txtTelefono3.setText("Telefono: " + arrayListPersona.get(2).getTelefono() );
+           panelAdminUsuario.txtTelefono4.setText("Telefono: " + arrayListPersona.get(3).getTelefono() );
         }
         else if(arrayListPersona.size() == 5){
             panelAdminUsuario.nextPagAdmin.setVisible(true);
@@ -406,23 +638,23 @@ public class ControladorPersona implements ActionListener, MouseListener{
            panelAdminUsuario.txtNombre4.setText(arrayListPersona.get(3).getNombrePersona());
            panelAdminUsuario.txtNombre5.setText(arrayListPersona.get(4).getNombrePersona());
            //documento
-           panelAdminUsuario.txtNombreAutor1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor3.setText("Documento: " +arrayListPersona.get(2).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor4.setText("Documento: " +arrayListPersona.get(3).getDocumentoPersona());
-           panelAdminUsuario.txtNombreAutor5.setText("Documento: " +arrayListPersona.get(4).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento1.setText("Documento: " +arrayListPersona.get(0).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento2.setText("Documento: " +arrayListPersona.get(1).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento3.setText("Documento: " +arrayListPersona.get(2).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento4.setText("Documento: " +arrayListPersona.get(3).getDocumentoPersona());
+           panelAdminUsuario.txtDocumento5.setText("Documento: " +arrayListPersona.get(4).getDocumentoPersona());
            //email
-           panelAdminUsuario.txtAnoLibro1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro3.setText("Email: " + String.valueOf(arrayListPersona.get(2).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro4.setText("Email: " + String.valueOf(arrayListPersona.get(3).getEmailPersona()));
-           panelAdminUsuario.txtAnoLibro5.setText("Email: " + String.valueOf(arrayListPersona.get(4).getEmailPersona()));
+           panelAdminUsuario.txtEmail1.setText("Email: " + String.valueOf(arrayListPersona.get(0).getEmailPersona()));
+           panelAdminUsuario.txtEmail2.setText("Email: " + String.valueOf(arrayListPersona.get(1).getEmailPersona()));
+           panelAdminUsuario.txtEmail3.setText("Email: " + String.valueOf(arrayListPersona.get(2).getEmailPersona()));
+           panelAdminUsuario.txtEmail4.setText("Email: " + String.valueOf(arrayListPersona.get(3).getEmailPersona()));
+           panelAdminUsuario.txtEmail5.setText("Email: " + String.valueOf(arrayListPersona.get(4).getEmailPersona()));
            //telefono
-           panelAdminUsuario.txtDisponibilidadLibro1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro3.setText("Telefono: " + arrayListPersona.get(2).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro4.setText("Telefono: " + arrayListPersona.get(4).getTelefono() );
-           panelAdminUsuario.txtDisponibilidadLibro5.setText("Telefono: " + arrayListPersona.get(5).getTelefono() );
+           panelAdminUsuario.txtTelefono1.setText("Telefono: " + arrayListPersona.get(0).getTelefono() );
+           panelAdminUsuario.txtTelefono2.setText("Telefono: " + arrayListPersona.get(1).getTelefono() );
+           panelAdminUsuario.txtTelefono3.setText("Telefono: " + arrayListPersona.get(2).getTelefono() );
+           panelAdminUsuario.txtTelefono4.setText("Telefono: " + arrayListPersona.get(4).getTelefono() );
+           panelAdminUsuario.txtTelefono5.setText("Telefono: " + arrayListPersona.get(5).getTelefono() );
         }
         else{
            panelAdminUsuario.panel1.setVisible(false);

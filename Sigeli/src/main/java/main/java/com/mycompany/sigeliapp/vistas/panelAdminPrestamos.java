@@ -9,12 +9,12 @@ package main.java.com.mycompany.sigeliapp.vistas;
  *
  * @author Eduar Xavier
  */
-public class panelAdminLibros extends javax.swing.JFrame {
+public class panelAdminPrestamos extends javax.swing.JFrame {
 
     /**
      * Creates new form panelAdminLibros
      */
-    public panelAdminLibros() {
+    public panelAdminPrestamos() {
         initComponents();
     }
 
@@ -33,55 +33,42 @@ public class panelAdminLibros extends javax.swing.JFrame {
         btnCerrarSesion = new javax.swing.JLabel();
         btnExtenPanelOff = new javax.swing.JLabel();
         adminLibros = new javax.swing.JLabel();
-        addLibro = new javax.swing.JLabel();
+        addLibros = new javax.swing.JLabel();
         adminUsuarios = new javax.swing.JLabel();
         prestamos = new javax.swing.JLabel();
         multas = new javax.swing.JLabel();
         reportes = new javax.swing.JLabel();
         panel4 = new javax.swing.JPanel();
-        txtNombreLibro4 = new javax.swing.JLabel();
-        txtNombreAutor4 = new javax.swing.JLabel();
-        txtEstanteLibro4 = new javax.swing.JLabel();
-        txtFilaLibro4 = new javax.swing.JLabel();
-        txtDisponibilidadLibro4 = new javax.swing.JLabel();
-        txtAnoLibro4 = new javax.swing.JLabel();
-        jSeparator6 = new javax.swing.JSeparator();
+        txtNombre4 = new javax.swing.JLabel();
+        txtDocumento4 = new javax.swing.JLabel();
+        fechaPrestamo4 = new javax.swing.JLabel();
+        fechaEntrega4 = new javax.swing.JLabel();
         panel5 = new javax.swing.JPanel();
-        txtNombreLibro5 = new javax.swing.JLabel();
-        txtNombreAutor5 = new javax.swing.JLabel();
-        txtEstanteLibro5 = new javax.swing.JLabel();
-        txtFilaLibro5 = new javax.swing.JLabel();
-        txtDisponibilidadLibro5 = new javax.swing.JLabel();
-        txtAnoLibro5 = new javax.swing.JLabel();
-        jSeparator7 = new javax.swing.JSeparator();
+        txtNombre5 = new javax.swing.JLabel();
+        txtDocumento5 = new javax.swing.JLabel();
+        fechaPrestamo5 = new javax.swing.JLabel();
+        fechaEntrega5 = new javax.swing.JLabel();
         backPagAdmin = new javax.swing.JButton();
         panel2 = new javax.swing.JPanel();
-        txtNombreLibro2 = new javax.swing.JLabel();
-        txtNombreAutor2 = new javax.swing.JLabel();
-        txtEstanteLibro2 = new javax.swing.JLabel();
-        txtFilaLibro2 = new javax.swing.JLabel();
-        txtDisponibilidadLibro2 = new javax.swing.JLabel();
-        txtAnoLibro2 = new javax.swing.JLabel();
-        jSeparator4 = new javax.swing.JSeparator();
+        txtNombre2 = new javax.swing.JLabel();
+        txtDocumento2 = new javax.swing.JLabel();
+        fechaPrestamo2 = new javax.swing.JLabel();
+        fechaEntrega2 = new javax.swing.JLabel();
         txtCantLibroAdmin = new javax.swing.JLabel();
         panel1 = new javax.swing.JPanel();
-        txtNombreLibro1 = new javax.swing.JLabel();
-        txtNombreAutor1 = new javax.swing.JLabel();
-        txtEstanteLibro1 = new javax.swing.JLabel();
-        txtFilaLibro1 = new javax.swing.JLabel();
-        txtDisponibilidadLibro1 = new javax.swing.JLabel();
-        txtAnoLibro1 = new javax.swing.JLabel();
-        jSeparator3 = new javax.swing.JSeparator();
+        txtNombre1 = new javax.swing.JLabel();
+        txtDocumento1 = new javax.swing.JLabel();
+        fechaPrestamo1 = new javax.swing.JLabel();
+        fechaEntrega1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         txtBusquedaAdmin = new javax.swing.JLabel();
         nextPagAdmin = new javax.swing.JButton();
         panel3 = new javax.swing.JPanel();
-        txtNombreLibro3 = new javax.swing.JLabel();
-        txtNombreAutor3 = new javax.swing.JLabel();
-        txtEstanteLibro3 = new javax.swing.JLabel();
-        txtFilaLibro3 = new javax.swing.JLabel();
-        txtDisponibilidadLibro3 = new javax.swing.JLabel();
-        txtAnoLibro3 = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
+        txtNombre3 = new javax.swing.JLabel();
+        txtDocumento3 = new javax.swing.JLabel();
+        fechaPrestamo3 = new javax.swing.JLabel();
+        fechaEntrega3 = new javax.swing.JLabel();
+        btnCrearPrestamo = new javax.swing.JButton();
         btnPegar = new javax.swing.JButton();
         btnBusqueda = new javax.swing.JButton();
         txtIngresoBusqueda = new javax.swing.JTextField();
@@ -119,11 +106,11 @@ public class panelAdminLibros extends javax.swing.JFrame {
         adminLibros.setText("Administrar libros");
         adminLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        addLibro.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
-        addLibro.setForeground(java.awt.Color.white);
-        addLibro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        addLibro.setText("Añadir libros");
-        addLibro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addLibros.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        addLibros.setForeground(java.awt.Color.white);
+        addLibros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        addLibros.setText("Añadir libros");
+        addLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         adminUsuarios.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
         adminUsuarios.setForeground(java.awt.Color.white);
@@ -175,7 +162,7 @@ public class panelAdminLibros extends javax.swing.JFrame {
             .addGroup(panelExtenLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminLibros, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(prestamos, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,7 +184,7 @@ public class panelAdminLibros extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(adminUsuarios)
                 .addGap(18, 18, 18)
-                .addComponent(addLibro)
+                .addComponent(addLibros)
                 .addGap(18, 18, 18)
                 .addComponent(prestamos)
                 .addGap(18, 18, 18)
@@ -213,31 +200,20 @@ public class panelAdminLibros extends javax.swing.JFrame {
 
         panel4.setBackground(new java.awt.Color(249, 249, 249));
         panel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
+        panel4.setForeground(new java.awt.Color(51, 51, 51));
         panel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        txtNombreLibro4.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreLibro4.setText("jLabel3");
+        txtNombre4.setForeground(new java.awt.Color(51, 51, 51));
+        txtNombre4.setText("jLabel3");
 
-        txtNombreAutor4.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor4.setText("jLabel4");
+        txtDocumento4.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento4.setText("jLabel4");
 
-        txtEstanteLibro4.setForeground(new java.awt.Color(51, 51, 51));
-        txtEstanteLibro4.setText("jLabel5");
+        fechaPrestamo4.setForeground(new java.awt.Color(51, 51, 51));
+        fechaPrestamo4.setText("jLabel7");
 
-        txtFilaLibro4.setForeground(new java.awt.Color(51, 51, 51));
-        txtFilaLibro4.setText("jLabel6");
-
-        txtDisponibilidadLibro4.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtDisponibilidadLibro4.setText("jLabel7");
-
-        txtAnoLibro4.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtAnoLibro4.setText("jLabel8");
-
-        jSeparator6.setBackground(new java.awt.Color(153, 0, 0));
-        jSeparator6.setForeground(new java.awt.Color(153, 0, 0));
-        jSeparator6.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        fechaEntrega4.setForeground(new java.awt.Color(51, 51, 51));
+        fechaEntrega4.setText("jLabel8");
 
         javax.swing.GroupLayout panel4Layout = new javax.swing.GroupLayout(panel4);
         panel4.setLayout(panel4Layout);
@@ -246,19 +222,13 @@ public class panelAdminLibros extends javax.swing.JFrame {
             .addGroup(panel4Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombreLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtNombre4, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                    .addComponent(txtDocumento4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
-                .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDisponibilidadLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEstanteLibro4)
-                    .addComponent(txtFilaLibro4))
-                .addGap(20, 20, 20))
+                .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fechaPrestamo4, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                    .addComponent(fechaEntrega4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         panel4Layout.setVerticalGroup(
             panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,18 +236,13 @@ public class panelAdminLibros extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addComponent(txtNombreLibro4)
+                        .addComponent(txtNombre4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor4))
+                        .addComponent(txtDocumento4))
                     .addGroup(panel4Layout.createSequentialGroup()
-                        .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDisponibilidadLibro4)
-                            .addComponent(txtEstanteLibro4))
+                        .addComponent(fechaPrestamo4)
                         .addGap(14, 14, 14)
-                        .addGroup(panel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFilaLibro4)
-                            .addComponent(txtAnoLibro4)))
-                    .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fechaEntrega4)))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -285,31 +250,20 @@ public class panelAdminLibros extends javax.swing.JFrame {
 
         panel5.setBackground(new java.awt.Color(249, 249, 249));
         panel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
+        panel5.setForeground(new java.awt.Color(51, 51, 51));
         panel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        txtNombreLibro5.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreLibro5.setText("jLabel3");
+        txtNombre5.setForeground(new java.awt.Color(51, 51, 51));
+        txtNombre5.setText("jLabel3");
 
-        txtNombreAutor5.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor5.setText("jLabel4");
+        txtDocumento5.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento5.setText("jLabel4");
 
-        txtEstanteLibro5.setForeground(new java.awt.Color(51, 51, 51));
-        txtEstanteLibro5.setText("jLabel5");
+        fechaPrestamo5.setForeground(new java.awt.Color(51, 51, 51));
+        fechaPrestamo5.setText("jLabel7");
 
-        txtFilaLibro5.setForeground(new java.awt.Color(51, 51, 51));
-        txtFilaLibro5.setText("jLabel6");
-
-        txtDisponibilidadLibro5.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtDisponibilidadLibro5.setText("jLabel7");
-
-        txtAnoLibro5.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtAnoLibro5.setText("jLabel8");
-
-        jSeparator7.setBackground(new java.awt.Color(153, 0, 0));
-        jSeparator7.setForeground(new java.awt.Color(153, 0, 0));
-        jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        fechaEntrega5.setForeground(new java.awt.Color(51, 51, 51));
+        fechaEntrega5.setText("jLabel8");
 
         javax.swing.GroupLayout panel5Layout = new javax.swing.GroupLayout(panel5);
         panel5.setLayout(panel5Layout);
@@ -318,39 +272,30 @@ public class panelAdminLibros extends javax.swing.JFrame {
             .addGroup(panel5Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombreLibro5, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(67, 67, 67)
+                    .addComponent(txtNombre5, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                    .addComponent(txtDocumento5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDisponibilidadLibro5, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEstanteLibro5)
-                    .addComponent(txtFilaLibro5))
-                .addGap(20, 20, 20))
+                    .addComponent(fechaPrestamo5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fechaEntrega5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17))
         );
         panel5Layout.setVerticalGroup(
             panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel5Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombre5)
+                    .addComponent(fechaPrestamo5))
                 .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel5Layout.createSequentialGroup()
-                        .addComponent(txtNombreLibro5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor5))
-                    .addGroup(panel5Layout.createSequentialGroup()
-                        .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDisponibilidadLibro5)
-                            .addComponent(txtEstanteLibro5))
-                        .addGap(14, 14, 14)
-                        .addGroup(panel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFilaLibro5)
-                            .addComponent(txtAnoLibro5)))
-                    .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(8, Short.MAX_VALUE))
+                        .addComponent(txtDocumento5)
+                        .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(fechaEntrega5)
+                        .addContainerGap())))
         );
 
         getContentPane().add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 660, -1));
@@ -367,31 +312,20 @@ public class panelAdminLibros extends javax.swing.JFrame {
 
         panel2.setBackground(new java.awt.Color(249, 249, 249));
         panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
+        panel2.setForeground(new java.awt.Color(51, 51, 51));
         panel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        txtNombreLibro2.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreLibro2.setText("jLabel3");
+        txtNombre2.setForeground(new java.awt.Color(51, 51, 51));
+        txtNombre2.setText("jLabel3");
 
-        txtNombreAutor2.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor2.setText("jLabel4");
+        txtDocumento2.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento2.setText("jLabel4");
 
-        txtEstanteLibro2.setForeground(new java.awt.Color(51, 51, 51));
-        txtEstanteLibro2.setText("jLabel5");
+        fechaPrestamo2.setForeground(new java.awt.Color(51, 51, 51));
+        fechaPrestamo2.setText("jLabel7");
 
-        txtFilaLibro2.setForeground(new java.awt.Color(51, 51, 51));
-        txtFilaLibro2.setText("jLabel6");
-
-        txtDisponibilidadLibro2.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtDisponibilidadLibro2.setText("jLabel7");
-
-        txtAnoLibro2.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtAnoLibro2.setText("jLabel8");
-
-        jSeparator4.setBackground(new java.awt.Color(153, 0, 0));
-        jSeparator4.setForeground(new java.awt.Color(153, 0, 0));
-        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        fechaEntrega2.setForeground(new java.awt.Color(51, 51, 51));
+        fechaEntrega2.setText("jLabel8");
 
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
@@ -400,19 +334,13 @@ public class panelAdminLibros extends javax.swing.JFrame {
             .addGroup(panel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombreLibro2, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtNombre2, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                    .addComponent(txtDocumento2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDisponibilidadLibro2, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEstanteLibro2)
-                    .addComponent(txtFilaLibro2))
-                .addGap(20, 20, 20))
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fechaPrestamo2, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
+                    .addComponent(fechaEntrega2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         panel2Layout.setVerticalGroup(
             panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -420,18 +348,13 @@ public class panelAdminLibros extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addComponent(txtNombreLibro2)
+                        .addComponent(txtNombre2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor2))
+                        .addComponent(txtDocumento2))
                     .addGroup(panel2Layout.createSequentialGroup()
-                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDisponibilidadLibro2)
-                            .addComponent(txtEstanteLibro2))
+                        .addComponent(fechaPrestamo2)
                         .addGap(14, 14, 14)
-                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFilaLibro2)
-                            .addComponent(txtAnoLibro2)))
-                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fechaEntrega2)))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
@@ -444,31 +367,23 @@ public class panelAdminLibros extends javax.swing.JFrame {
 
         panel1.setBackground(new java.awt.Color(249, 249, 249));
         panel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
+        panel1.setForeground(new java.awt.Color(51, 51, 51));
         panel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        txtNombreLibro1.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreLibro1.setText("jLabel3");
+        txtNombre1.setForeground(new java.awt.Color(51, 51, 51));
+        txtNombre1.setText("jLabel3");
 
-        txtNombreAutor1.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor1.setText("jLabel4");
+        txtDocumento1.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento1.setText("jLabel4");
 
-        txtEstanteLibro1.setForeground(new java.awt.Color(51, 51, 51));
-        txtEstanteLibro1.setText("jLabel5");
+        fechaPrestamo1.setForeground(new java.awt.Color(51, 51, 51));
+        fechaPrestamo1.setText("jLabel7");
 
-        txtFilaLibro1.setForeground(new java.awt.Color(51, 51, 51));
-        txtFilaLibro1.setText("jLabel6");
+        fechaEntrega1.setForeground(new java.awt.Color(51, 51, 51));
+        fechaEntrega1.setText("jLabel8");
 
-        txtDisponibilidadLibro1.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtDisponibilidadLibro1.setText("jLabel7");
-
-        txtAnoLibro1.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtAnoLibro1.setText("jLabel8");
-
-        jSeparator3.setBackground(new java.awt.Color(153, 0, 0));
-        jSeparator3.setForeground(new java.awt.Color(153, 0, 0));
-        jSeparator3.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setText("ID :");
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -476,20 +391,17 @@ public class panelAdminLibros extends javax.swing.JFrame {
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombreLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtNombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtDocumento1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtDisponibilidadLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEstanteLibro1)
-                    .addComponent(txtFilaLibro1))
-                .addGap(20, 20, 20))
+                    .addComponent(fechaPrestamo1, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
+                    .addComponent(fechaEntrega1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,17 +410,15 @@ public class panelAdminLibros extends javax.swing.JFrame {
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNombreLibro1)
-                            .addComponent(txtDisponibilidadLibro1))
+                            .addComponent(txtNombre1)
+                            .addComponent(fechaPrestamo1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor1))
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addComponent(txtEstanteLibro1)
-                        .addGap(14, 14, 14)
                         .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFilaLibro1)
-                            .addComponent(txtAnoLibro1)))
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtDocumento1)
+                            .addComponent(jLabel3)))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(fechaEntrega1)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -531,31 +441,20 @@ public class panelAdminLibros extends javax.swing.JFrame {
 
         panel3.setBackground(new java.awt.Color(249, 249, 249));
         panel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
+        panel3.setForeground(new java.awt.Color(51, 51, 51));
         panel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        txtNombreLibro3.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreLibro3.setText("jLabel3");
+        txtNombre3.setForeground(new java.awt.Color(51, 51, 51));
+        txtNombre3.setText("jLabel3");
 
-        txtNombreAutor3.setForeground(new java.awt.Color(51, 51, 51));
-        txtNombreAutor3.setText("jLabel4");
+        txtDocumento3.setForeground(new java.awt.Color(51, 51, 51));
+        txtDocumento3.setText("jLabel4");
 
-        txtEstanteLibro3.setForeground(new java.awt.Color(51, 51, 51));
-        txtEstanteLibro3.setText("jLabel5");
+        fechaPrestamo3.setForeground(new java.awt.Color(51, 51, 51));
+        fechaPrestamo3.setText("jLabel7");
 
-        txtFilaLibro3.setForeground(new java.awt.Color(51, 51, 51));
-        txtFilaLibro3.setText("jLabel6");
-
-        txtDisponibilidadLibro3.setForeground(new java.awt.Color(51, 51, 51));
-        txtDisponibilidadLibro3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtDisponibilidadLibro3.setText("jLabel7");
-
-        txtAnoLibro3.setForeground(new java.awt.Color(51, 51, 51));
-        txtAnoLibro3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtAnoLibro3.setText("jLabel8");
-
-        jSeparator5.setBackground(new java.awt.Color(153, 0, 0));
-        jSeparator5.setForeground(new java.awt.Color(153, 0, 0));
-        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        fechaEntrega3.setForeground(new java.awt.Color(51, 51, 51));
+        fechaEntrega3.setText("jLabel8");
 
         javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
         panel3.setLayout(panel3Layout);
@@ -564,19 +463,13 @@ public class panelAdminLibros extends javax.swing.JFrame {
             .addGroup(panel3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNombreLibro3, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
-                    .addComponent(txtNombreAutor3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtNombre3, javax.swing.GroupLayout.DEFAULT_SIZE, 284, Short.MAX_VALUE)
+                    .addComponent(txtDocumento3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(74, 74, 74)
-                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtDisponibilidadLibro3, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(txtAnoLibro3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtEstanteLibro3)
-                    .addComponent(txtFilaLibro3))
-                .addGap(20, 20, 20))
+                .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(fechaPrestamo3, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                    .addComponent(fechaEntrega3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         panel3Layout.setVerticalGroup(
             panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -584,22 +477,29 @@ public class panelAdminLibros extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panel3Layout.createSequentialGroup()
-                        .addComponent(txtNombreLibro3)
+                        .addComponent(txtNombre3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreAutor3))
+                        .addComponent(txtDocumento3))
                     .addGroup(panel3Layout.createSequentialGroup()
-                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtDisponibilidadLibro3)
-                            .addComponent(txtEstanteLibro3))
+                        .addComponent(fechaPrestamo3)
                         .addGap(14, 14, 14)
-                        .addGroup(panel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFilaLibro3)
-                            .addComponent(txtAnoLibro3)))
-                    .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(fechaEntrega3)))
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
         getContentPane().add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, 660, -1));
+
+        btnCrearPrestamo.setBackground(new java.awt.Color(204, 204, 204));
+        btnCrearPrestamo.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnCrearPrestamo.setForeground(new java.awt.Color(51, 153, 0));
+        btnCrearPrestamo.setText("+");
+        btnCrearPrestamo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCrearPrestamo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearPrestamoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCrearPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, 40, 30));
 
         btnPegar.setBackground(new java.awt.Color(204, 204, 204));
         btnPegar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\inconoPegar.png")); // NOI18N
@@ -609,7 +509,7 @@ public class panelAdminLibros extends javax.swing.JFrame {
                 btnPegarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, 40, 30));
+        getContentPane().add(btnPegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 50, 40, 30));
 
         btnBusqueda.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoLupaBusqueda.png")); // NOI18N
         btnBusqueda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -623,7 +523,7 @@ public class panelAdminLibros extends javax.swing.JFrame {
         txtIngresoBusqueda.setBackground(new java.awt.Color(153, 153, 153));
         txtIngresoBusqueda.setForeground(new java.awt.Color(51, 51, 51));
         txtIngresoBusqueda.setBorder(null);
-        getContentPane().add(txtIngresoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 580, 30));
+        getContentPane().add(txtIngresoBusqueda, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 50, 540, 30));
 
         btnVolverMenu.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         btnVolverMenu.setForeground(new java.awt.Color(51, 51, 51));
@@ -651,8 +551,9 @@ public class panelAdminLibros extends javax.swing.JFrame {
         getContentPane().add(btnExtenPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, 80, -1));
 
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("Los libros pueden ser filtrados por nombre, Isbn, Autor o categorias especificas");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Los prestamos pueden ser filtrados por el número de documento o el id del prestamo");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, 580, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\interfazPaneles.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -676,6 +577,10 @@ public class panelAdminLibros extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBusquedaActionPerformed
 
+    private void btnCrearPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPrestamoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCrearPrestamoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -693,44 +598,54 @@ public class panelAdminLibros extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(panelAdminLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelAdminPrestamos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(panelAdminLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelAdminPrestamos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(panelAdminLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelAdminPrestamos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(panelAdminLibros.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(panelAdminPrestamos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new panelAdminLibros().setVisible(true);
+                new panelAdminPrestamos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JLabel addLibro;
+    public javax.swing.JLabel addLibros;
     public javax.swing.JLabel adminLibros;
     public javax.swing.JLabel adminUsuarios;
     public javax.swing.JButton backPagAdmin;
     public javax.swing.JButton btnBusqueda;
     public javax.swing.JLabel btnCerrarSesion;
+    public javax.swing.JButton btnCrearPrestamo;
     public javax.swing.JLabel btnExtenPanel;
     public javax.swing.JLabel btnExtenPanelOff;
     public javax.swing.JLabel btnOpcionesPanelAdmin;
     public javax.swing.JLabel btnOpcionesPanelAdmin1;
     public javax.swing.JButton btnPegar;
     public javax.swing.JLabel btnVolverMenu;
+    public javax.swing.JLabel fechaEntrega1;
+    public javax.swing.JLabel fechaEntrega2;
+    public javax.swing.JLabel fechaEntrega3;
+    public javax.swing.JLabel fechaEntrega4;
+    public javax.swing.JLabel fechaEntrega5;
+    public javax.swing.JLabel fechaPrestamo1;
+    public javax.swing.JLabel fechaPrestamo2;
+    public javax.swing.JLabel fechaPrestamo3;
+    public javax.swing.JLabel fechaPrestamo4;
+    public javax.swing.JLabel fechaPrestamo5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JLabel jLabel3;
     public javax.swing.JLabel multas;
     public javax.swing.JButton nextPagAdmin;
     public javax.swing.JPanel panel1;
@@ -741,39 +656,19 @@ public class panelAdminLibros extends javax.swing.JFrame {
     public javax.swing.JPanel panelExten;
     public javax.swing.JLabel prestamos;
     public javax.swing.JLabel reportes;
-    public javax.swing.JLabel txtAnoLibro1;
-    public javax.swing.JLabel txtAnoLibro2;
-    public javax.swing.JLabel txtAnoLibro3;
-    public javax.swing.JLabel txtAnoLibro4;
-    public javax.swing.JLabel txtAnoLibro5;
     public javax.swing.JLabel txtBusquedaAdmin;
     public javax.swing.JLabel txtCantLibroAdmin;
-    public javax.swing.JLabel txtDisponibilidadLibro1;
-    public javax.swing.JLabel txtDisponibilidadLibro2;
-    public javax.swing.JLabel txtDisponibilidadLibro3;
-    public javax.swing.JLabel txtDisponibilidadLibro4;
-    public javax.swing.JLabel txtDisponibilidadLibro5;
-    public javax.swing.JLabel txtEstanteLibro1;
-    public javax.swing.JLabel txtEstanteLibro2;
-    public javax.swing.JLabel txtEstanteLibro3;
-    public javax.swing.JLabel txtEstanteLibro4;
-    public javax.swing.JLabel txtEstanteLibro5;
-    public javax.swing.JLabel txtFilaLibro1;
-    public javax.swing.JLabel txtFilaLibro2;
-    public javax.swing.JLabel txtFilaLibro3;
-    public javax.swing.JLabel txtFilaLibro4;
-    public javax.swing.JLabel txtFilaLibro5;
+    public javax.swing.JLabel txtDocumento1;
+    public javax.swing.JLabel txtDocumento2;
+    public javax.swing.JLabel txtDocumento3;
+    public javax.swing.JLabel txtDocumento4;
+    public javax.swing.JLabel txtDocumento5;
     public javax.swing.JTextField txtIngresoBusqueda;
-    public javax.swing.JLabel txtNombreAutor1;
-    public javax.swing.JLabel txtNombreAutor2;
-    public javax.swing.JLabel txtNombreAutor3;
-    public javax.swing.JLabel txtNombreAutor4;
-    public javax.swing.JLabel txtNombreAutor5;
-    public javax.swing.JLabel txtNombreLibro1;
-    public javax.swing.JLabel txtNombreLibro2;
-    public javax.swing.JLabel txtNombreLibro3;
-    public javax.swing.JLabel txtNombreLibro4;
-    public javax.swing.JLabel txtNombreLibro5;
+    public javax.swing.JLabel txtNombre1;
+    public javax.swing.JLabel txtNombre2;
+    public javax.swing.JLabel txtNombre3;
+    public javax.swing.JLabel txtNombre4;
+    public javax.swing.JLabel txtNombre5;
     public javax.swing.JLabel txtNombrePersona;
     public javax.swing.JLabel txtNombrePersona1;
     // End of variables declaration//GEN-END:variables

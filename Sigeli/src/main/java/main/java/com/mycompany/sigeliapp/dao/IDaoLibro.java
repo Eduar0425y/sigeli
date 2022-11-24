@@ -14,4 +14,6 @@ public interface IDaoLibro {
     
     public boolean eliminarLibro(String isbn);
     
+    public boolean cambioEstadoLibro(Libro libro);
+    
 }
