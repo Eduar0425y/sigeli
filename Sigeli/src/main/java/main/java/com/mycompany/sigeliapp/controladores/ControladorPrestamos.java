@@ -294,6 +294,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         else if(e.getSource() == panelAdminPrestamos.adminLibros || e.getSource() == panelVerPrestamo.adminLibros || e.getSource() == panelAddPrestamo.adminLibros){
             cerrarPanelAdminPrestamos();
             cerrarPanelVerPrestamo();
+            cerrarPanelAddPrestamo();
             ControladorLibro controladorLibro = new ControladorLibro();
             controladorLibro.inicio(documentoLogin, nombre);
         }
@@ -301,6 +302,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         else if(e.getSource() == panelAdminPrestamos.adminUsuarios || e.getSource() == panelVerPrestamo.adminUsuarios || e.getSource() == panelAddPrestamo.adminUsuarios){
             cerrarPanelAdminPrestamos();
             cerrarPanelVerPrestamo();
+            cerrarPanelAddPrestamo();
             
             ControladorPersona controladorPersona = new ControladorPersona();
             controladorPersona.inicio(documentoLogin, nombre);
@@ -310,6 +312,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         else if(e.getSource() == panelAdminPrestamos.addLibros || e.getSource() == panelVerPrestamo.addLibros || e.getSource() == panelAddPrestamo.addLibros){
             cerrarPanelAdminPrestamos();
             cerrarPanelVerPrestamo();
+            cerrarPanelAddPrestamo();
             
             ControladorLibro controladorLibro = new ControladorLibro();
             
@@ -321,18 +324,26 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         else if(e.getSource() == panelAdminPrestamos.prestamos || e.getSource() == panelVerPrestamo.prestamos || e.getSource() == panelAddPrestamo.prestamos){
             cerrarPanelAdminPrestamos();
             cerrarPanelVerPrestamo();
+            cerrarPanelAddPrestamo();
+            
+            visiblePanelAdminPrestamos();
 
         }
         
         else if(e.getSource() == panelAdminPrestamos.multas || e.getSource() == panelVerPrestamo.multas || e.getSource() == panelAddPrestamo.multas){
             cerrarPanelAdminPrestamos();
             cerrarPanelVerPrestamo();
+            cerrarPanelAddPrestamo();
+            
+            ControladorMulta controladorMulta = new ControladorMulta();
+            controladorMulta.inicio(documentoLogin, nombre);
 
         }
         
         else if(e.getSource() == panelAdminPrestamos.reportes || e.getSource() == panelVerPrestamo.reportes|| e.getSource() == panelAddPrestamo.reportes){
             cerrarPanelAdminPrestamos();
             cerrarPanelVerPrestamo();
+            cerrarPanelAddPrestamo();
 
         }
         

@@ -262,6 +262,9 @@ public class ControladorPersona implements ActionListener, MouseListener{
         else if(e.getSource() == panelVerPersona.prestamos || e.getSource() == panelAdminUsuario.prestamos){
             cerrarPanelAdminUsuario();
             cerrarPanelVerPersona();
+            
+            ControladorPrestamos controladorPrestamos = new ControladorPrestamos();
+            controladorPrestamos.inicio(documentoLogin, nombre);
 
         }
         
@@ -269,6 +272,8 @@ public class ControladorPersona implements ActionListener, MouseListener{
             cerrarPanelAdminUsuario();
             cerrarPanelVerPersona();
 
+            ControladorMulta controladorMulta = new ControladorMulta();
+            controladorMulta.inicio(documentoLogin, nombre);
         }
         
         else if(e.getSource() == panelVerPersona.reportes || e.getSource() == panelAdminUsuario.reportes){

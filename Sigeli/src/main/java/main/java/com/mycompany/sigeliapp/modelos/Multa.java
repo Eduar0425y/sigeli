@@ -1,5 +1,6 @@
 package main.java.com.mycompany.sigeliapp.modelos;
 
+import java.sql.Date;
 import java.util.ArrayList;
 
 
@@ -9,16 +10,18 @@ public class Multa {
     private int idPrestamo;
     private int valorMulta;
     private int estadoMulta;
+    private Date fecha;
 
     public Multa() {
     }
 
-    public Multa(int idMulta, int documentoPersona, int idPrestamo, int valorMulta, int estadoMulta) {
+    public Multa(int idMulta, int documentoPersona, int idPrestamo, int valorMulta, int estadoMulta, Date fecha) {
         this.idMulta = idMulta;
         this.documentoPersona = documentoPersona;
         this.idPrestamo = idPrestamo;
         this.valorMulta = valorMulta;
         this.estadoMulta = estadoMulta;
+        this.fecha = fecha;
     }
 
 
@@ -61,6 +64,15 @@ public class Multa {
     public void setEstadoMulta(int estadoMulta) {
         this.estadoMulta = estadoMulta;
     }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+    
     
     
 }

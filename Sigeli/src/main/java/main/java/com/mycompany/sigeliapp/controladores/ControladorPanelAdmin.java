@@ -89,7 +89,9 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
 
         else if(e.getSource() == vistaAdministrador.btnDeudas){
             cerrarPanelAdmin();
-            controladorApp.adminMultas();
+            //controladorApp.adminMultas();
+            ControladorMulta controladorMulta = new ControladorMulta();
+            controladorMulta.inicio(documentoLogin, nombre);
         }
 
         else if(e.getSource() == vistaAdministrador.btnReportes){

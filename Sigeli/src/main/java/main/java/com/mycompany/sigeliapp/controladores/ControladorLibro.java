@@ -225,6 +225,9 @@ public class ControladorLibro  implements ActionListener, MouseListener{
             cerrarPanelAddLibro();
             cerrarPanelAdminLibros();
             cerrarVerLibro();
+            
+            ControladorPrestamos controladorPrestamos = new ControladorPrestamos();
+            controladorPrestamos.inicio(documentoLogin, nombre);
 
         }
         
@@ -232,6 +235,9 @@ public class ControladorLibro  implements ActionListener, MouseListener{
             cerrarPanelAddLibro();
             cerrarPanelAdminLibros();
             cerrarVerLibro();
+            
+            ControladorMulta controladorMulta = new ControladorMulta();
+            controladorMulta.inicio(documentoLogin, nombre);
 
         }
         

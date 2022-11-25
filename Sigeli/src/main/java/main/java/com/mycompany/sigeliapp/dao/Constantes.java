@@ -42,6 +42,7 @@ public class Constantes {
     public static final String TM_IDPRESTAMO = "id_prestamo";
     public static final String TM_VALOR = "valor_multa";
     public static final String TM_IDESTADO = "id_estado";
+    public static final String TM_FECHA = "fecha";
     
     public static final String T_PERSONA = "persona";
     public static final String TP_DOCUMENTO = "documento_persona";
