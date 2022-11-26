@@ -10,6 +10,7 @@ import main.java.com.mycompany.sigeliapp.dao.*;
 import main.java.com.mycompany.sigeliapp.modelos.Carrera;
 import main.java.com.mycompany.sigeliapp.modelos.Persona;
 import main.java.com.mycompany.sigeliapp.modelos.Usuario;
+import main.java.com.mycompany.sigeliapp.validaciones.ValidacionRegistroLogin;
 import main.java.com.mycompany.sigeliapp.vistas.Login;
 import main.java.com.mycompany.sigeliapp.vistas.Registro;
 
@@ -167,11 +168,20 @@ public class ControladorLogin implements ActionListener, MouseListener{
         Persona persona = new Persona(documento, nombre, idCarrera, email, telefono);
         Usuario usuarioE = new Usuario(documento, clave, idCargo);
 
-        if(registro == true){
-            iDaoPersona.addPersona(persona);
-            iDaoUsuario.addUsuario(usuarioE);
-            JOptionPane.showMessageDialog(null, "El usuario ha sido creado");
+        if(ValidacionRegistroLogin.registro(persona, usuarioE)){
+            if(registro == true){
+                iDaoPersona.addPersona(persona);
+                iDaoUsuario.addUsuario(usuarioE);
+                JOptionPane.showMessageDialog(null, "El usuario ha sido creado");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+            }
         }
+        else{
+            JOptionPane.showMessageDialog(null, "Revise los datos");
+        }
+        
 
 
     }

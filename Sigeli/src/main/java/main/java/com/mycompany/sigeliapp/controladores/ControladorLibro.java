@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 import main.java.com.mycompany.sigeliapp.dao.*;
 import main.java.com.mycompany.sigeliapp.modelos.*;
 import main.java.com.mycompany.sigeliapp.modelos.utiles.Portapapeles;
+import main.java.com.mycompany.sigeliapp.validaciones.ValidacionLibros;
 import main.java.com.mycompany.sigeliapp.vistas.*;
 
 public class ControladorLibro  implements ActionListener, MouseListener{
@@ -514,12 +515,18 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         libro.setEstanteLibro(panelAddLibro.txtEstante.getText());
         libro.setFilaLibro(Integer.parseInt(panelAddLibro.txtFila.getText()));
         
-        if(iDaoLibro.addLibro(libro)){
-            JOptionPane.showMessageDialog(null, "Libro añadido con éxito");
+        if(ValidacionLibros.crearLibro(libro)){
+            if(iDaoLibro.addLibro(libro)){
+                JOptionPane.showMessageDialog(null, "Libro añadido con éxito");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+            }
         }
         else{
-            JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+            JOptionPane.showMessageDialog(null, "Verifique los datos");
         }
+
         
     }
     
