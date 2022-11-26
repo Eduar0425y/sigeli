@@ -86,7 +86,7 @@ public class DaoUsuario extends Conexion implements IDaoUsuario{
             
             ps.executeUpdate();
             
-            System.out.println("El pago ha sido subido con éxito...");
+            System.out.println("El usuario fue actualizado con éxito...");
             
             return true;
             

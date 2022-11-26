@@ -272,6 +272,10 @@ public class ControladorMulta implements ActionListener, MouseListener{
         else if(e.getSource() == panelAdminMultas.reportes || e.getSource() == panelVerMulta.reportes){
             
             cerrarPanelAdminMultas();
+            
+            ControladorReportes controladorReportes = new ControladorReportes();
+            
+            controladorReportes.inicio(documentoLogin, nombre);
 
         }
     }

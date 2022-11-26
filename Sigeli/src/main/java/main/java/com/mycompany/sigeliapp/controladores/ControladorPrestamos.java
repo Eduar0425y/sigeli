@@ -345,6 +345,9 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
             cerrarPanelVerPrestamo();
             cerrarPanelAddPrestamo();
 
+            ControladorReportes controladorReportes = new ControladorReportes();
+            
+            controladorReportes.inicio(documentoLogin, nombre);
         }
         
     }

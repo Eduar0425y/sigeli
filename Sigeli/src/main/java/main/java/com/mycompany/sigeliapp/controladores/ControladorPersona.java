@@ -279,6 +279,10 @@ public class ControladorPersona implements ActionListener, MouseListener{
         else if(e.getSource() == panelVerPersona.reportes || e.getSource() == panelAdminUsuario.reportes){
             cerrarPanelAdminUsuario();
             cerrarPanelVerPersona();
+            
+            ControladorReportes controladorReportes = new ControladorReportes();
+            
+            controladorReportes.inicio(documentoLogin, nombre);
 
         }
         

@@ -245,6 +245,10 @@ public class ControladorLibro  implements ActionListener, MouseListener{
             cerrarPanelAddLibro();
             cerrarPanelAdminLibros();
             cerrarVerLibro();
+            
+            ControladorReportes controladorReportes = new ControladorReportes();
+            
+            controladorReportes.inicio(documentoLogin, nombre);
 
         }
         
@@ -487,10 +491,12 @@ public class ControladorLibro  implements ActionListener, MouseListener{
                     if(libro.getIdEstado() == 0){
                         panelVistaLibro.txtDisponibilidad.setForeground(new java.awt.Color(153,0,0));
                         panelVistaLibro.txtDisponibilidad.setText("El libro no está disponible");
+                        panelVistaLibro.btnPrestarLibro.setVisible(false);
                     }
                     else{
                         panelVistaLibro.txtDisponibilidad.setForeground(new java.awt.Color(0,204,0));
                         panelVistaLibro.txtDisponibilidad.setText("El libro está disponible");
+                        panelVistaLibro.btnPrestarLibro.setVisible(true);
                     }
                 }
             }

@@ -17,6 +17,7 @@ public class ControladorLogin implements ActionListener, MouseListener{
     
     private ControladorApp controlador;
     private ControladorPanelAdmin controladorPanelAdmin;
+    private ControladorPanelEstudiante controladorPanelEstudiante;
     private Login vistaLogin;
     private Registro vistaRegistro;
     private int documentoAdmin = 0;
@@ -31,6 +32,7 @@ public class ControladorLogin implements ActionListener, MouseListener{
     public ControladorLogin() {
         this.controlador = new ControladorApp();
         this.controladorPanelAdmin = new ControladorPanelAdmin();
+        this.controladorPanelEstudiante = new ControladorPanelEstudiante();
         
         this.vistaLogin = new Login();
         this.vistaRegistro= new Registro();
@@ -134,7 +136,8 @@ public class ControladorLogin implements ActionListener, MouseListener{
 
                 else if(usuario.getIdCargo() == 2){
                     cerrarLogin();
-                    controlador.panelEstudiante();
+                    //controlador.panelEstudiante();
+                    controladorPanelEstudiante.inicio(usuario.getDocumento(), iDaoPersona.verPersonas());
                     ingresar = true;
                 }
             }

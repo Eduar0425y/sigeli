@@ -10,13 +10,15 @@ import main.java.com.mycompany.sigeliapp.modelos.*;
 import main.java.com.mycompany.sigeliapp.dao.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
 import main.java.com.mycompany.sigeliapp.modelos.utiles.Portapapeles;
 
 
 public class ControladorPanelAdmin implements ActionListener, MouseListener{
     
     private panelAdministrador vistaAdministrador;
-    private ControladorApp controladorApp;
+    private Configuracion panelConfiguracion;
+    //private ControladorApp controladorApp;
     
     private ControladorLibro controladorLibro;
     ControladorPersona controladorPersona;
@@ -33,7 +35,8 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
 
     public ControladorPanelAdmin() {
         this.vistaAdministrador = new panelAdministrador();
-        this.controladorApp = new ControladorApp();
+        this.panelConfiguracion = new Configuracion();
+        //this.controladorApp = new ControladorApp();
         
         this.controladorLibro = new ControladorLibro();
         this.controladorPersona = new ControladorPersona();
@@ -53,10 +56,37 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
         this.vistaAdministrador.btnReportes.addMouseListener(this);
         this.vistaAdministrador.opcion1Config.addMouseListener(this);
         this.vistaAdministrador.opcion2Config.addMouseListener(this);
+        
+        this.panelConfiguracion.btnVolver.addMouseListener(this);
+        this.panelConfiguracion.btnRegistro.addActionListener(this);
+        this.panelConfiguracion.btnCancelar.addActionListener(this);
     }
     
      public void actionPerformed(ActionEvent e){
-
+         
+        if(e.getSource() == panelConfiguracion.btnCancelar){
+            cerrarPanelConfiguracion();
+            visiblePanelAdmin();
+        }
+         
+        else if(e.getSource() == panelConfiguracion.btnRegistro){
+            if(panelConfiguracion.txtClaveRegistro.getText().equals(panelConfiguracion.txtClaveRegistro1.getText())){
+                Usuario usuario = new Usuario();
+                usuario.setDocumento(documentoLogin);
+                usuario.setClave(panelConfiguracion.txtClaveRegistro.getText());
+                if(iDaoUsuario.cambioClave(usuario)){
+                    JOptionPane.showMessageDialog(null, "Clave cambiada con éxito");
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+                }
+                cerrarPanelAdmin();
+                visibleLogin();
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Las claves ingresadas no coinciden");
+            }
+        }
      }
 
     @Override
@@ -96,7 +126,9 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
 
         else if(e.getSource() == vistaAdministrador.btnReportes){
             cerrarPanelAdmin();
-            controladorApp.reportes();
+            //controladorApp.reportes();
+            ControladorReportes controladorReportes = new ControladorReportes();
+            controladorReportes.inicio(documentoLogin, nombre);
         }
 
         else if(e.getSource() == vistaAdministrador.btnOpcionesPanelAdmin){
@@ -118,7 +150,12 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
         
         else if(e.getSource() == vistaAdministrador.opcion1Config){
             cerrarPanelAdmin();
-            controladorApp.opcionesCuenta(iDaoPersona.verPersonas(), iDaoUsuario.verUsuarios(), documentoLogin, iDaoCarrera.verCarreras());
+            //controladorApp.opcionesCuenta(iDaoPersona.verPersonas(), iDaoUsuario.verUsuarios(), documentoLogin, iDaoCarrera.verCarreras());
+            setDatosConfig(documentoLogin);
+            limpiarDatosConfiguracion();
+            vistaAdministrador.panelConfig.setVisible(false);
+            visiblePanelConfiguracion();
+            
         }
        
         else if(e.getSource() == vistaAdministrador.opcion2Config){
@@ -126,6 +163,14 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
             visibleLogin();
         }
        
+       
+       
+        else if(e.getSource() == panelConfiguracion.btnVolver){
+            cerrarPanelConfiguracion();
+            visiblePanelAdmin();
+        }
+       
+        
        
     }
 
@@ -150,7 +195,30 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
     }
      
      
-    
+    public void setDatosConfig(int documento){
+        for(Persona persona : iDaoPersona.verPersonas()){
+            if(persona.getDocumentoPersona() == documento){
+                panelConfiguracion.txtNombreRegistro.setText(persona.getNombrePersona());
+                panelConfiguracion.txtEmailRegistro.setText(persona.getEmailPersona());
+                panelConfiguracion.txtTelefonoRegistro.setText(persona.getTelefono());
+                panelConfiguracion.txtDocumentoRegistro.setText(String.valueOf(persona.getDocumentoPersona()));
+                
+                for(Carrera carrera : iDaoCarrera.verCarreras()){
+                    if(persona.getIdCarrera() == 0){
+                        panelConfiguracion.txtcarrera.setVisible(false);
+                        panelConfiguracion.carrera.setVisible(false);
+                    }
+                    else{
+                        panelConfiguracion.txtcarrera.setVisible(true);
+                        if(persona.getIdCarrera() == carrera.getIdCarrera()){
+                            panelConfiguracion.txtcarrera.setText(carrera.getCarrera());
+                        }
+                        panelConfiguracion.carrera.setVisible(true);
+                    }
+                }
+            }
+        }
+    }
      
     public void inicio(int documento, ArrayList<Persona> arrayListPersona){
         this.documentoLogin = documento;
@@ -184,6 +252,21 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
     public void visibleLogin(){
         ControladorLogin controladorLogin = new ControladorLogin();
         controladorLogin.visibleLogin();
+    }
+    
+    public void visiblePanelConfiguracion(){
+        panelConfiguracion.setTitle("Panel Configuración - Sigeli");
+        panelConfiguracion.setLocationRelativeTo(null);
+        panelConfiguracion.setVisible(true);
+    }
+    
+    public void cerrarPanelConfiguracion(){
+        panelConfiguracion.setVisible(false);
+    }
+    
+    public void limpiarDatosConfiguracion(){
+        panelConfiguracion.txtClaveRegistro.setText("");
+        panelConfiguracion.txtClaveRegistro1.setText("");
     }
     
 }

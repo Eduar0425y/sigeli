@@ -128,15 +128,14 @@ public class panelAdministrador extends javax.swing.JFrame {
         panelConfigLayout.setHorizontalGroup(
             panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelConfigLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelConfigLayout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addComponent(opcion2Config, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(separadorCofing)
-                        .addComponent(opcion1Config, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addGroup(panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(separadorCofing)
+                    .addComponent(opcion1Config, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11))
+            .addGroup(panelConfigLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(opcion2Config, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelConfigLayout.setVerticalGroup(
             panelConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +149,7 @@ public class panelAdministrador extends javax.swing.JFrame {
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
-        jPanel2.add(panelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 10, 140, 70));
+        jPanel2.add(panelConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, 140, 70));
 
         btnAddLibros.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoAddLibros.png")); // NOI18N
         btnAddLibros.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

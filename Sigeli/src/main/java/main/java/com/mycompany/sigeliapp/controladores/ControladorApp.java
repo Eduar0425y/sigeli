@@ -70,7 +70,7 @@ public class ControladorApp {
 
     }
 
-    /*public void inicio() {
+    public void inicio() {
                                
         crearMultas(iDaoMulta.verMultas(), iDaoPrestamos.verPrestamos());
         
@@ -140,7 +140,7 @@ public class ControladorApp {
             }
         }
         
-    }*/
+    }
 
 
     public void panelAdmin() {

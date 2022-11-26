@@ -28,6 +28,7 @@ public class DaoMulta extends Conexion implements IDaoMulta{
                 multa.setIdPrestamo(resultSet.getInt(Constantes.TM_IDPRESTAMO));
                 multa.setValorMulta(resultSet.getInt(Constantes.TM_VALOR));
                 multa.setEstadoMulta(resultSet.getInt(Constantes.TM_IDESTADO));
+                multa.setFecha(resultSet.getDate(Constantes.TM_FECHA));
                 
                 arrayListMulta.add(multa);
             }
