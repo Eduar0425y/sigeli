@@ -246,6 +246,7 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
     public void visiblePanelAdmin(){
         vistaAdministrador.setTitle("Panel Administrador - Sigeli");
         vistaAdministrador.setLocationRelativeTo(null);
+        vistaAdministrador.setResizable(false);
         vistaAdministrador.setVisible(true);
     }
     
@@ -256,6 +257,7 @@ public class ControladorPanelAdmin implements ActionListener, MouseListener{
     
     public void visiblePanelConfiguracion(){
         panelConfiguracion.setTitle("Panel Configuración - Sigeli");
+        panelConfiguracion.setResizable(false);
         panelConfiguracion.setLocationRelativeTo(null);
         panelConfiguracion.setVisible(true);
     }

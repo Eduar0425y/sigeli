@@ -107,6 +107,18 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         this.panelAddPrestamo.btnPegarIsbn.addMouseListener(this);
         this.panelAddPrestamo.btnCrearPrestamo.addActionListener(this);
         
+        this.panelAddPrestamo.btnCerrarSesion.addMouseListener(this);
+        this.panelAddPrestamo.btnVolverMenu.addMouseListener(this);
+        this.panelAddPrestamo.btnExtenPanel.addMouseListener(this);
+        this.panelAddPrestamo.btnExtenPanelOff.addMouseListener(this);
+        
+        this.panelAddPrestamo.adminLibros.addMouseListener(this);
+        this.panelAddPrestamo.adminUsuarios.addMouseListener(this);
+        this.panelAddPrestamo.addLibros.addMouseListener(this);
+        this.panelAddPrestamo.prestamos.addMouseListener(this);
+        this.panelAddPrestamo.multas.addMouseListener(this);
+        this.panelAddPrestamo.reportes.addMouseListener(this);
+        
     }
 
     @Override
@@ -163,7 +175,17 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
     @Override
     public void mouseClicked(MouseEvent e) {
         
-        if(e.getSource() == panelAdminPrestamos.btnVolverMenu){
+        if(e.getSource() == panelAdminPrestamos.btnCerrarSesion || e.getSource() == panelVerPrestamo.btnCerrarSesion || e.getSource() == panelAddPrestamo.btnCerrarSesion){
+            cerrarPanelAddPrestamo();
+            cerrarPanelAdminPrestamos();
+            cerrarPanelVerPrestamo();
+            
+            ControladorLogin controladorLogin = new ControladorLogin();
+            
+            controladorLogin.visibleLogin();
+        }
+        
+        else if(e.getSource() == panelAdminPrestamos.btnVolverMenu){
             cerrarPanelAdminPrestamos();
             visiblePanelAdmin();
         }
@@ -571,6 +593,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         this.busqueda = false;
         panelAdminPrestamos.txtBusquedaAdmin.setText("");
         panelAdminPrestamos.setLocationRelativeTo(null);
+        panelAdminPrestamos.setResizable(false);
         panelAdminPrestamos.setVisible(true);
     }
     
@@ -589,6 +612,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         panelVerPrestamo.txtNombrePersona.setText(nombreCorto);
         panelVerPrestamo.txtNombrePersona1.setText(nombre);
         panelVerPrestamo.panelExten.setVisible(false);
+        panelVerPrestamo.setResizable(false);
         panelVerPrestamo.setLocationRelativeTo(null);
         panelVerPrestamo.setVisible(true);
     }
@@ -603,6 +627,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         panelAddPrestamo.txtNombrePersona1.setText(nombre);
         panelAddPrestamo.panelExten.setVisible(false);
         panelAddPrestamo.setLocationRelativeTo(null);
+        panelAddPrestamo.setResizable(false);
         panelAddPrestamo.setVisible(true);
     }
     

@@ -159,7 +159,7 @@ public class ControladorLogin implements ActionListener, MouseListener{
         nombre = vistaRegistro.txtNombreRegistro.getText();
         email = vistaRegistro.txtEmailRegistro.getText();
         telefono = vistaRegistro.txtTelefonoRegistro.getText();
-
+        
         idCarrera = vistaRegistro.boxCarreraRegistro.getSelectedIndex();
 
         idCargo = vistaRegistro.boxTipoRegistro.getSelectedIndex();
@@ -205,6 +205,7 @@ public class ControladorLogin implements ActionListener, MouseListener{
      public void visibleRegistro(){
         vistaRegistro.setTitle("Registro - Sigeli");
         vistaRegistro.setLocationRelativeTo(null);
+        vistaRegistro.setResizable(false);
         vistaRegistro.setVisible(true);
     }
     
@@ -216,6 +217,7 @@ public class ControladorLogin implements ActionListener, MouseListener{
         vistaLogin.setTitle("Login - Sigeli");
         vistaLogin.txtMensajeLogin.setText("");
         vistaLogin.setLocationRelativeTo(null);
+        vistaLogin.setResizable(false);
         vistaLogin.setVisible(true);
     }
     

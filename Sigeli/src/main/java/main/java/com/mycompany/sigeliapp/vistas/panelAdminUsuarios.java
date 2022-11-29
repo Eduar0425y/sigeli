@@ -30,7 +30,6 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         panelExten = new javax.swing.JPanel();
         btnOpcionesPanelAdmin1 = new javax.swing.JLabel();
         txtNombrePersona1 = new javax.swing.JLabel();
-        btnCerrarSesion = new javax.swing.JLabel();
         btnExtenPanelOff = new javax.swing.JLabel();
         adminLibros = new javax.swing.JLabel();
         addLibros = new javax.swing.JLabel();
@@ -38,6 +37,7 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         prestamos = new javax.swing.JLabel();
         multas = new javax.swing.JLabel();
         reportes = new javax.swing.JLabel();
+        btnCerrarSesion = new javax.swing.JLabel();
         panel4 = new javax.swing.JPanel();
         txtNombre4 = new javax.swing.JLabel();
         txtDocumento4 = new javax.swing.JLabel();
@@ -90,9 +90,6 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         txtNombrePersona1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtNombrePersona1.setText("jLabel1");
 
-        btnCerrarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\inconoExit.png")); // NOI18N
-        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         btnExtenPanelOff.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnExtenPanelOff.setForeground(java.awt.Color.white);
         btnExtenPanelOff.setText("x");
@@ -134,19 +131,18 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
         reportes.setText("Reportes");
         reportes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        btnCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\logout.png")); // NOI18N
+        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         javax.swing.GroupLayout panelExtenLayout = new javax.swing.GroupLayout(panelExten);
         panelExten.setLayout(panelExtenLayout);
         panelExtenLayout.setHorizontalGroup(
             panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtenLayout.createSequentialGroup()
-                        .addComponent(btnCerrarSesion)
-                        .addGap(89, 89, 89))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtenLayout.createSequentialGroup()
-                        .addComponent(btnExtenPanelOff)
-                        .addGap(16, 16, 16))))
+                .addContainerGap(176, Short.MAX_VALUE)
+                .addComponent(btnExtenPanelOff)
+                .addGap(16, 16, 16))
             .addGroup(panelExtenLayout.createSequentialGroup()
                 .addGroup(panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelExtenLayout.createSequentialGroup()
@@ -167,6 +163,7 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                     .addComponent(multas, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reportes, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelExtenLayout.setVerticalGroup(
             panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +173,7 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOpcionesPanelAdmin1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txtNombrePersona1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtNombrePersona1, javax.swing.GroupLayout.DEFAULT_SIZE, 17, Short.MAX_VALUE)
                 .addGap(35, 35, 35)
                 .addComponent(adminLibros)
                 .addGap(18, 18, 18)
@@ -189,9 +186,8 @@ public class panelAdminUsuarios extends javax.swing.JFrame {
                 .addComponent(multas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(reportes)
-                .addGap(268, 268, 268)
-                .addComponent(btnCerrarSesion)
-                .addGap(40, 40, 40))
+                .addGap(273, 273, 273)
+                .addComponent(btnCerrarSesion))
         );
 
         getContentPane().add(panelExten, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 650));

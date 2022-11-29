@@ -95,7 +95,8 @@ public class panelAdminMultas extends javax.swing.JFrame {
         txtNombrePersona1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtNombrePersona1.setText("jLabel1");
 
-        btnCerrarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\inconoExit.png")); // NOI18N
+        btnCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\logout.png")); // NOI18N
         btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnExtenPanelOff.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -144,14 +145,9 @@ public class panelAdminMultas extends javax.swing.JFrame {
         panelExtenLayout.setHorizontalGroup(
             panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtenLayout.createSequentialGroup()
-                        .addComponent(btnCerrarSesion)
-                        .addGap(89, 89, 89))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelExtenLayout.createSequentialGroup()
-                        .addComponent(btnExtenPanelOff)
-                        .addGap(16, 16, 16))))
+                .addContainerGap(176, Short.MAX_VALUE)
+                .addComponent(btnExtenPanelOff)
+                .addGap(16, 16, 16))
             .addGroup(panelExtenLayout.createSequentialGroup()
                 .addGroup(panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelExtenLayout.createSequentialGroup()
@@ -172,6 +168,7 @@ public class panelAdminMultas extends javax.swing.JFrame {
                     .addComponent(multas, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reportes, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 12, Short.MAX_VALUE))
+            .addComponent(btnCerrarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         panelExtenLayout.setVerticalGroup(
             panelExtenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,9 +191,9 @@ public class panelAdminMultas extends javax.swing.JFrame {
                 .addComponent(multas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(reportes)
-                .addGap(268, 268, 268)
+                .addGap(272, 272, 272)
                 .addComponent(btnCerrarSesion)
-                .addGap(40, 40, 40))
+                .addGap(36, 36, 36))
         );
 
         getContentPane().add(panelExten, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 650));

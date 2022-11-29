@@ -27,7 +27,6 @@ public class PanelEstudiante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCerrarSesion = new javax.swing.JLabel();
         panel4 = new javax.swing.JPanel();
         txtNombreLibro4 = new javax.swing.JLabel();
         txtNombreAutor4 = new javax.swing.JLabel();
@@ -54,6 +53,7 @@ public class PanelEstudiante extends javax.swing.JFrame {
         txtAnoLibro2 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         txtCantLibroAdmin = new javax.swing.JLabel();
+        btnCerrarSesion = new javax.swing.JLabel();
         panel1 = new javax.swing.JPanel();
         txtNombreLibro1 = new javax.swing.JLabel();
         txtNombreAutor1 = new javax.swing.JLabel();
@@ -82,11 +82,6 @@ public class PanelEstudiante extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnCerrarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\inconoExit.png")); // NOI18N
-        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 580, 190, 50));
 
         panel4.setBackground(new java.awt.Color(249, 249, 249));
         panel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
@@ -318,6 +313,11 @@ public class PanelEstudiante extends javax.swing.JFrame {
         txtCantLibroAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCantLibroAdmin.setText("jLabel2");
         getContentPane().add(txtCantLibroAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 580, 350, -1));
+
+        btnCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\logout.png")); // NOI18N
+        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 570, 190, -1));
 
         panel1.setBackground(new java.awt.Color(249, 249, 249));
         panel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));

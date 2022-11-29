@@ -480,6 +480,7 @@ public class ControladorPersona implements ActionListener, MouseListener{
         this.busqueda = false;
         panelAdminUsuario.txtBusquedaAdmin.setText("");
         panelAdminUsuario.setLocationRelativeTo(null);
+        panelAdminUsuario.setResizable(false);
         panelAdminUsuario.setVisible(true);
     }
     
@@ -493,6 +494,7 @@ public class ControladorPersona implements ActionListener, MouseListener{
         panelVerPersona.txtNombrePersona1.setText(nombre);
         panelVerPersona.panelExten.setVisible(false);
         panelVerPersona.setLocationRelativeTo(null);
+        panelVerPersona.setResizable(false);
         panelVerPersona.setVisible(true);
     }
     

@@ -14,8 +14,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.sql.Date;
 import java.time.LocalDate;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import main.java.com.mycompany.sigeliapp.dao.*;
 import main.java.com.mycompany.sigeliapp.vistas.*;
@@ -240,8 +238,10 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 documentoPdf.add(new Paragraph("REPORTE DE PRESTAMOS  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
                 documentoPdf.add(new Paragraph("\n"));
-                documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
-                documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                if(!panelReportes.txtObservaciones.getText().equals("")){
+                    documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
+                    documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                }
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("Prestamos" , fuenteSubTitulo));
@@ -293,8 +293,10 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 documentoPdf.add(new Paragraph("REPORTE DE MULTAS  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
                 documentoPdf.add(new Paragraph("\n"));
-                documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
-                documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                if(!panelReportes.txtObservaciones.getText().equals("")){
+                    documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
+                    documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                }
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("Multas" , fuenteSubTitulo));
@@ -354,8 +356,10 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 documentoPdf.add(new Paragraph("REPORTE DE PAGOS  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
                 documentoPdf.add(new Paragraph("\n"));
-                documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
-                documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                if(!panelReportes.txtObservaciones.getText().equals("")){
+                    documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
+                    documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                }
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("Pagos" , fuenteSubTitulo));
@@ -412,8 +416,10 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 documentoPdf.add(new Paragraph("REPORTE TOTAL  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
                 documentoPdf.add(new Paragraph("\n"));
-                documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
-                documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                if(!panelReportes.txtObservaciones.getText().equals("")){
+                    documentoPdf.add(new Paragraph("Observaciones: ", fuenteSubTitulo));
+                    documentoPdf.add(new Paragraph(panelReportes.txtObservaciones.getText()));
+                }
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("\n"));
                 
@@ -540,6 +546,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
     public void visiblePanelReportes(){
         panelReportes.setTitle("Panel generador de reportes - Sigeli");
         panelReportes.setLocationRelativeTo(null);
+        panelReportes.setResizable(false);
         panelReportes.setVisible(true);
     }
     

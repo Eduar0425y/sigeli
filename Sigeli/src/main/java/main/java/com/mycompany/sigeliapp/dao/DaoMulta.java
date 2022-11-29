@@ -53,8 +53,8 @@ public class DaoMulta extends Conexion implements IDaoMulta{
     public boolean hacerMultas(Multa multa) {
         String sql = "INSERT INTO "+ Constantes.T_MULTA+ "(" + Constantes.TM_ID + "," + 
                 Constantes.TM_DOCUMENTO + "," + Constantes.TM_IDPRESTAMO + "," +
-                Constantes.TM_VALOR + "," + Constantes.TM_IDESTADO + ") " + 
-                "VALUES (?,?,?,?,?)";
+                Constantes.TM_VALOR + "," + Constantes.TM_IDESTADO + "," + Constantes.TM_FECHA + ") " + 
+                "VALUES (?,?,?,?,?,?)";
         try {            
             PreparedStatement ps=getConexion().prepareStatement(sql);
             ps.setInt(1, multa.getIdMulta());
@@ -62,6 +62,7 @@ public class DaoMulta extends Conexion implements IDaoMulta{
             ps.setInt(3, multa.getIdPrestamo());
             ps.setInt(4, multa.getValorMulta());
             ps.setInt(5, multa.getEstadoMulta());
+            ps.setDate(6, multa.getFecha());
             
             ps.executeUpdate();
             

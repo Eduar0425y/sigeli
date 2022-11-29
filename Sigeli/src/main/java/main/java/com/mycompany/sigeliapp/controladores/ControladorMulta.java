@@ -446,6 +446,7 @@ public class ControladorMulta implements ActionListener, MouseListener{
         this.busqueda = false;
         panelAdminMultas.txtBusquedaAdmin.setText("");
         panelAdminMultas.setLocationRelativeTo(null);
+        panelAdminMultas.setResizable(false);
         panelAdminMultas.setVisible(true);
     }
     
@@ -465,6 +466,7 @@ public class ControladorMulta implements ActionListener, MouseListener{
         panelVerMulta.txtNombrePersona1.setText(this.nombre);
         panelVerMulta.panelExten.setVisible(false);
         panelVerMulta.setLocationRelativeTo(null);
+        panelVerMulta.setResizable(false);
         panelVerMulta.setVisible(true);
     }
     

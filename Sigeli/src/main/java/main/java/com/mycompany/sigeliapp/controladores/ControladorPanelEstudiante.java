@@ -273,6 +273,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
     public void visiblePanelEstudiante(){
         panelEstudiante.setTitle("Panel Estudiante - Sigeli");
         panelEstudiante.setLocationRelativeTo(null);
+        panelEstudiante.setResizable(false);
         panelEstudiante.setVisible(true);
     }
     
@@ -284,6 +285,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
     public void visiblePanelConfiguracion(){
         panelConfiguracion.setTitle("Panel Configuración - Sigeli");
         panelConfiguracion.setLocationRelativeTo(null);
+        panelConfiguracion.setResizable(false);
         panelConfiguracion.setVisible(true);
     }
     

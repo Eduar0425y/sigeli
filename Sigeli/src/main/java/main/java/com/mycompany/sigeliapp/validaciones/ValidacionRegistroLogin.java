@@ -5,6 +5,8 @@
  */
 package main.java.com.mycompany.sigeliapp.validaciones;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import main.java.com.mycompany.sigeliapp.dao.DaoPersona;
 import main.java.com.mycompany.sigeliapp.dao.IDaoPersona;
@@ -39,7 +41,23 @@ public class ValidacionRegistroLogin {
             return false;
         }
         
-        else if(persona.getTelefono().equals("")){
+        Pattern pat = Pattern.compile(".*@gmail.com");
+        Pattern pat2 = Pattern.compile(".*@fesc.edu.co");
+        Pattern pat3 = Pattern.compile(".*@misena.edu.co");
+        
+        Matcher mat = pat.matcher(persona.getEmailPersona());
+        Matcher mat2 = pat2.matcher(persona.getEmailPersona());
+        Matcher mat3 = pat3.matcher(persona.getEmailPersona());
+        
+        if(mat.matches() || mat2.matches() || mat3.matches()){
+            System.out.println("Correo valido");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Por favor ingrese un correo institucional o terminado en \n-@gmail.com\n-@fesc.edu.co\n-@misena.edu.co");
+            return false;
+        }
+        
+        if(persona.getTelefono().equals("")){
             JOptionPane.showMessageDialog(null, "El Telefono no puede estar vacío");
             return false;
         }

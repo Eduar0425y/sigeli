@@ -802,6 +802,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         panelAdminLibros.txtBusquedaAdmin.setText("");
         verLibros(iDaoLibro.verLibros());
         panelAdminLibros.setLocationRelativeTo(null);
+        panelAdminLibros.setResizable(false);
         panelAdminLibros.setVisible(true);
     }
     
@@ -817,6 +818,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         panelVistaLibro.panelExten.setVisible(false);
         panelVistaLibro.setTitle("Panel Administrar Libros - Sigeli");
         panelVistaLibro.setLocationRelativeTo(null);
+        panelVistaLibro.setResizable(false);
         panelVistaLibro.setVisible(true);
     }
     
@@ -828,6 +830,7 @@ public class ControladorLibro  implements ActionListener, MouseListener{
         
         panelAddLibro.setTitle("Panel añadir Libros - Sigeli");
         panelAddLibro.setLocationRelativeTo(null);
+        panelAddLibro.setResizable(false);
         panelAddLibro.setVisible(true);
         
     }
