@@ -90,6 +90,7 @@ public class ControladorMulta implements ActionListener, MouseListener{
         this.panelVerMulta.txtDocumentoPersona.addMouseListener(this);
         this.panelVerMulta.txtIsbn.addMouseListener(this);
         this.panelVerMulta.btnPagarMulta.addMouseListener(this);
+        this.panelVerMulta.btnCondenar.addMouseListener(this);
         
     }
     
@@ -221,7 +222,13 @@ public class ControladorMulta implements ActionListener, MouseListener{
         }
         
         else if(e.getSource() == panelVerMulta.btnPagarMulta){
-            pagarMulta(panelVerMulta.txtDocumentoPersona.getText(), panelVerMulta.txtIsbn.getText());
+            pagarMulta(panelVerMulta.txtDocumentoPersona.getText(), panelVerMulta.txtIsbn.getText(), 5);
+            cerrarPanelVerMulta();
+            visiblePanelAdmin();
+        }
+        
+        else if(e.getSource() == panelVerMulta.btnCondenar){
+            pagarMulta(panelVerMulta.txtDocumentoPersona.getText(), panelVerMulta.txtIsbn.getText(), 7);
             cerrarPanelVerMulta();
             visiblePanelAdmin();
         }
@@ -390,14 +397,17 @@ public class ControladorMulta implements ActionListener, MouseListener{
         }
     }
     
-    public void pagarMulta(String documento, String isbn){
+    public void pagarMulta(String documento, String isbn, int estado){
         
         
         for(Multa multa : iDaoMulta.verMultas()){
             for(Prestamos prestamo : iDaoPrestamos.verPrestamos()){
                 if(multa.getIdPrestamo() == prestamo.getIdPrestamo() && multa.getDocumentoPersona() == Integer.parseInt(documento)){
                     if(prestamo.getIsbnLibro().equals(isbn)){
-                        multa.setEstadoMulta(5);
+                        multa.setEstadoMulta(estado);
+                        if(estado == 7){
+                            multa.setValorMulta(0);
+                        }
                         multa.setFecha(Date.valueOf(LocalDate.now()));
                         if(iDaoMulta.pagarMulta(multa.getIdMulta(), multa)){
                             JOptionPane.showMessageDialog(null, "La multa ha sido pagada con éxito");

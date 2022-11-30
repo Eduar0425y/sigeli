@@ -44,7 +44,6 @@ public class PanelReportes extends javax.swing.JFrame {
         btnIncluirTodo = new javax.swing.JRadioButton();
         btnExtenPanel = new javax.swing.JLabel();
         btnOpcionesPanelAdmin = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         txtMesFin = new javax.swing.JComboBox<>();
         txtMesInicio = new javax.swing.JComboBox<>();
         txtDiaInicio = new javax.swing.JTextField();
@@ -225,12 +224,6 @@ public class PanelReportes extends javax.swing.JFrame {
 
         btnOpcionesPanelAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoUsuario.png")); // NOI18N
         getContentPane().add(btnOpcionesPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 40, 50));
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI Historic", 0, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Los reportes se guardan en Documentos/reportes/");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 620, 620, -1));
 
         txtMesFin.setBackground(new java.awt.Color(249, 249, 249));
         txtMesFin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -496,7 +489,6 @@ public class PanelReportes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;

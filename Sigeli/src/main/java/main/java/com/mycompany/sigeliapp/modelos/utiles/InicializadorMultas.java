@@ -47,7 +47,14 @@ public class InicializadorMultas {
     
     public void crearMultas(){
         
-        int barra = 100/arrayListPrestamos.size();
+        int barra =0;
+        
+        if(arrayListPrestamos.size() != 0){
+            barra = 100/arrayListPrestamos.size();
+        }
+        else{
+            barra = 100;
+        }
         
         visibleCarga();
         
@@ -80,6 +87,10 @@ public class InicializadorMultas {
                                 if(iDaoMulta.hacerMultas(multaEnviar)){
                                     System.out.println("Multa añadida");
                                 }
+                                libro.setIdEstado(1);
+                                if(iDaoLibro.cambioEstadoLibro(libro)){
+                                    System.out.println("libro actualizado");
+                                }
                                 iDaoPrestamos.cambioEstado(prestamo);
                             }
                         }
@@ -87,7 +98,9 @@ public class InicializadorMultas {
                 }
             }
             barra += barra;
-            if(barra == 100){
+        }
+        
+        if(barra == 100){
                 ventanaCarga.mnsjInicio.setText("Iniciando aplicación");
                 ventanaCarga.barraProgreso.setValue(0);
                 for(int i = 0; i< 100; i+= 25){
@@ -99,7 +112,6 @@ public class InicializadorMultas {
                     }
                 }
             }
-        }
         
         cerrarCarga();
     }

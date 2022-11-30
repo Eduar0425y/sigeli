@@ -14,12 +14,14 @@ import main.java.com.mycompany.sigeliapp.dao.DaoCarrera;
 import main.java.com.mycompany.sigeliapp.dao.DaoCategoria;
 import main.java.com.mycompany.sigeliapp.dao.DaoCategoriaLibro;
 import main.java.com.mycompany.sigeliapp.dao.DaoLibro;
+import main.java.com.mycompany.sigeliapp.dao.DaoMulta;
 import main.java.com.mycompany.sigeliapp.dao.DaoPersona;
 import main.java.com.mycompany.sigeliapp.dao.DaoUsuario;
 import main.java.com.mycompany.sigeliapp.dao.IDaoCarrera;
 import main.java.com.mycompany.sigeliapp.dao.IDaoCategoria;
 import main.java.com.mycompany.sigeliapp.dao.IDaoCategoriaLibro;
 import main.java.com.mycompany.sigeliapp.dao.IDaoLibro;
+import main.java.com.mycompany.sigeliapp.dao.IDaoMulta;
 import main.java.com.mycompany.sigeliapp.dao.IDaoPersona;
 import main.java.com.mycompany.sigeliapp.dao.IDaoUsuario;
 import main.java.com.mycompany.sigeliapp.modelos.*;
@@ -37,6 +39,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
     private IDaoPersona iDaoPersona;
     private IDaoCarrera iDaoCarrera;
     private IDaoUsuario iDaoUsuario;
+    private IDaoMulta iDaoMulta;
     private IDaoCategoria iDaoCategoria;
     private IDaoCategoriaLibro iDaoCategoriaLibro;
     private String nombre;
@@ -52,6 +55,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
         this.iDaoPersona = new DaoPersona();
         this.iDaoCarrera = new DaoCarrera();
         this.iDaoUsuario = new DaoUsuario();
+        this.iDaoMulta = new DaoMulta();
         this.iDaoCategoria = new DaoCategoria();
         this.iDaoCategoriaLibro = new DaoCategoriaLibro();
         
@@ -61,7 +65,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
         this.panelEstudiante.btnBusqueda.addActionListener(this);
         this.panelEstudiante.btnCerrarSesion.addMouseListener(this);
         this.panelEstudiante.btnOpcionesPanelAdmin.addMouseListener(this);
-        
+
         
         this.panelConfiguracion.btnVolver.addMouseListener(this);
         this.panelConfiguracion.btnRegistro.addActionListener(this);
@@ -250,6 +254,24 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
 
     }
     
+    public void multasUsuario(){
+        
+
+        for(Multa multa: iDaoMulta.verMultas()){
+            if(multa.getDocumentoPersona() == documentoLogin){
+                if(multa.getEstadoMulta() == 6){
+                    panelEstudiante.txtNotificaciones.setText("Usted tiene una multa \npediente por pagar.\nEsta se generó por \nel prestamo número: " + 
+                                                           multa.getIdPrestamo() + " \ny tiene un valor de: " + multa.getValorMulta());
+                    
+                    panelEstudiante.iconNotificacion.setIcon(new javax.swing.ImageIcon("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoNotificacionOn.png"));
+                
+                }
+            }
+        }
+        
+        
+    }
+    
     
 
     public void inicio(int documento, ArrayList<Persona> arrayListPersona){
@@ -261,6 +283,8 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
             }
         }
         verLibros(iDaoLibro.verLibros());
+        panelEstudiante.txtNotificaciones.setText("No tienes notificaciones");
+        multasUsuario();
         visiblePanelEstudiante();
     }
     
@@ -344,6 +368,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
         }
         else if(arrayListLibro.size() == 1){
             panelEstudiante.nextPagAdmin.setVisible(false);
+            panelEstudiante.backPagAdmin.setVisible(false);
             //paneles
            panelEstudiante.panel1.setVisible(true);
            panelEstudiante.panel2.setVisible(false);
@@ -365,6 +390,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
         }
         else if(arrayListLibro.size() == 2){
             panelEstudiante.nextPagAdmin.setVisible(false);
+            panelEstudiante.backPagAdmin.setVisible(false);
             //paneles
            panelEstudiante.panel1.setVisible(true);
            panelEstudiante.panel2.setVisible(true);
@@ -392,6 +418,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
         }
         else if(arrayListLibro.size() == 3){
             panelEstudiante.nextPagAdmin.setVisible(false);
+            panelEstudiante.backPagAdmin.setVisible(false);
             //paneles
            panelEstudiante.panel1.setVisible(true);
            panelEstudiante.panel2.setVisible(true);
@@ -425,6 +452,7 @@ public class ControladorPanelEstudiante implements ActionListener, MouseListener
         }
         else if(arrayListLibro.size() == 4){
             panelEstudiante.nextPagAdmin.setVisible(false);
+            panelEstudiante.backPagAdmin.setVisible(false);
             //paneles
            panelEstudiante.panel1.setVisible(true);
            panelEstudiante.panel2.setVisible(true);

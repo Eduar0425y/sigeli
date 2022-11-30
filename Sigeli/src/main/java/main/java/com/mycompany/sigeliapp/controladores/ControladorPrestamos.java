@@ -31,6 +31,10 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
     private PanelVerPrestamo panelVerPrestamo;
     private PanelAddPrestamo panelAddPrestamo;
     
+    //Controladores
+    
+    private ControladorPanelAdmin controladorPanelAdmin;
+    
     //DAO
     private IDaoPrestamos iDaoPrestamo;
     private IDaoPersona iDaoPersona;
@@ -49,6 +53,10 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         this.panelAdminPrestamos = new panelAdminPrestamos();
         this.panelVerPrestamo = new PanelVerPrestamo();
         this.panelAddPrestamo = new PanelAddPrestamo();
+        
+        //controlador 
+        
+        this.controladorPanelAdmin = new ControladorPanelAdmin();
         
         //DAO
         this.iDaoPrestamo = new DaoPrestamos();
@@ -197,6 +205,7 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
         
         else if(e.getSource() == panelAddPrestamo.btnVolverMenu){
             cerrarPanelAddPrestamo();
+            cerrarPanelAdmin();
             visiblePanelAdmin();
         }
         
@@ -602,9 +611,13 @@ public class ControladorPrestamos implements ActionListener, MouseListener{
     }
     
     public void visiblePanelAdmin(){
-        ControladorPanelAdmin controladorPanelAdmin = new ControladorPanelAdmin();
-        
+
         controladorPanelAdmin.inicio(documentoLogin, iDaoPersona.verPersonas());
+    }
+    
+    public void cerrarPanelAdmin(){
+        
+        controladorPanelAdmin.cerrarPanelAdmin();
     }
     
     public void visiblePanelVerPrestamo(){

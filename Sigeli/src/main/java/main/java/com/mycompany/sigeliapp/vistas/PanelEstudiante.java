@@ -27,6 +27,7 @@ public class PanelEstudiante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToggleButton1 = new javax.swing.JToggleButton();
         panel4 = new javax.swing.JPanel();
         txtNombreLibro4 = new javax.swing.JLabel();
         txtNombreAutor4 = new javax.swing.JLabel();
@@ -53,6 +54,7 @@ public class PanelEstudiante extends javax.swing.JFrame {
         txtAnoLibro2 = new javax.swing.JLabel();
         jSeparator4 = new javax.swing.JSeparator();
         txtCantLibroAdmin = new javax.swing.JLabel();
+        iconNotificacion = new javax.swing.JLabel();
         btnCerrarSesion = new javax.swing.JLabel();
         panel1 = new javax.swing.JPanel();
         txtNombreLibro1 = new javax.swing.JLabel();
@@ -63,6 +65,8 @@ public class PanelEstudiante extends javax.swing.JFrame {
         txtAnoLibro1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         txtBusquedaAdmin = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtNotificaciones = new javax.swing.JTextPane();
         nextPagAdmin = new javax.swing.JButton();
         panel3 = new javax.swing.JPanel();
         txtNombreLibro3 = new javax.swing.JLabel();
@@ -79,6 +83,8 @@ public class PanelEstudiante extends javax.swing.JFrame {
         txtNombrePersona = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+
+        jToggleButton1.setText("jToggleButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -227,15 +233,16 @@ public class PanelEstudiante extends javax.swing.JFrame {
 
         getContentPane().add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 660, -1));
 
-        backPagAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        backPagAdmin.setBackground(new java.awt.Color(249, 249, 249));
         backPagAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoBefore.png")); // NOI18N
+        backPagAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         backPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backPagAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backPagAdminActionPerformed(evt);
             }
         });
-        getContentPane().add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 150, 40));
+        getContentPane().add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 560, 150, 50));
 
         panel2.setBackground(new java.awt.Color(249, 249, 249));
         panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
@@ -313,6 +320,16 @@ public class PanelEstudiante extends javax.swing.JFrame {
         txtCantLibroAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtCantLibroAdmin.setText("jLabel2");
         getContentPane().add(txtCantLibroAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 580, 350, -1));
+
+        iconNotificacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        iconNotificacion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoNotificacion.png")); // NOI18N
+        iconNotificacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        iconNotificacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                iconNotificacionMouseClicked(evt);
+            }
+        });
+        getContentPane().add(iconNotificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 170, -1));
 
         btnCerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnCerrarSesion.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\logout.png")); // NOI18N
@@ -396,15 +413,24 @@ public class PanelEstudiante extends javax.swing.JFrame {
         txtBusquedaAdmin.setText("jLabel1");
         getContentPane().add(txtBusquedaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 650, -1));
 
-        nextPagAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        txtNotificaciones.setEditable(false);
+        txtNotificaciones.setBackground(new java.awt.Color(116, 0, 0));
+        txtNotificaciones.setForeground(new java.awt.Color(255, 255, 255));
+        txtNotificaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jScrollPane1.setViewportView(txtNotificaciones);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 170, 210));
+
+        nextPagAdmin.setBackground(new java.awt.Color(249, 249, 249));
         nextPagAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoNext.png")); // NOI18N
+        nextPagAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         nextPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nextPagAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextPagAdminActionPerformed(evt);
             }
         });
-        getContentPane().add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 560, 150, 40));
+        getContentPane().add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 560, 150, 50));
 
         panel3.setBackground(new java.awt.Color(249, 249, 249));
         panel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
@@ -505,13 +531,13 @@ public class PanelEstudiante extends javax.swing.JFrame {
         btnOpcionesPanelAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnOpcionesPanelAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoUsuario.png")); // NOI18N
         btnOpcionesPanelAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btnOpcionesPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 190, 50));
+        getContentPane().add(btnOpcionesPanelAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 190, 50));
 
         txtNombrePersona.setBackground(new java.awt.Color(204, 204, 204));
         txtNombrePersona.setForeground(new java.awt.Color(204, 204, 204));
         txtNombrePersona.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtNombrePersona.setText("jLabel1");
-        getContentPane().add(txtNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 190, -1));
+        getContentPane().add(txtNombrePersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 190, -1));
 
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Los libros pueden ser filtrados por nombre, Isbn, Autor o categorias especificas");
@@ -538,6 +564,10 @@ public class PanelEstudiante extends javax.swing.JFrame {
     private void btnBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBusquedaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBusquedaActionPerformed
+
+    private void iconNotificacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_iconNotificacionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_iconNotificacionMouseClicked
 
     /**
      * @param args the command line arguments
@@ -581,13 +611,16 @@ public class PanelEstudiante extends javax.swing.JFrame {
     public javax.swing.JLabel btnCerrarSesion;
     public javax.swing.JLabel btnOpcionesPanelAdmin;
     public javax.swing.JButton btnPegar;
+    public javax.swing.JLabel iconNotificacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JToggleButton jToggleButton1;
     public javax.swing.JButton nextPagAdmin;
     public javax.swing.JPanel panel1;
     public javax.swing.JPanel panel2;
@@ -628,5 +661,6 @@ public class PanelEstudiante extends javax.swing.JFrame {
     public javax.swing.JLabel txtNombreLibro4;
     public javax.swing.JLabel txtNombreLibro5;
     public javax.swing.JLabel txtNombrePersona;
+    public javax.swing.JTextPane txtNotificaciones;
     // End of variables declaration//GEN-END:variables
 }

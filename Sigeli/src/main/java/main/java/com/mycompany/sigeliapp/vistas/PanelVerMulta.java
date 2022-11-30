@@ -51,6 +51,7 @@ public class PanelVerMulta extends javax.swing.JFrame {
         txtDocumentoPersona = new javax.swing.JTextField();
         txtFechaPrestamo = new javax.swing.JTextField();
         txtIsbn = new javax.swing.JTextField();
+        btnCondenar = new javax.swing.JButton();
         btnPagarMulta = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -281,6 +282,18 @@ public class PanelVerMulta extends javax.swing.JFrame {
         });
         getContentPane().add(txtIsbn, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 280, 590, 40));
 
+        btnCondenar.setBackground(new java.awt.Color(249, 249, 249));
+        btnCondenar.setForeground(new java.awt.Color(51, 51, 51));
+        btnCondenar.setText("Condenar");
+        btnCondenar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 0, 0), 2, true));
+        btnCondenar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCondenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCondenarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCondenar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 550, 210, 30));
+
         btnPagarMulta.setBackground(new java.awt.Color(249, 249, 249));
         btnPagarMulta.setForeground(new java.awt.Color(51, 51, 51));
         btnPagarMulta.setText("Pagar");
@@ -291,7 +304,7 @@ public class PanelVerMulta extends javax.swing.JFrame {
                 btnPagarMultaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPagarMulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 550, 210, 30));
+        getContentPane().add(btnPagarMulta, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, 210, 30));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 51));
@@ -345,6 +358,10 @@ public class PanelVerMulta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFechaPrestamoActionPerformed
 
+    private void btnCondenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCondenarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCondenarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -392,6 +409,7 @@ public class PanelVerMulta extends javax.swing.JFrame {
     public javax.swing.JLabel adminLibros;
     public javax.swing.JLabel adminUsuarios;
     public javax.swing.JLabel btnCerrarSesion;
+    public javax.swing.JButton btnCondenar;
     public javax.swing.JLabel btnExtenPanel;
     public javax.swing.JLabel btnExtenPanelOff;
     public javax.swing.JLabel btnOpcionesPanelAdmin;

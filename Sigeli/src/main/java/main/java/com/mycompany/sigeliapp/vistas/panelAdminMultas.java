@@ -316,15 +316,16 @@ public class panelAdminMultas extends javax.swing.JFrame {
 
         getContentPane().add(panel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 660, -1));
 
-        backPagAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        backPagAdmin.setBackground(new java.awt.Color(249, 249, 249));
         backPagAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoBefore.png")); // NOI18N
+        backPagAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         backPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backPagAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backPagAdminActionPerformed(evt);
             }
         });
-        getContentPane().add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 150, 40));
+        getContentPane().add(backPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 560, 150, 50));
 
         panel2.setBackground(new java.awt.Color(249, 249, 249));
         panel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
@@ -453,15 +454,16 @@ public class panelAdminMultas extends javax.swing.JFrame {
         txtBusquedaAdmin.setText("jLabel1");
         getContentPane().add(txtBusquedaAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 650, -1));
 
-        nextPagAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        nextPagAdmin.setBackground(new java.awt.Color(249, 249, 249));
         nextPagAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Eduar Xavier\\Desktop\\EduarXavier\\sigeli\\Sigeli\\src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\iconos\\iconoNext.png")); // NOI18N
+        nextPagAdmin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(249, 249, 249)));
         nextPagAdmin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nextPagAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextPagAdminActionPerformed(evt);
             }
         });
-        getContentPane().add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 560, 150, 40));
+        getContentPane().add(nextPagAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 560, 150, 50));
 
         panel3.setBackground(new java.awt.Color(249, 249, 249));
         panel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 0, 0), 2));
