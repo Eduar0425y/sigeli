@@ -78,7 +78,7 @@ public class InicializadorMultas {
 
                                 multaEnviar.setDocumentoPersona(prestamo.getIdPersona());
                                 multaEnviar.setIdPrestamo(prestamo.getIdPrestamo());
-                                multaEnviar.setValorMulta(30000);
+                                multaEnviar.setValorMulta(1500);
                                 multaEnviar.setFecha(Date.valueOf(LocalDate.now()));
                                 multaEnviar.setEstadoMulta(6);
 
@@ -126,8 +126,10 @@ public class InicializadorMultas {
         
         Session sesion = Session.getDefaultInstance(propiedad);
         
-        String correoEnvia = "est_ex_avendano@fesc.edu.co";
-        String contrasena = "Xavierserrano1!";
+        //Correo
+        String correoEnvia = "";
+        //Clave
+        String contrasena = "";
         
         
         MimeMessage mail = new MimeMessage(sesion);
