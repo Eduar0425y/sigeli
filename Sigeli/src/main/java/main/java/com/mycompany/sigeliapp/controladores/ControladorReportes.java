@@ -264,6 +264,8 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 documentoPdf.add(imagen);
                 
+                documentoPdf.setMargins(30,30, 30, 30);
+                
                 documentoPdf.add(new Paragraph("\n"));
                 
                 documentoPdf.add(new Paragraph("REPORTE DE PRESTAMOS  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
@@ -282,7 +284,12 @@ public class ControladorReportes implements ActionListener, MouseListener{
                             if(prestamo.getIdPersona() == persona.getDocumentoPersona()){
                                 documentoPdf.add(new Paragraph("Prestamo número: " + prestamo.getIdPrestamo()));
                                 documentoPdf.add(new Paragraph("Persona que pidió el prestamo: " + persona.getNombrePersona() + "\nDocumento: " + prestamo.getIdPersona()));
-                                documentoPdf.add(new Paragraph("Programa al que pertenece: " + arrayListCarrera.get(persona.getIdCarrera()-1).getCarrera()));
+                                if(persona.getIdCarrera() != 0){
+                                    documentoPdf.add(new Paragraph("Programa al que pertenece: " + arrayListCarrera.get(persona.getIdCarrera()).getCarrera()));
+                                }
+                                else{
+                                    documentoPdf.add(new Paragraph("Administrador"));
+                                }
                                 documentoPdf.add(new Paragraph("ISBN del libro prestado: " + prestamo.getIsbnLibro()));
                                 documentoPdf.add(new Paragraph("Fecha del prestamo: " + prestamo.getFechaPrestamo() + "Fecha de entrega: " + prestamo.getFechaEntrega()));
                                 documentoPdf.add(new Paragraph("Estado del prestamo: " + ((prestamo.getIdEstado() == 3)? "En deuda":"Entregado")));
@@ -328,6 +335,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 documentoPdf.add(new Paragraph("Estadisticas por carrera - Prestamos" , fuenteSubTitulo));
                 documentoPdf.add(new Paragraph("\n"));
 
+                documentoPdf.setMargins(30,30, 0, 30);
 
                 //Cabecera
                 tabla.addCell("Cargo/carrera");
@@ -448,6 +456,8 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 documentoPdf.add(imagen);
                 
+                documentoPdf.setMargins(30,30, 30, 30);
+                
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("REPORTE DE MULTAS  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
                 documentoPdf.add(new Paragraph("\n"));
@@ -547,6 +557,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 documentoPdf.add(new Paragraph("Gráfica de las multas" , fuenteSubTitulo));
                 documentoPdf.add(new Paragraph("\n"));
                 
+                documentoPdf.setMargins(30,30, 0, 30);
                 //Creacion de las graficas
                 
                     //Graficas de pastel
@@ -633,6 +644,8 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 Image imagen = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\encabezadoPDF.png");
                 
                 documentoPdf.add(imagen);
+                
+                documentoPdf.setMargins(30,30, 30, 30);
                 
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("REPORTE DE PAGOS  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
@@ -761,6 +774,8 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                     //Graficas de pastel
                 
+                documentoPdf.setMargins(30,30, 0, 30);
+                    
                 DefaultPieDataset graficaPastel = new DefaultPieDataset();
                 
                 int promPagos = 0;
@@ -831,6 +846,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
         }
         else if(opcion == 4){
             Document documentoPdf = new Document();
+            Boolean prestamosDoc = false, multasDoc = false, pagosDoc = false;
             try {
                 FileOutputStream ficheroDocumento = new FileOutputStream(pdfFile + " Reporte total " + " inicio " + fechaInicio + " fin " + fechaFin + ".pdf");
                 PdfWriter.getInstance(documentoPdf, ficheroDocumento).setInitialLeading(10);
@@ -841,6 +857,8 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 Image imagen = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\imagenes\\encabezadoPDF.png");
                 
                 documentoPdf.add(imagen);
+                
+                documentoPdf.setMargins(30,30, 30, 30);
                 
                 documentoPdf.add(new Paragraph("\n"));
                 documentoPdf.add(new Paragraph("REPORTE TOTAL  desde: " + fechaInicio + " hasta: "+ fechaFin , fuenteTitulo));
@@ -861,7 +879,12 @@ public class ControladorReportes implements ActionListener, MouseListener{
                             if(prestamo.getIdPersona() == persona.getDocumentoPersona()){
                                 documentoPdf.add(new Paragraph("Prestamo número: " + prestamo.getIdPrestamo()));
                                 documentoPdf.add(new Paragraph("Persona que pidió el prestamo: " + persona.getNombrePersona() + "\nDocumento: " + prestamo.getIdPersona()));
-                                documentoPdf.add(new Paragraph("Programa al que pertenece: " + arrayListCarrera.get(persona.getIdCarrera()-1).getCarrera()));
+                                if(persona.getIdCarrera() != 0){
+                                    documentoPdf.add(new Paragraph("Programa al que pertenece: " + arrayListCarrera.get(persona.getIdCarrera()-1).getCarrera()));
+                                }
+                                else{
+                                    documentoPdf.add(new Paragraph("Administrador"));
+                                }
                                 documentoPdf.add(new Paragraph("ISBN del libro prestado: " + prestamo.getIsbnLibro()));
                                 documentoPdf.add(new Paragraph("Fecha del prestamo: " + prestamo.getFechaPrestamo() + "Fecha de entrega: " + prestamo.getFechaEntrega()));
                                 documentoPdf.add(new Paragraph("Estado del prestamo: " + ((prestamo.getIdEstado() == 3)? "En deuda":"Entregado")));
@@ -914,6 +937,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 if(promPrestamos != 0){
                     
+                    prestamosDoc = true;
                     PdfPTable tabla = new PdfPTable(2);
 
                     documentoPdf.add(new Paragraph("\n"));
@@ -964,8 +988,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
 
                     ChartUtilities.saveChartAsJPEG(new File("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastel.png"), graficoCahrt, 400, 400);
 
-                    Image image = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastel.png");
-                    documentoPdf.add(image);
+                    
 
                         //Graficas de barras
 
@@ -984,8 +1007,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
 
                     ChartUtilities.saveChartAsJPEG(new File("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarra.png"), graficaBarraChart, 400, 400);
 
-                    Image imagenGraf = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarra.png");
-                    documentoPdf.add(imagenGraf);
+                    
                 }
                 else{
                     documentoPdf.add(new Paragraph("No existe ningún registro"));
@@ -1064,6 +1086,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 if(promMultas != 0){
                     
+                    multasDoc = true;
                     PdfPTable tabla2 = new PdfPTable(2);
 
                     documentoPdf.add(new Paragraph("\n"));
@@ -1114,8 +1137,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
 
                     ChartUtilities.saveChartAsJPEG(new File("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastelMultas.png"), graficoCahrtMultas, 400, 400);
 
-                    Image imageMultas = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastelMultas.png");
-                    documentoPdf.add(imageMultas);
+                    
 
                         //Graficas de barras
 
@@ -1134,8 +1156,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
 
                     ChartUtilities.saveChartAsJPEG(new File("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarraMultas.png"), graficaBarraChartMultas, 400, 400);
 
-                    Image imagenGrafMultas = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarraMultas.png");
-                    documentoPdf.add(imagenGrafMultas);
+                    
                 }
                 else{
                     documentoPdf.add(new Paragraph("No existe ningún registro"));
@@ -1228,7 +1249,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
 
                 if(promPagos != 0){
-                    
+                    pagosDoc = true;
                     PdfPTable tabla3 = new PdfPTable(2);
 
                     documentoPdf.add(new Paragraph("\n"));
@@ -1298,8 +1319,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
 
                     ChartUtilities.saveChartAsJPEG(new File("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastelPago.png"), graficoCahrtPago, 400, 400);
 
-                    Image imagePago = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastelPago.png");
-                    documentoPdf.add(imagePago);
+                    
 
                         //Graficas de barras
 
@@ -1318,12 +1338,37 @@ public class ControladorReportes implements ActionListener, MouseListener{
 
                     ChartUtilities.saveChartAsJPEG(new File("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarraPago.png"), graficaBarraChartPago, 400, 400);
 
-                    Image imagenGrafPago = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarraPago.png");
-                    documentoPdf.add(imagenGrafPago);
                 }
                 else{
                     documentoPdf.add(new Paragraph("No existe ningún registro"));
                 }
+                
+                documentoPdf.setMargins(30,30, 0, 30);
+                
+                if(prestamosDoc){
+                    Image image = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastel.png");
+                    documentoPdf.add(image);
+
+                    Image imagenGraf = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarra.png");
+                    documentoPdf.add(imagenGraf);
+
+                }
+                if(multasDoc){
+                    Image imageMultas = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastelMultas.png");
+                    documentoPdf.add(imageMultas);
+
+                    Image imagenGrafMultas = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarraMultas.png");
+                    documentoPdf.add(imagenGrafMultas);
+                }
+                
+                if(pagosDoc){
+                    Image imagePago = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoPastelPago.png");
+                    documentoPdf.add(imagePago);
+
+                    Image imagenGrafPago = Image.getInstance("src\\main\\java\\main\\java\\com\\mycompany\\sigeliapp\\vistas\\graficos\\graficoBarraPago.png");
+                    documentoPdf.add(imagenGrafPago);
+                }
+                    
                 
                 documentoPdf.close();
                 JOptionPane.showMessageDialog(null, "Documento Creado con éxito");
@@ -1338,6 +1383,7 @@ public class ControladorReportes implements ActionListener, MouseListener{
                 
                 
             } catch (Exception e) {
+                documentoPdf.close();
                 
                 JOptionPane.showMessageDialog(null, "No se ha podido crear el documento " + e.getMessage());
             }
